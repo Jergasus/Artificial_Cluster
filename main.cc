@@ -2,8 +2,13 @@
 #include "Procesador.hh"
 #include "Proceso.hh"
 #include "Area_Procesos.hh"
+#include <iostream>
+using namespace std;
 
 int main() {
-    BinTree<Procesador> cluster;
-    (cluster);
+    string comando;
+    cin >> comando;
+    while (comando != "fin") {
+
+    }
 }

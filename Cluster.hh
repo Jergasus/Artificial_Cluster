@@ -1,6 +1,5 @@
-/**
-@file Cluster.hh
-@brief Especificación de la clase Cluster 
+/** @file Cluster.hh
+    @brief Especificación de la clase Cluster 
 */
 
 #ifndef _CLUSTER_HH_
@@ -11,26 +10,23 @@
 #include "BinTree.hh"
 #endif
 
-/**
-@class Cluster
-@brief Representa un Cluster 
+/** @class Cluster
+    @brief Representa un Cluster 
 */
 
 
 class Cluster {
     public:
+    // Constructoras
+    /** @brief Creadora por defecto.
+     Se ejecuta de forma automatica al declarar un cluster.
+     \pre <em>Cierto</em>
+     \post El resultado es un cluster no inicializado (sin procesadores).
+    */
 
-    Cluster(BinTree<Procesador>& cluster);
+    Cluster();
+
+    // Modificadoras
+
 };
 #endif
-
-
-
-/* Estudiant est;
-    est.llegir();
-    if (est.consultar_DNI() != 0) {
-        BinTree<Estudiant> left, right;
-        read_bintree_est(left);
-        read_bintree_est(right);
-        a = BinTree<Estudiant>(est, left, right);
-    } */
