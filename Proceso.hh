@@ -57,16 +57,10 @@ class Proceso {
      \post Devuelve el nuevo tiempo de ejecución después de haber restado al tiempo anterior el tiempo pasado por parámetro. Si el tiempo es del parámetro es mayor que el anterior, se elimina el proceso.
     */
     void modificar_tiempo(int tiempo);
-    
-    
-
-
 
     private:
     int identificador;
     int memoria;
     int tiempo;
-
-
 };
 #endif
