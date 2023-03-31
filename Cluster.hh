@@ -17,16 +17,22 @@
 
 class Cluster {
     public:
-    // Constructoras
+    // Constructoras ---------------------------------------------------
     /** @brief Creadora por defecto.
      Se ejecuta de forma automatica al declarar un cluster.
      \pre <em>Cierto</em>
      \post El resultado es un cluster no inicializado (sin procesadores).
     */
-
     Cluster();
 
-    // Modificadoras
+    // Modificadoras ---------------------------------------------------
+
+    // Estas 2 llaman a leer_cluster!!
+    void configurar_cluster();
+    void modificar_cluster(string identificador);
+
+    private:
+    void leer_cluster(BinTree<Procesador>& cluster);
 
 };
 #endif

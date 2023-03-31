@@ -6,12 +6,12 @@
 #define _PROCESO_HH_
 
 
-/** @class Lavadora
-    @brief Representa una lavadora 
+/** @class Proceso
+    @brief Representa un proceso
 
-    Dispone de dos estados posibles (inicializada / no inicializada); si está inicializada tiene un peso máximo y un color y puede contener prendas de dicho color hasta alcanzar dicho peso máximo; si no está inicializada no contiene ninguna prenda y solo se puede inicializar
+    Dispone de dos estados posibles (inicializado / no inicializado); si está inicializado tiene un identificador, la memoria que ocupan y un tiempo de ejecución determinado. Si no está incializado, no contiene propiedades. En este caso, solo se puede inicilizar
 
-    Todas las operaciones son de <b>coste constante</b> salvo las indicadas */
+*/
 class Proceso {
     public:
     //Constructoras ---------------------------------------------------------------
@@ -27,7 +27,7 @@ class Proceso {
 
         Se ejecuta automáticamente al declarar una proceso.
         \pre Identificador >= 0, memoria >= 0, tiempo >= 0.
-        \post El resultado es un proceso inicializado con dicho identificador, memoria y tiempo de ejecución;
+        \post El resultado es un proceso inicializado con dicho identificador, la memoria que ocupa y el tiempo de ejecución;
     */
     Proceso(int identificador, int memoria, int tiempo);
 
