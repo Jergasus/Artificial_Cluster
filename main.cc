@@ -6,8 +6,8 @@
 using namespace std;
 
 int main() {
-    // Inicializar cluster
-    // Inicializar area de procesos
+    Cluster cluster;
+    Area_Procesos area_proceso;
     string comando;
     cin >> comando;
     while (comando != "fin") {
@@ -21,17 +21,21 @@ int main() {
         else if (comando == "modificar_cluster" or comando == "mc") {
             string ident;
             cin >> ident;
-            Cluster cluster;
             cluster.modificar_cluster(ident);
         }
         else if (comando == "alta_prioridad" or comando == "ap") {
-            
+            string ident;
+            cin >> ident;
+            area_proceso.consultar_ident_alta(ident);
+
         }
         else if (comando == "baja_prioridad" or comando == "bp") {
-            
+            string ident;
+            cin >> ident;
+            area_proceso.consultar_ident_baja(ident);
         }
         else if (comando == "alta_proceso_espera" or comando == "ape") {
-            
+            Proceso proceso;
         }
         else if (comando == "alta_proceso_procesador" or comando == "app") {
             

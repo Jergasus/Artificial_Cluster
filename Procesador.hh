@@ -4,6 +4,7 @@
 
 #ifndef _PROCESADOR_HH_
 #define _PROCESADOR_HH_
+#include "Proceso.hh"
 
 
 /** @class Procesador
@@ -25,5 +26,6 @@ class Procesador {
 
     private:
     string identificador;
+    int memoria;
 };
 #endif

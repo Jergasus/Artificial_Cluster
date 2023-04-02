@@ -32,7 +32,11 @@ class Cluster {
     void modificar_cluster(string identificador);
 
     private:
+    // Lee el BinTree de procesadores.
+    BinTree<Procesador> cluster;
     void leer_cluster(BinTree<Procesador>& cluster);
+
+    // Struct de prioridades
 
 };
 #endif
