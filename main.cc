@@ -26,16 +26,24 @@ int main() {
         else if (comando == "alta_prioridad" or comando == "ap") {
             string ident;
             cin >> ident;
-            area_proceso.consultar_ident_alta(ident);
+            area_proceso.añadir_prioridad(ident);
 
         }
         else if (comando == "baja_prioridad" or comando == "bp") {
             string ident;
             cin >> ident;
-            area_proceso.consultar_ident_baja(ident);
+            area_proceso.eliminar_prioridad(ident);
         }
         else if (comando == "alta_proceso_espera" or comando == "ape") {
-            Proceso proceso;
+            int ident_proceso, memoria, tiempo;
+            cin >> ident_proceso >> memoria >> tiempo;
+            Proceso proceso(ident_proceso, memoria, tiempo);
+            string ident;
+            cin >> ident;
+            if (area_proceso.existe_prioridad(ident) == false); // Mensaje de error
+            else if (area_proceso.existe_proceso(ident, ident_proceso)); // Mensaje de error
+            else area_proceso.añadir_proceso(ident, proceso);
+            
         }
         else if (comando == "alta_proceso_procesador" or comando == "app") {
             

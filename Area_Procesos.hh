@@ -16,17 +16,23 @@
 */
 class Area_Procesos {
     public:
-    //Constructoras --------------------------------------------------- 
+    // Constructoras --------------------------------------------------- 
     Area_Procesos();
-    //Consultoras -----------------------------------------------------
-    void consultar_ident_alta(string identificador);
+    // Consultoras -----------------------------------------------------
+    void añadir_prioridad(string identificador);
     // Poner un iterador que busque en todo el mapa. map<string, Proceso>::iterator i;
     // Si hemos encontrador un string igual al identificador, devolvemos un ERROR
     // else: lo añadimos al mapa. Se ordena automaticamente
-    void consultar_ident_baja(string identificador);
+    void eliminar_prioridad(string identificador);
     // Poner un iterador que busque en todo el mapa. map<string, Proceso>::iterator i;
     // Si no existe un string igual al identificador o tiene procesos pendientes: ERROR
     // else: Eliminamos dicha prioridad del area_procesos.
+    // Modificadoras ----------------------------------------------------
+    bool existe_prioridad(string identificador);
+
+    bool existe_proceso(string identificador, int identificador_proceso);
+
+    void añadir_proceso(string identificador, Proceso proceso);
     private:
     map<string, Proceso> area_procesos;
 

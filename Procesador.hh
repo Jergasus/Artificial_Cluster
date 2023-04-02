@@ -27,5 +27,6 @@ class Procesador {
     private:
     string identificador;
     int memoria;
+    // Lista de procesos¿?
 };
 #endif
