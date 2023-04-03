@@ -46,6 +46,12 @@ int main() {
             
         }
         else if (comando == "alta_proceso_procesador" or comando == "app") {
+            string ident_procesador;
+            cin >> ident_procesador;
+            int ident_proceso, memoria, tiempo;
+            cin >> ident_proceso >> memoria >> tiempo;
+            Proceso proceso(ident_proceso, memoria, tiempo);
+            if (cluster.existe_procesador(cluster, ident_procesador) == false); // Mensaje de error
             
         }
         else if (comando == "baja_proceso_procesador" or comando == "bpp") {

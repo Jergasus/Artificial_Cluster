@@ -30,6 +30,7 @@ class Cluster {
     // Estas 2 llaman a leer_cluster!!
     void configurar_cluster();
     void modificar_cluster(string identificador);
+    bool existe_procesador(BinTree<Procesador>& cluster, string identificador);
 
     private:
     // Lee el BinTree de procesadores.
