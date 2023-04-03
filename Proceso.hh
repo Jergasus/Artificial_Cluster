@@ -29,7 +29,7 @@ class Proceso {
         \pre Identificador >= 0, memoria >= 0, tiempo >= 0.
         \post El resultado es un proceso inicializado con dicho identificador, la memoria que ocupa y el tiempo de ejecución;
     */
-    Proceso(int identificador, int memoria, int tiempo);
+    Proceso(int ident, int mem, int time);
 
     //Consultoras ------------------------------------------------------------------
     /**
@@ -62,5 +62,7 @@ class Proceso {
     int identificador;
     int memoria;
     int tiempo;
+
+    // Como funcionan los privados¿?
 };
 #endif

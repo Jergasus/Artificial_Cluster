@@ -33,7 +33,12 @@ class Area_Procesos {
     bool existe_proceso(string identificador, int identificador_proceso);
 
     void añadir_proceso(string identificador, Proceso proceso);
+
+    void escribir_procesos(string identificador);
+
+    void escribir_area_procesos();
     private:
+    pair<int,int> aceptados_rechazados;
     map<string, Proceso> area_procesos;
 
 

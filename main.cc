@@ -21,6 +21,7 @@ int main() {
         else if (comando == "modificar_cluster" or comando == "mc") {
             string ident;
             cin >> ident;
+            Cluster cluster_new;
             cluster.modificar_cluster(ident);
         }
         else if (comando == "alta_prioridad" or comando == "ap") {
@@ -51,35 +52,51 @@ int main() {
             int ident_proceso, memoria, tiempo;
             cin >> ident_proceso >> memoria >> tiempo;
             Proceso proceso(ident_proceso, memoria, tiempo);
-            if (cluster.existe_procesador(cluster, ident_procesador) == false); // Mensaje de error
+            if (cluster.existe_procesador(/*Preguntar como hacerlo*/, ident_procesador) == false); // Mensaje de error
+            // existe_proceso(ident_proceso);
+            // añadir_proceso(proceso);
             
         }
         else if (comando == "baja_proceso_procesador" or comando == "bpp") {
-            
+            string ident_procesador;
+            cin >> ident_procesador;
+            int ident_proceso;
+            cin >> ident_proceso;
+            //Existe Procesador¿?
+            // Si existe procesador, ¿existe proceso? existe_proceso(clase procesador)
         }
         else if (comando == "enviar_procesos_cluster" or comando == "epc") {
-            
+            int num;
+            cin >> num;
         }
         else if (comando == "avanzar_tiempo" or comando == "at") {
-            
+            int t;
+            cin >> t;
+            cluster.avanzar_tiempo(cluster, t);
         }
         else if (comando == "imprimir_prioridad" or comando == "ipri") {
-            
+            string identificador;
+            cin >> identificador;
+            //existe_prioridad(identificador)
         }
         else if (comando == "imprimir_area_espera" or comando == "iae") {
-            
+            area_proceso.escribir_area_procesos();
         }
         else if (comando == "imprimir_procesador" or comando == "ipro") {
-            
+            string identificador;
+            cin >> identificador;
         }
         else if (comando == "imprimir_procesadores_cluster" or comando == "ipc") {
-            
+            // cluster.escribir_procesadores(cluster);
         }
         else if (comando == "imprimir_estructura_cluster" or comando == "iec") {
-            
+            // ¿?
         }
         else if (comando == "compactar_memoria_procesador" or comando == "cmp") {
-            
+            string identificador;
+            cin >> identificador;
+            // cluster.existe_procesador()
+            // cluster.compactar_memoria_procesador
         }
         else if (comando == "compactar_memoria_cluster" or comando == "cmc") {
             

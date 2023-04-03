@@ -6,6 +6,10 @@
 #define _PROCESADOR_HH_
 #include "Proceso.hh"
 
+#ifndef NO_DIAGRAM
+#include <list>
+#endif
+
 
 /** @class Procesador
     @brief Representa un procesador
@@ -23,10 +27,20 @@ class Procesador {
         \post El resultado es un procesador sin memoria ni procesos.
     */
     Procesador();
+    //Modificadoras ---------------------------------------------------------------
+    bool existe_proceso(int ident);
+    bool cabe_proceso(int ident);
+    void añadir_proceso(Proceso proceso);
+    void eliminar_proceso(int ident_proceso);
+    void consultar_identificador();
+    void consultar_memoria();
+    void mover_procesos();
+    void ordenar_procesos_mem();
+    void escribir_procesos(string ident);
 
     private:
     string identificador;
     int memoria;
-    // Lista de procesos¿?
+    list<Proceso> procesos;
 };
 #endif
