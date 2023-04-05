@@ -14,6 +14,7 @@
 */
 class Proceso {
     public:
+
     //Constructoras ---------------------------------------------------------------
 
     /** @brief Creadora por defecto. 
@@ -23,11 +24,12 @@ class Proceso {
         \post El resultado es un proceso sin identificador, memoria ni tiempo de ejecución.
     */
     Proceso();
+
     /** @brief Creadora por defecto. 
 
-        Se ejecuta automáticamente al declarar una proceso.
-        \pre ident >= 0, mem >= 0, timeo >= 0.
-        \post El resultado es un proceso inicializado con dicho identificador, la memoria que ocupa y el tiempo de ejecución;
+        \pre ident >= 0, mem >= 0, time >= 0.
+        \post El resultado es un proceso inicializado con un identificador <em>ident</em>,
+        memoria <em>mem</em> y tiempo <em>time</em>.
     */
     Proceso(int ident, int mem, int time);
 
@@ -35,31 +37,36 @@ class Proceso {
 
     /**
      @brief Consultora del identificador
-     \pre Que el parámetro ímplicito esté inicializado.
-     \post Devuelve el identificador del parámetro ímplicito.
+
+     \pre El parámetro implícito debe estar inicializado.
+     \post Devuelve el identificador del parámetro implícito.
     */
     int consultar_ident() const;
+
     /**
      @brief Consultora de la memoria
-     \pre Que el parámetro ímplicito esté inicializado.
-     \post Devuelve la memoria del parámetro ímplicito.
+
+     \pre El parámetro implícito debe estar inicializado.
+     \post Devuelve la memoria del parámetro implícito.
     */
-    int consultar_mem() const;
+    int consultar_memoria() const;
+
     /**
      @brief Consultora del tiempo de ejecución
-     \pre Que el parámetro ímplicito esté inicializado.
-     \post Devuelve el tiempo de ejecución del parámetro ímplicito
+
+     \pre El parámetro implícito debe estar inicializado.
+     \post Devuelve el tiempo de ejecución del parámetro implícito
     */
     int consultar_tiempo() const;
 
     //Modificadoras -------------------------------------------------
 
     /**
-     @brief Modificadora del tiempo de ejecución del procesador.
-     \pre Que el parámetro ímplicito esté inicializado.
-     \post Devuelve el nuevo tiempo de ejecución después de haber restado al tiempo anterior el tiempo pasado por parámetro. Si el tiempo es del parámetro es mayor que el anterior, se elimina el proceso.
+     @brief Modifica el tiempo de un proceso.
+
+     \pre El parámetro implícito debe estar inicializado.
+     \post El nuevo tiempo del procesador = tiempo anterior - <em>time</em>.
     */
-    void avanzar_tiempo(int time);
-    // bool avanzar_tiempo() --> Hacer aqui lo relacionado con el avanzar tiempo
+    void modificar_tiempo(int time);
 };
 #endif

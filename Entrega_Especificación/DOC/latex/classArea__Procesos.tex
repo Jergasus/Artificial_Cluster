@@ -1,0 +1,154 @@
+\hypertarget{classArea__Procesos}{}\doxysection{Referencia de la Clase Area\+\_\+\+Procesos}
+\label{classArea__Procesos}\index{Area\_Procesos@{Area\_Procesos}}
+
+
+Representa una area de procesos.  
+
+
+
+
+{\ttfamily \#include $<$Area\+\_\+\+Procesos.\+hh$>$}
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classArea__Procesos_a7bb67af68388c2fc4ff1acf60ac915af}{Area\+\_\+\+Procesos}} ()
+\begin{DoxyCompactList}\small\item\em Creadora por defecto. Se ejecuta de forma automática al declarar una área de procesos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArea__Procesos_a0aa02e28bf4da5a3f649c821d30ed8c1}{alta\+\_\+prioridad}} (const string \&ident, int \&error)
+\begin{DoxyCompactList}\small\item\em Añadir una prioridad al área de procesos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArea__Procesos_ae5af510b7f353e611bf1b5a8cf9e9fe1}{baja\+\_\+prioridad}} (const string \&ident, int \&error)
+\begin{DoxyCompactList}\small\item\em Eliminar una prioridad del área de procesos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArea__Procesos_a940a907e09c3af66a5a09dc0e9ae5d85}{alta\+\_\+proceso\+\_\+espera}} (const string \&ident, \mbox{\hyperlink{classProceso}{Proceso}} proc, int \&error)
+\begin{DoxyCompactList}\small\item\em Añadir un proceso al área de procesos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArea__Procesos_a06fdd60fdcc7e2dfac0d9710c1f4d51b}{enviar\+\_\+procesos\+\_\+cluster}} (int n)
+\begin{DoxyCompactList}\small\item\em Enviar los procesos del área de procesos al clúster. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArea__Procesos_a1a2a6083ec9764c49af3c09492674b5d}{imprimir\+\_\+prioridad}} (string ident, int \&error)
+\begin{DoxyCompactList}\small\item\em Escribe los procesos pendientes de una prioridad. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArea__Procesos_af9989fdce6619bd90fa11ea0c988a4b0}{imprimir\+\_\+area\+\_\+espera}} ()
+\begin{DoxyCompactList}\small\item\em Escribe los procesos pendientes de todas las prioridades. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa una area de procesos. 
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classArea__Procesos_a7bb67af68388c2fc4ff1acf60ac915af}\label{classArea__Procesos_a7bb67af68388c2fc4ff1acf60ac915af}} 
+\index{Area\_Procesos@{Area\_Procesos}!Area\_Procesos@{Area\_Procesos}}
+\index{Area\_Procesos@{Area\_Procesos}!Area\_Procesos@{Area\_Procesos}}
+\doxysubsubsection{\texorpdfstring{Area\_Procesos()}{Area\_Procesos()}}
+{\footnotesize\ttfamily Area\+\_\+\+Procesos\+::\+Area\+\_\+\+Procesos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creadora por defecto. Se ejecuta de forma automática al declarar una área de procesos. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es una área de procesos (sin procesos). 
+\end{DoxyPostcond}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classArea__Procesos_a0aa02e28bf4da5a3f649c821d30ed8c1}\label{classArea__Procesos_a0aa02e28bf4da5a3f649c821d30ed8c1}} 
+\index{Area\_Procesos@{Area\_Procesos}!alta\_prioridad@{alta\_prioridad}}
+\index{alta\_prioridad@{alta\_prioridad}!Area\_Procesos@{Area\_Procesos}}
+\doxysubsubsection{\texorpdfstring{alta\_prioridad()}{alta\_prioridad()}}
+{\footnotesize\ttfamily void Area\+\_\+\+Procesos\+::alta\+\_\+prioridad (\begin{DoxyParamCaption}\item[{const string \&}]{ident,  }\item[{int \&}]{error }\end{DoxyParamCaption})}
+
+
+
+Añadir una prioridad al área de procesos. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Si existe una prioridad con el mismo identificador que ident, error $>$= 0. En caso contrario, se añade dicha prioridad al área de procesos. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classArea__Procesos_a940a907e09c3af66a5a09dc0e9ae5d85}\label{classArea__Procesos_a940a907e09c3af66a5a09dc0e9ae5d85}} 
+\index{Area\_Procesos@{Area\_Procesos}!alta\_proceso\_espera@{alta\_proceso\_espera}}
+\index{alta\_proceso\_espera@{alta\_proceso\_espera}!Area\_Procesos@{Area\_Procesos}}
+\doxysubsubsection{\texorpdfstring{alta\_proceso\_espera()}{alta\_proceso\_espera()}}
+{\footnotesize\ttfamily void Area\+\_\+\+Procesos\+::alta\+\_\+proceso\+\_\+espera (\begin{DoxyParamCaption}\item[{const string \&}]{ident,  }\item[{\mbox{\hyperlink{classProceso}{Proceso}}}]{proc,  }\item[{int \&}]{error }\end{DoxyParamCaption})}
+
+
+
+Añadir un proceso al área de procesos. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Si no existe una prioridad con el mismo identificador que ident, o uno de los procesos de dicha prioridad tiene el mismo identificador que proc, error $>$= 0. En caso contrario, error = -\/1 y añadimos el proceso al área de procesos (con la prioridad de identificador ident). 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classArea__Procesos_ae5af510b7f353e611bf1b5a8cf9e9fe1}\label{classArea__Procesos_ae5af510b7f353e611bf1b5a8cf9e9fe1}} 
+\index{Area\_Procesos@{Area\_Procesos}!baja\_prioridad@{baja\_prioridad}}
+\index{baja\_prioridad@{baja\_prioridad}!Area\_Procesos@{Area\_Procesos}}
+\doxysubsubsection{\texorpdfstring{baja\_prioridad()}{baja\_prioridad()}}
+{\footnotesize\ttfamily void Area\+\_\+\+Procesos\+::baja\+\_\+prioridad (\begin{DoxyParamCaption}\item[{const string \&}]{ident,  }\item[{int \&}]{error }\end{DoxyParamCaption})}
+
+
+
+Eliminar una prioridad del área de procesos. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Si no existe una prioridad con el mismo identificador que ident, o dicha prioridad tiene procesos pendientes, error $>$= 0. En caso contrario, se elimina dicha prioridad del área de procesos. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classArea__Procesos_a06fdd60fdcc7e2dfac0d9710c1f4d51b}\label{classArea__Procesos_a06fdd60fdcc7e2dfac0d9710c1f4d51b}} 
+\index{Area\_Procesos@{Area\_Procesos}!enviar\_procesos\_cluster@{enviar\_procesos\_cluster}}
+\index{enviar\_procesos\_cluster@{enviar\_procesos\_cluster}!Area\_Procesos@{Area\_Procesos}}
+\doxysubsubsection{\texorpdfstring{enviar\_procesos\_cluster()}{enviar\_procesos\_cluster()}}
+{\footnotesize\ttfamily void Area\+\_\+\+Procesos\+::enviar\+\_\+procesos\+\_\+cluster (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Enviar los procesos del área de procesos al clúster. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se intentan enviar n procesos al clúster. D\+A\+R\+LE U\+NA V\+U\+E\+L\+T\+A!!!! 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classArea__Procesos_af9989fdce6619bd90fa11ea0c988a4b0}\label{classArea__Procesos_af9989fdce6619bd90fa11ea0c988a4b0}} 
+\index{Area\_Procesos@{Area\_Procesos}!imprimir\_area\_espera@{imprimir\_area\_espera}}
+\index{imprimir\_area\_espera@{imprimir\_area\_espera}!Area\_Procesos@{Area\_Procesos}}
+\doxysubsubsection{\texorpdfstring{imprimir\_area\_espera()}{imprimir\_area\_espera()}}
+{\footnotesize\ttfamily void Area\+\_\+\+Procesos\+::imprimir\+\_\+area\+\_\+espera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Escribe los procesos pendientes de todas las prioridades. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se escriben todos los procesos de todas las prioridades del área de procesos (en orden creciente de prioridad). 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classArea__Procesos_a1a2a6083ec9764c49af3c09492674b5d}\label{classArea__Procesos_a1a2a6083ec9764c49af3c09492674b5d}} 
+\index{Area\_Procesos@{Area\_Procesos}!imprimir\_prioridad@{imprimir\_prioridad}}
+\index{imprimir\_prioridad@{imprimir\_prioridad}!Area\_Procesos@{Area\_Procesos}}
+\doxysubsubsection{\texorpdfstring{imprimir\_prioridad()}{imprimir\_prioridad()}}
+{\footnotesize\ttfamily void Area\+\_\+\+Procesos\+::imprimir\+\_\+prioridad (\begin{DoxyParamCaption}\item[{string}]{ident,  }\item[{int \&}]{error }\end{DoxyParamCaption})}
+
+
+
+Escribe los procesos pendientes de una prioridad. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Si no existe una prioridad con el mismo identificador que ident, error $>$= 0. En caso contrario, error = -\/1 y se escriben los procesos pendientes de la prioridad cuyo identificador es el mismo que ident (se escriben de más antiguo a más nuevo). Además, se escribe el número de procesos de la prioridad colocados correctamente en el clúster y el número de rechazados. 
+\end{DoxyPostcond}
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Area__Procesos_8hh}{Area\+\_\+\+Procesos.\+hh}}\end{DoxyCompactItemize}

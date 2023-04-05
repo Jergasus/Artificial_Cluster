@@ -18,29 +18,77 @@
 */
 class Area_Procesos {
     public:
-    // Constructoras --------------------------------------------------- 
-    Area_Procesos();
-    // Consultoras -----------------------------------------------------
-    void alta_prioridad(string identificador, int& error);
-    // Poner un iterador que busque en todo el mapa. map<string, Proceso>::iterator i;
-    // Si hemos encontrador un string igual al identificador, devolvemos un ERROR
-    // else: lo añadimos al mapa. Se ordena automaticamente
-    void baja_prioridad(string identificador, int& error);
-    // Poner un iterador que busque en todo el mapa. map<string, Proceso>::iterator i;
-    // Si no existe un string igual al identificador o tiene procesos pendientes: ERROR
-    // else: Eliminamos dicha prioridad del area_procesos.
-    // Modificadoras ----------------------------------------------------
-    void alta_proceso_espera(string identificador, Proceso proceso, int& error);
 
+    //Constructoras -----------------------------------------------------------
+
+    /** @brief Creadora por defecto.
+     Se ejecuta de forma automática al declarar una área de procesos.
+     \pre <em>Cierto</em>
+     \post El resultado es una área de procesos (sin procesos).
+    */
+    Area_Procesos();
+
+    //Modificadoras -----------------------------------------------------------
+
+    /** @brief Añadir una prioridad al área de procesos. 
+
+        \pre El parámetro implícito está inicializado.
+        \post Si existe una prioridad con el mismo identificador que ident,
+        error >= 0. En caso contrario, se añade dicha prioridad al área de
+        procesos.
+    */
+    void alta_prioridad(const string& ident, int& error);
+
+    /** @brief Eliminar una prioridad del área de procesos. 
+
+        \pre El parámetro implícito está inicializado.
+        \post Si no existe una prioridad con el mismo identificador que ident,
+        o dicha prioridad tiene procesos pendientes, error >= 0. En caso
+        contrario, se elimina dicha prioridad del área de procesos.
+    */
+    void baja_prioridad(const string& ident, int& error);
+
+    /** @brief Añadir un proceso al área de procesos.
+
+        \pre El parámetro implícito está inicializado.
+        \post Si no existe una prioridad con el mismo identificador que ident,
+        o uno de los procesos de dicha prioridad tiene el mismo identificador
+        que proc, error >= 0. En caso contrario, error = -1 y añadimos el proceso al
+        área de procesos (con la prioridad de identificador ident).
+    */
+    void alta_proceso_espera(const string& ident, Proceso proc, int& error);
+
+    /** @brief Enviar los procesos del área de procesos al clúster.
+
+        \pre El parámetro implícito está inicializado.
+        \post Se intentan enviar n procesos al clúster. DARLE UNA VUELTA!!!!
+    */
     void enviar_procesos_cluster(int n); // Igual tengo que añadir algo en el cluster. Echar un ojo!
 
+    /** @brief Escribe los procesos pendientes de una prioridad.
 
-    void imprimir_prioridad(string identificador);
+        \pre El parámetro implícito está inicializado.
+        \post Si no existe una prioridad con el mismo identificador que ident,
+        error >= 0. En caso contrario, error = -1 y se escriben los procesos
+        pendientes de la prioridad cuyo identificador es el mismo que
+        ident (se escriben de más antiguo a más nuevo). Además, se escribe
+        el número de procesos de la prioridad colocados correctamente
+        en el clúster y el número de rechazados.
+    */
+    void imprimir_prioridad(string ident, int& error);
 
+    /** @brief Escribe los procesos pendientes de todas las prioridades.
+
+        \pre El parámetro implícito está inicializado.
+        \post Se escriben todos los procesos de todas las prioridades
+        del área de procesos (en orden creciente de prioridad).
+    */
     void imprimir_area_espera();
 
     private:
+
     bool existe_prioridad(string identificador); // alta_proceso_espera
+    
     bool existe_proceso(string identificador, int identificador_proceso);
 
     struct Priority {

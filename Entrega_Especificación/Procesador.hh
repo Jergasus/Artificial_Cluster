@@ -18,6 +18,7 @@
 */
 class Procesador {
     public:
+
     //Constructoras ---------------------------------------------------------------
 
     /** @brief Creadora por defecto. 
@@ -27,6 +28,7 @@ class Procesador {
         \post El resultado es un procesador sin memoria ni procesos.
     */
     Procesador();
+
     //Modificadoras ---------------------------------------------------------------
 
     /** @brief Inicialización de un procesador. 
@@ -36,9 +38,26 @@ class Procesador {
     */
     void inicializar(string ident, int mem);
 
-    void avanzar_tiempo(int tiempo);
+    /** @brief Avanzar t unidades de tiempo en los procesos del procesador.
 
+        \pre El parámetro implícito está inicializado.
+        \post Se avanza t unidades de tiempo en cada proceso. 
+        Si el tiempo de un proceso ha finalizado, se elimina del
+        procesador. En caso contrario, los procesos progresan t unidades
+        de tiempo.
+
+    */
+    void avanzar_tiempo(int time);
+
+    /** @brief Movimiento de procesos en la memoria del procesador.
+
+        \pre El parámetro implícito está inicializado.
+        \post Se mueven los procesos hacia el principio de la memoria
+        del parámetro implícito (sin huecos, sin solaparse y respetando el orden inicial).
+
+    */
     void mover_procesos_memoria();
+
     /** @brief Escritura de los procesos de un procesador. 
 
         \pre El parámetro implícito debe estar inicializado.
@@ -46,8 +65,18 @@ class Procesador {
     */
     void escribir_procesos();
 
-    void añadir_proceso(Proceso proceso);
+    /** @brief Añadir un proceso del procesador.
 
+        \pre El parámetro implícito debe estar inicializado.
+        \post Añade un proceso al parámetro implícito.
+    */
+    void añadir_proceso(Proceso proc);
+
+    /** @brief Eliminar un proceso del procesador.
+
+        \pre El parámetro implícito debe estar inicializado.
+        \post Elimina un proceso del parámetro implícito.
+    */
     void eliminar_proceso(int ident_proceso);
 
     //Consultoras -------------------------------------------------------------
@@ -58,18 +87,21 @@ class Procesador {
         \post Devuelve el identificador del parámetro implícito.
     */
     string consultar_identificador();
+
     /** @brief Consultora de la memoria. 
 
         \pre El parámetro implícito debe estar inicializado.
         \post Devuelve la memoria del parámetro implícito.
     */
     int consultar_memoria();
+
     /** @brief Consultora de los procesos del parámetro implicito. 
 
         \pre El parámetro implícito debe estar inicializado.
         \post Devuelve los procesos del parámetro implícito.
     */
     list<Proceso> consultar_procesos();
+
     /** @brief Existencia de un determinado proceso en un procesador. 
 
         \pre El parámetro implícito debe estar inicializado.

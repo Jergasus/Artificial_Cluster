@@ -56,14 +56,12 @@ class Proceso {
      \pre Que el parámetro ímplicito esté inicializado.
      \post Devuelve el nuevo tiempo de ejecución después de haber restado al tiempo anterior el tiempo pasado por parámetro. Si el tiempo es del parámetro es mayor que el anterior, se elimina el proceso.
     */
-    void avanzar_tiempo(int time);
+    void modificar_tiempo(int time);
     // bool avanzar_tiempo() --> Hacer aqui lo relacionado con el avanzar tiempo
 
     private:
     int identificador;
     int memoria;
     int tiempo;
-
-    // Como funcionan los privados¿?
 };
 #endif

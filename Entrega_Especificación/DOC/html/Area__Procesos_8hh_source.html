@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto PRO2: Fichero Fuente Area_Procesos.hh</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Proyecto PRO2
+   &#160;<span id="projectnumber">version primavera 2023</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Area_Procesos.hh</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Area__Procesos_8hh.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef _AREA_PROCESOS_HH_</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define _AREA_PROCESOS_HH_</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Proceso_8hh.html">Proceso.hh</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Cluster_8hh.html">Cluster.hh</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef NO_DIAGRAM</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classArea__Procesos.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classArea__Procesos.html">Area_Procesos</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">//Constructoras -----------------------------------------------------------</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classArea__Procesos.html#a7bb67af68388c2fc4ff1acf60ac915af">Area_Procesos</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">//Modificadoras -----------------------------------------------------------</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classArea__Procesos.html#a0aa02e28bf4da5a3f649c821d30ed8c1">alta_prioridad</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; ident, <span class="keywordtype">int</span>&amp; error);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classArea__Procesos.html#ae5af510b7f353e611bf1b5a8cf9e9fe1">baja_prioridad</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; ident, <span class="keywordtype">int</span>&amp; error);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classArea__Procesos.html#a940a907e09c3af66a5a09dc0e9ae5d85">alta_proceso_espera</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; ident, <a class="code" href="classProceso.html">Proceso</a> proc, <span class="keywordtype">int</span>&amp; error);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classArea__Procesos.html#a06fdd60fdcc7e2dfac0d9710c1f4d51b">enviar_procesos_cluster</a>(<span class="keywordtype">int</span> n); <span class="comment">// Igual tengo que añadir algo en el cluster. Echar un ojo!</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classArea__Procesos.html#a1a2a6083ec9764c49af3c09492674b5d">imprimir_prioridad</a>(<span class="keywordtype">string</span> ident, <span class="keywordtype">int</span>&amp; error);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classArea__Procesos.html#af9989fdce6619bd90fa11ea0c988a4b0">imprimir_area_espera</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassArea__Procesos_html_af9989fdce6619bd90fa11ea0c988a4b0"><div class="ttname"><a href="classArea__Procesos.html#af9989fdce6619bd90fa11ea0c988a4b0">Area_Procesos::imprimir_area_espera</a></div><div class="ttdeci">void imprimir_area_espera()</div><div class="ttdoc">Escribe los procesos pendientes de todas las prioridades.</div></div>
+<div class="ttc" id="aCluster_8hh_html"><div class="ttname"><a href="Cluster_8hh.html">Cluster.hh</a></div><div class="ttdoc">Especificación de la clase Cluster.</div></div>
+<div class="ttc" id="aclassProceso_html"><div class="ttname"><a href="classProceso.html">Proceso</a></div><div class="ttdoc">Representa un proceso.</div><div class="ttdef"><b>Definition:</b> Proceso.hh:15</div></div>
+<div class="ttc" id="aclassArea__Procesos_html_a7bb67af68388c2fc4ff1acf60ac915af"><div class="ttname"><a href="classArea__Procesos.html#a7bb67af68388c2fc4ff1acf60ac915af">Area_Procesos::Area_Procesos</a></div><div class="ttdeci">Area_Procesos()</div><div class="ttdoc">Creadora por defecto. Se ejecuta de forma automática al declarar una área de procesos.</div></div>
+<div class="ttc" id="aclassArea__Procesos_html_a0aa02e28bf4da5a3f649c821d30ed8c1"><div class="ttname"><a href="classArea__Procesos.html#a0aa02e28bf4da5a3f649c821d30ed8c1">Area_Procesos::alta_prioridad</a></div><div class="ttdeci">void alta_prioridad(const string &amp;ident, int &amp;error)</div><div class="ttdoc">Añadir una prioridad al área de procesos.</div></div>
+<div class="ttc" id="aclassArea__Procesos_html_a940a907e09c3af66a5a09dc0e9ae5d85"><div class="ttname"><a href="classArea__Procesos.html#a940a907e09c3af66a5a09dc0e9ae5d85">Area_Procesos::alta_proceso_espera</a></div><div class="ttdeci">void alta_proceso_espera(const string &amp;ident, Proceso proc, int &amp;error)</div><div class="ttdoc">Añadir un proceso al área de procesos.</div></div>
+<div class="ttc" id="aclassArea__Procesos_html_a06fdd60fdcc7e2dfac0d9710c1f4d51b"><div class="ttname"><a href="classArea__Procesos.html#a06fdd60fdcc7e2dfac0d9710c1f4d51b">Area_Procesos::enviar_procesos_cluster</a></div><div class="ttdeci">void enviar_procesos_cluster(int n)</div><div class="ttdoc">Enviar los procesos del área de procesos al clúster.</div></div>
+<div class="ttc" id="aProceso_8hh_html"><div class="ttname"><a href="Proceso_8hh.html">Proceso.hh</a></div><div class="ttdoc">Especificación de la clase Proceso.</div></div>
+<div class="ttc" id="aclassArea__Procesos_html"><div class="ttname"><a href="classArea__Procesos.html">Area_Procesos</a></div><div class="ttdoc">Representa una area de procesos.</div><div class="ttdef"><b>Definition:</b> Area_Procesos.hh:18</div></div>
+<div class="ttc" id="aclassArea__Procesos_html_a1a2a6083ec9764c49af3c09492674b5d"><div class="ttname"><a href="classArea__Procesos.html#a1a2a6083ec9764c49af3c09492674b5d">Area_Procesos::imprimir_prioridad</a></div><div class="ttdeci">void imprimir_prioridad(string ident, int &amp;error)</div><div class="ttdoc">Escribe los procesos pendientes de una prioridad.</div></div>
+<div class="ttc" id="aclassArea__Procesos_html_ae5af510b7f353e611bf1b5a8cf9e9fe1"><div class="ttname"><a href="classArea__Procesos.html#ae5af510b7f353e611bf1b5a8cf9e9fe1">Area_Procesos::baja_prioridad</a></div><div class="ttdeci">void baja_prioridad(const string &amp;ident, int &amp;error)</div><div class="ttdoc">Eliminar una prioridad del área de procesos.</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

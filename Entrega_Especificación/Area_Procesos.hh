@@ -12,7 +12,6 @@
 #include <queue>
 #endif
 
-
 /** @class Area_Procesos
     @brief Representa una area de procesos
 */
@@ -53,7 +52,7 @@ class Area_Procesos {
         \pre El parámetro implícito está inicializado.
         \post Si no existe una prioridad con el mismo identificador que ident,
         o uno de los procesos de dicha prioridad tiene el mismo identificador
-        que proc, error >= 0. En caso contrario, añadimos el proceso al
+        que proc, error >= 0. En caso contrario, error = -1 y añadimos el proceso al
         área de procesos (con la prioridad de identificador ident).
     */
     void alta_proceso_espera(const string& ident, Proceso proc, int& error);
@@ -65,22 +64,25 @@ class Area_Procesos {
     */
     void enviar_procesos_cluster(int n); // Igual tengo que añadir algo en el cluster. Echar un ojo!
 
+    /** @brief Escribe los procesos pendientes de una prioridad.
 
-    void imprimir_prioridad(string identificador);
+        \pre El parámetro implícito está inicializado.
+        \post Si no existe una prioridad con el mismo identificador que ident,
+        error >= 0. En caso contrario, error = -1 y se escriben los procesos
+        pendientes de la prioridad cuyo identificador es el mismo que
+        ident (se escriben de más antiguo a más nuevo). Además, se escribe
+        el número de procesos de la prioridad colocados correctamente
+        en el clúster y el número de rechazados.
+    */
+    void imprimir_prioridad(string ident, int& error);
 
+    /** @brief Escribe los procesos pendientes de todas las prioridades.
+
+        \pre El parámetro implícito está inicializado.
+        \post Se escriben todos los procesos de todas las prioridades
+        del área de procesos (en orden creciente de prioridad).
+    */
     void imprimir_area_espera();
-
-    private:
-    bool existe_prioridad(string identificador); // alta_proceso_espera
-    bool existe_proceso(string identificador, int identificador_proceso);
-
-    struct Priority {
-        queue<Proceso> procesos;
-        int procesos_aceptados;
-        int procesos_rechazados;
-    };
-    map<string, Priority> area_procesos;
-
 
 };
 #endif

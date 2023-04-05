@@ -75,11 +75,11 @@ class Cluster {
     */
     void baja_proceso_procesador(const string& ident, int ident_proc, int& error);
 
-    /** @brief Avanzar t unidades de tiempo en el cluster
+    /** @brief Avanzar t unidades de tiempo en los procesadores del clúster.
 
         \pre El parámetro implícito está inicializado.
         \post Se avanza t unidades de tiempo a cada proceso de cada procesador
-        del clúster. Si el tiempo de un proceso a finalizado, se elimina del
+        del clúster. Si el tiempo de un proceso ha finalizado, se elimina del
         procesador. En caso contrario, los procesos progresan t unidades
         de tiempo.
 
@@ -119,12 +119,12 @@ class Cluster {
 
         \pre El parámetro implícito está inicializado.
         \post Si no existe un procesador en el clúster con el mismo identificador
-        que ident, error >= 0. En caso contrario, se desplazan todos los
+        que ident, error >= 0. En caso contrario, error = -1 y se desplazan todos los
         procesos hacia el principio de la memoria del procesador (
         sin huecos, sin solaparse y respetando el orden inicial).
 
     */
-    void compactar_memoria_procesador(const string& ident);
+    void compactar_memoria_procesador(const string& ident, int& error);
 
     /** @brief Compacta la memoria del clúster
 
