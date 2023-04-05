@@ -26,43 +26,40 @@ class Proceso {
     /** @brief Creadora por defecto. 
 
         Se ejecuta automáticamente al declarar una proceso.
-        \pre Identificador >= 0, memoria >= 0, tiempo >= 0.
+        \pre ident >= 0, mem >= 0, timeo >= 0.
         \post El resultado es un proceso inicializado con dicho identificador, la memoria que ocupa y el tiempo de ejecución;
     */
     Proceso(int ident, int mem, int time);
 
     //Consultoras ------------------------------------------------------------------
+
     /**
      @brief Consultora del identificador
      \pre Que el parámetro ímplicito esté inicializado.
      \post Devuelve el identificador del parámetro ímplicito.
     */
-    void consultar_ident() const;
+    int consultar_ident() const;
     /**
      @brief Consultora de la memoria
      \pre Que el parámetro ímplicito esté inicializado.
      \post Devuelve la memoria del parámetro ímplicito.
     */
-    void consultar_mem() const;
+    int consultar_mem() const;
     /**
      @brief Consultora del tiempo de ejecución
      \pre Que el parámetro ímplicito esté inicializado.
      \post Devuelve el tiempo de ejecución del parámetro ímplicito
     */
-    void consultar_tiempo() const;
+    int consultar_tiempo() const;
+
     //Modificadoras -------------------------------------------------
+
     /**
-     @brief Modificadora del tiempo del ejecución del procesador.
+     @brief Modificadora del tiempo de ejecución del procesador.
      \pre Que el parámetro ímplicito esté inicializado.
      \post Devuelve el nuevo tiempo de ejecución después de haber restado al tiempo anterior el tiempo pasado por parámetro. Si el tiempo es del parámetro es mayor que el anterior, se elimina el proceso.
     */
-    void modificar_tiempo(int tiempo);
-
-    private:
-    int identificador;
-    int memoria;
-    int tiempo;
-
-    // Como funcionan los privados¿?
+    void avanzar_tiempo(int time);
+    // bool avanzar_tiempo() --> Hacer aqui lo relacionado con el avanzar tiempo
 };
 #endif
