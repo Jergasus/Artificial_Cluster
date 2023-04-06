@@ -86,7 +86,7 @@ int main() {
             cin >> ident_procesador;
             int ident_proceso;
             cin >> ident_proceso;
-            cluster.baja_proceso_procesador(ident_procesador, ident_proceso, error)
+            cluster.baja_proceso_procesador(ident_procesador, ident_proceso, error);
         }
         else if (comando == "enviar_procesos_cluster" or comando == "epc") {
             int num;
