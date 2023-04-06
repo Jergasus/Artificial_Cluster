@@ -10,6 +10,7 @@
 
 #ifndef NO_DIAGRAM
 #include "BinTree.hh"
+#include <string>
 #endif
 
 /** @class Cluster
@@ -95,7 +96,7 @@ class Cluster {
         creciente de memoria).
 
     */
-    void imprimir_procesador(const string& ident);
+    void imprimir_procesador(const string& ident, int& error);
 
     /** @brief Escribir los procesadores del clúster
 

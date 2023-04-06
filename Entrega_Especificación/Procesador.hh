@@ -8,6 +8,7 @@
 
 #ifndef NO_DIAGRAM
 #include <list>
+#include <string>
 #endif
 
 
@@ -36,7 +37,7 @@ class Procesador {
         \pre mem >= 0
         \post El resultado es un procesador inicializado con un identificador ident y una memoria mem.
     */
-    void inicializar(string ident, int mem);
+    void inicializar(const string& ident, int mem);
 
     /** @brief Avanzar t unidades de tiempo en los procesos del procesador.
 
@@ -70,7 +71,7 @@ class Procesador {
         \pre El parámetro implícito debe estar inicializado.
         \post Añade un proceso al parámetro implícito.
     */
-    void añadir_proceso(Proceso proc);
+    void introducir_proceso(Proceso proc);
 
     /** @brief Eliminar un proceso del procesador.
 
@@ -110,9 +111,5 @@ class Procesador {
     */
     bool existe_proceso(int ident);
 
-    private:
-    string identificador;
-    int memoria;
-    list<Proceso> procesos;
 };
 #endif

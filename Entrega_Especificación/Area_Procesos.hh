@@ -10,6 +10,7 @@
 #ifndef NO_DIAGRAM
 #include <map>
 #include <queue>
+#include <string>
 #endif
 
 /** @class Area_Procesos
@@ -74,7 +75,7 @@ class Area_Procesos {
         el número de procesos de la prioridad colocados correctamente
         en el clúster y el número de rechazados.
     */
-    void imprimir_prioridad(string ident, int& error);
+    void imprimir_prioridad(const string& ident, int& error);
 
     /** @brief Escribe los procesos pendientes de todas las prioridades.
 

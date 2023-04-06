@@ -34,7 +34,7 @@ class Area_Procesos {
 
         \pre El parámetro implícito está inicializado.
         \post Si existe una prioridad con el mismo identificador que ident,
-        error >= 0. En caso contrario, se añade dicha prioridad al área de
+        error >= 0. En caso contrario, error = -1 y se añade dicha prioridad al área de
         procesos.
     */
     void alta_prioridad(const string& ident, int& error);
@@ -44,7 +44,7 @@ class Area_Procesos {
         \pre El parámetro implícito está inicializado.
         \post Si no existe una prioridad con el mismo identificador que ident,
         o dicha prioridad tiene procesos pendientes, error >= 0. En caso
-        contrario, se elimina dicha prioridad del área de procesos.
+        contrario, error = -1 y se elimina dicha prioridad del área de procesos.
     */
     void baja_prioridad(const string& ident, int& error);
 
