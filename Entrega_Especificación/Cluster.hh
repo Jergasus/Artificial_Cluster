@@ -45,8 +45,8 @@ class Cluster {
 
         \pre El parámetro implícito está inicializado.
         \post Si no existe un procesador en el clúster con el mismo identificador
-        que ident, el procesador tiene procesos pendientes o tiene hojas,
-        error >= 0. En caso contario, error = -1 y en la posición del 
+        que <em>ident</em>, el procesador tiene procesos pendientes o tiene hojas,
+        <em>error</em> >= 0. En caso contario, <em>error</em> = -1 y en la posición del 
         procesador se pondrá un nuevo clúster.
 
     */
@@ -56,9 +56,9 @@ class Cluster {
 
         \pre El parámetro implícito está inicializado.
         \post Si no existe un procesador en el clúster con el mismo identificador
-        que ident, o el procesador ya tiene un proceso con el mismo
-        identificador que proc, o el proceso no cabe en el procesador,
-        error >= 0. En caso contrario, error = -1 y el proceso se ejecutará
+        que <em>ident</em>, o el procesador ya tiene un proceso con el mismo
+        identificador que <em>proc</em>, o el proceso no cabe en el procesador,
+        <em>error</em> >= 0. En caso contrario, <em>error</em> = -1 y el proceso se ejecutará
         en el procesador, ocupando su respectiva memoria.
 
     */
@@ -68,20 +68,20 @@ class Cluster {
 
         \pre El parámetro implícito está inicializado.
         \post Si no existe un procesador en el clúster con el mismo identificador
-        que ident, o el procesador no tiene un proceso con el mismo
-        identificador que ident_proc, error >= 0. 
-        En caso contrario, error = -1 y se eliminará el respectivo
+        que <em>ident</em>, o el procesador no tiene un proceso con el mismo
+        identificador que <em>ident_proc</em>, <em>error</em> >= 0. 
+        En caso contrario, <em>error</em> = -1 y se eliminará el respectivo
         proceso del procesador.
 
     */
     void baja_proceso_procesador(const string& ident, int ident_proc, int& error);
 
-    /** @brief Avanzar t unidades de tiempo en los procesadores del clúster.
+    /** @brief Avanzar <em>t</em> unidades de tiempo en los procesadores del clúster.
 
         \pre El parámetro implícito está inicializado.
-        \post Se avanza t unidades de tiempo a cada proceso de cada procesador
+        \post Se avanza <em>t</em> unidades de tiempo a cada proceso de cada procesador
         del clúster. Si el tiempo de un proceso ha finalizado, se elimina del
-        procesador. En caso contrario, los procesos progresan t unidades
+        procesador. En caso contrario, los procesos progresan <em>t</em> unidades
         de tiempo.
 
     */
@@ -91,7 +91,7 @@ class Cluster {
 
         \pre El parámetro implícito está inicializado.
         \post Si no existe un procesador en el clúster con el mismo identificador
-        que ident, error >= 0. En caso contrario, se escriben los procesos
+        que <em>ident</em>, <em>error</em> >= 0. En caso contrario, <em>error</em> = -1 y se escriben los procesos
         pertenecientes al procesador con identificador ident (en orden
         creciente de memoria).
 
@@ -120,7 +120,7 @@ class Cluster {
 
         \pre El parámetro implícito está inicializado.
         \post Si no existe un procesador en el clúster con el mismo identificador
-        que ident, error >= 0. En caso contrario, error = -1 y se desplazan todos los
+        que <em>ident</em>, <em>error</em> >= 0. En caso contrario, <em>error</em> = -1 y se desplazan todos los
         procesos hacia el principio de la memoria del procesador (
         sin huecos, sin solaparse y respetando el orden inicial).
 

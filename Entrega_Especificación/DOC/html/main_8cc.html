@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Proyecto PRO2: Referencia del Archivo main.cc</title>
+<title>Proyecto PRO2 Jesús José García Ayala: Referencia del Archivo main.cc</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Proyecto PRO2
+   <div id="projectname">Proyecto PRO2 Jesús José García Ayala
    &#160;<span id="projectnumber">version primavera 2023</span>
    </div>
   </td>
@@ -73,26 +73,77 @@ $(function() {
 <code>#include &quot;<a class="el" href="Proceso_8hh_source.html">Proceso.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Area__Procesos_8hh_source.html">Area_Procesos.hh</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Dependencia gráfica adjunta para main.cc:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cc__incl.png" border="0" usemap="#main_8cc" alt=""/></div>
 <map name="main_8cc" id="main_8cc">
-<area shape="rect" title=" " alt="" coords="255,5,328,32"/>
-<area shape="rect" href="Cluster_8hh.html" title="Especificación de la clase Cluster." alt="" coords="167,80,253,107"/>
+<area shape="rect" title=" " alt="" coords="308,5,381,32"/>
+<area shape="rect" href="Cluster_8hh.html" title="Especificación de la clase Cluster." alt="" coords="195,80,281,107"/>
 <area shape="rect" href="Procesador_8hh.html" title="Especificación de la clase Procesador." alt="" coords="5,155,119,181"/>
 <area shape="rect" href="Proceso_8hh.html" title="Especificación de la clase Proceso." alt="" coords="163,229,257,256"/>
 <area shape="rect" href="Area__Procesos_8hh.html" title="Especificación de la clase Area_Procesos." alt="" coords="195,155,332,181"/>
 <area shape="rect" title=" " alt="" coords="407,80,487,107"/>
+<area shape="rect" title=" " alt="" coords="511,80,570,107"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funciones</h2></td></tr>
+<tr class="memitem:a0a03874b0d9cf8dc5bbfb5759e40d30f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#a0a03874b0d9cf8dc5bbfb5759e40d30f">errores</a> (int error)</td></tr>
+<tr class="separator:a0a03874b0d9cf8dc5bbfb5759e40d30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentación de las funciones</h2>
+<a id="a0a03874b0d9cf8dc5bbfb5759e40d30f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a03874b0d9cf8dc5bbfb5759e40d30f">&#9670;&nbsp;</a></span>errores()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void errores </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>error</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                        {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">if</span> (error == 0) {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Error al intentar modificar el clúster&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    }</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (error = 1) {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Error al intentar añadir una prioridad al área de procesos&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (error = 2) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Error al intentar eliminar una prioridad del área de procesos&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (error = 3) {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Error al intentar añadir un proceso a un prioridad del área de procesos&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (error = 4) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Error al intentar añadir un proceso a un procesador&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (error = 5) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Error al intentar eliminar un proceso del procesador&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (error = 6) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Error al intentar escribir los procesos pendientes de una prioridad del área de procesos&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (error = 7) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Error al intentar escribir los procesos de un procesador&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (error = 8) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Error al intentar mover los procesos de un procesador al principio de su memoria&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
 
@@ -107,117 +158,120 @@ Funciones</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;           {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="classCluster.html">Cluster</a> cluster;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="classArea__Procesos.html">Area_Procesos</a> area_proceso;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">string</span> comando;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    cin &gt;&gt; comando;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">while</span> (comando != <span class="stringliteral">&quot;fin&quot;</span>) {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;configurar_cluster&quot;</span> or comando == <span class="stringliteral">&quot;cc&quot;</span>) {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <span class="comment">//Procesadores del cluster (sus memorias y sus tiempos de ejecución)</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="comment">//Si ya existe un cluster, deja de existir.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            cluster.<a class="code" href="classCluster.html#a84f9daea57e2773ab5766ef82d2a1def">configurar_cluster</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;modificar_cluster&quot;</span> or comando == <span class="stringliteral">&quot;mc&quot;</span>) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordtype">string</span> ident;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            cin &gt;&gt; ident;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            cluster.<a class="code" href="classCluster.html#ae4f6cb37cfa684b90597ac04bfd36655">modificar_cluster</a>(ident);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;alta_prioridad&quot;</span> or comando == <span class="stringliteral">&quot;ap&quot;</span>) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordtype">string</span> ident;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            cin &gt;&gt; ident;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            area_proceso.<a class="code" href="classArea__Procesos.html#a0aa02e28bf4da5a3f649c821d30ed8c1">alta_prioridad</a>(ident);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;baja_prioridad&quot;</span> or comando == <span class="stringliteral">&quot;bp&quot;</span>) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordtype">string</span> ident;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            cin &gt;&gt; ident;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            area_proceso.<a class="code" href="classArea__Procesos.html#ae5af510b7f353e611bf1b5a8cf9e9fe1">baja_prioridad</a>(ident);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;alta_proceso_espera&quot;</span> or comando == <span class="stringliteral">&quot;ape&quot;</span>) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordtype">int</span> ident_proceso, memoria, tiempo;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            cin &gt;&gt; ident_proceso &gt;&gt; memoria &gt;&gt; tiempo;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="classProceso.html">Proceso</a> proceso(ident_proceso, memoria, tiempo);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordtype">string</span> ident;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            cin &gt;&gt; ident;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            area_proceso.<a class="code" href="classArea__Procesos.html#a940a907e09c3af66a5a09dc0e9ae5d85">alta_proceso_espera</a>(ident, proceso);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;alta_proceso_procesador&quot;</span> or comando == <span class="stringliteral">&quot;app&quot;</span>) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordtype">string</span> ident_procesador;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            cin &gt;&gt; ident_procesador;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordtype">int</span> ident_proceso, memoria, tiempo;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            cin &gt;&gt; ident_proceso &gt;&gt; memoria &gt;&gt; tiempo;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="classProceso.html">Proceso</a> proceso(ident_proceso, memoria, tiempo);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            cluster.<a class="code" href="classCluster.html#a511e6f4cfdbdb41f174978370463c321">alta_proceso_procesador</a>(ident_procesador, proceso);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;baja_proceso_procesador&quot;</span> or comando == <span class="stringliteral">&quot;bpp&quot;</span>) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordtype">string</span> ident_procesador;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            cin &gt;&gt; ident_procesador;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordtype">int</span> ident_proceso;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            cin &gt;&gt; ident_proceso;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">//Existe Procesador¿?</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="comment">// Si existe procesador, ¿existe proceso? existe_proceso(clase procesador)</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;enviar_procesos_cluster&quot;</span> or comando == <span class="stringliteral">&quot;epc&quot;</span>) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordtype">int</span> num;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            cin &gt;&gt; num;</div>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;           {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classCluster.html">Cluster</a> cluster;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classArea__Procesos.html">Area_Procesos</a> area_proceso;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span> error;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">string</span> comando;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    cin &gt;&gt; comando;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">while</span> (comando != <span class="stringliteral">&quot;fin&quot;</span>) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;configurar_cluster&quot;</span> or comando == <span class="stringliteral">&quot;cc&quot;</span>) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            cluster.<a class="code" href="classCluster.html#a84f9daea57e2773ab5766ef82d2a1def">configurar_cluster</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;modificar_cluster&quot;</span> or comando == <span class="stringliteral">&quot;mc&quot;</span>) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordtype">string</span> ident;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            cin &gt;&gt; ident;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            cluster.<a class="code" href="classCluster.html#ae4f6cb37cfa684b90597ac04bfd36655">modificar_cluster</a>(ident, error);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;alta_prioridad&quot;</span> or comando == <span class="stringliteral">&quot;ap&quot;</span>) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordtype">string</span> ident;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            cin &gt;&gt; ident;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            area_proceso.<a class="code" href="classArea__Procesos.html#a0aa02e28bf4da5a3f649c821d30ed8c1">alta_prioridad</a>(ident, error);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;baja_prioridad&quot;</span> or comando == <span class="stringliteral">&quot;bp&quot;</span>) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordtype">string</span> ident;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            cin &gt;&gt; ident;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            area_proceso.<a class="code" href="classArea__Procesos.html#ae5af510b7f353e611bf1b5a8cf9e9fe1">baja_prioridad</a>(ident, error);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;avanzar_tiempo&quot;</span> or comando == <span class="stringliteral">&quot;at&quot;</span>) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordtype">int</span> t;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            cin &gt;&gt; t;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            cluster.<a class="code" href="classCluster.html#a3b93301a46cfa8cadf8d0121e234c386">avanzar_tiempo</a>(t);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;imprimir_prioridad&quot;</span> or comando == <span class="stringliteral">&quot;ipri&quot;</span>) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordtype">string</span> identificador;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            cin &gt;&gt; identificador;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            area_proceso.<a class="code" href="classArea__Procesos.html#a1a2a6083ec9764c49af3c09492674b5d">imprimir_prioridad</a>(identificador);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;imprimir_area_espera&quot;</span> or comando == <span class="stringliteral">&quot;iae&quot;</span>) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            area_proceso.<a class="code" href="classArea__Procesos.html#af9989fdce6619bd90fa11ea0c988a4b0">imprimir_area_espera</a>();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;imprimir_procesador&quot;</span> or comando == <span class="stringliteral">&quot;ipro&quot;</span>) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordtype">string</span> identificador;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            cin &gt;&gt; identificador;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            cluster.<a class="code" href="classCluster.html#ae4e581f393eba6274004b81abf19b900">imprimir_procesador</a>(identificador);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;alta_proceso_espera&quot;</span> or comando == <span class="stringliteral">&quot;ape&quot;</span>) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordtype">int</span> ident_proceso, memoria, tiempo;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            cin &gt;&gt; ident_proceso &gt;&gt; memoria &gt;&gt; tiempo;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="classProceso.html">Proceso</a> proceso(ident_proceso, memoria, tiempo);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordtype">string</span> ident;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            cin &gt;&gt; ident;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            area_proceso.<a class="code" href="classArea__Procesos.html#a940a907e09c3af66a5a09dc0e9ae5d85">alta_proceso_espera</a>(ident, proceso, error);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;alta_proceso_procesador&quot;</span> or comando == <span class="stringliteral">&quot;app&quot;</span>) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordtype">string</span> ident_procesador;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            cin &gt;&gt; ident_procesador;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordtype">int</span> ident_proceso, memoria, tiempo;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            cin &gt;&gt; ident_proceso &gt;&gt; memoria &gt;&gt; tiempo;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="classProceso.html">Proceso</a> proceso(ident_proceso, memoria, tiempo);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            cluster.<a class="code" href="classCluster.html#a511e6f4cfdbdb41f174978370463c321">alta_proceso_procesador</a>(ident_procesador, proceso, error);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;imprimir_procesadores_cluster&quot;</span> or comando == <span class="stringliteral">&quot;ipc&quot;</span>) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            cluster.<a class="code" href="classCluster.html#ab8a628286f8a977063ea4395d9a422bf">imprimir_procesadores_cluster</a>();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;imprimir_estructura_cluster&quot;</span> or comando == <span class="stringliteral">&quot;iec&quot;</span>) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="comment">// ¿?</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;compactar_memoria_procesador&quot;</span> or comando == <span class="stringliteral">&quot;cmp&quot;</span>) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordtype">string</span> identificador;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            cin &gt;&gt; identificador;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="comment">// cluster.existe_procesador()</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="comment">// cluster.compactar_memoria_procesador</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;baja_proceso_procesador&quot;</span> or comando == <span class="stringliteral">&quot;bpp&quot;</span>) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordtype">string</span> ident_procesador;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            cin &gt;&gt; ident_procesador;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordtype">int</span> ident_proceso;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            cin &gt;&gt; ident_proceso;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            cluster.<a class="code" href="classCluster.html#ad27c24f93d82a18964a7170c44c4d696">baja_proceso_procesador</a>(ident_procesador, ident_proceso, error);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;enviar_procesos_cluster&quot;</span> or comando == <span class="stringliteral">&quot;epc&quot;</span>) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordtype">int</span> num;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            cin &gt;&gt; num;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            area_proceso.<a class="code" href="classArea__Procesos.html#a06fdd60fdcc7e2dfac0d9710c1f4d51b">enviar_procesos_cluster</a>(num);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;compactar_memoria_cluster&quot;</span> or comando == <span class="stringliteral">&quot;cmc&quot;</span>) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        } </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        cin &gt;&gt; comando;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;avanzar_tiempo&quot;</span> or comando == <span class="stringliteral">&quot;at&quot;</span>) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordtype">int</span> t;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            cin &gt;&gt; t;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            cluster.<a class="code" href="classCluster.html#a3b93301a46cfa8cadf8d0121e234c386">avanzar_tiempo</a>(t);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;imprimir_prioridad&quot;</span> or comando == <span class="stringliteral">&quot;ipri&quot;</span>) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordtype">string</span> identificador;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            cin &gt;&gt; identificador;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            area_proceso.<a class="code" href="classArea__Procesos.html#a09ede7abc768f88e9938d0d03f3ddd50">imprimir_prioridad</a>(identificador, error);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;imprimir_area_espera&quot;</span> or comando == <span class="stringliteral">&quot;iae&quot;</span>) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            area_proceso.<a class="code" href="classArea__Procesos.html#af9989fdce6619bd90fa11ea0c988a4b0">imprimir_area_espera</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;imprimir_procesador&quot;</span> or comando == <span class="stringliteral">&quot;ipro&quot;</span>) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordtype">string</span> identificador;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            cin &gt;&gt; identificador;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            cluster.<a class="code" href="classCluster.html#a545cc70fcdb0857afb851069e63ea1de">imprimir_procesador</a>(identificador, error);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;imprimir_procesadores_cluster&quot;</span> or comando == <span class="stringliteral">&quot;ipc&quot;</span>) {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            cluster.<a class="code" href="classCluster.html#ab8a628286f8a977063ea4395d9a422bf">imprimir_procesadores_cluster</a>();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;imprimir_estructura_cluster&quot;</span> or comando == <span class="stringliteral">&quot;iec&quot;</span>) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            cluster.<a class="code" href="classCluster.html#a948d7075f9b30c2885ce804029e5ab25">imprimir_estructura_cluster</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;compactar_memoria_procesador&quot;</span> or comando == <span class="stringliteral">&quot;cmp&quot;</span>) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordtype">string</span> identificador;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            cin &gt;&gt; identificador;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            cluster.<a class="code" href="classCluster.html#a5bedc8558ba975721788b52e7aaef629">compactar_memoria_procesador</a>(identificador, error);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (comando == <span class="stringliteral">&quot;compactar_memoria_cluster&quot;</span> or comando == <span class="stringliteral">&quot;cmc&quot;</span>) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            cluster.<a class="code" href="classCluster.html#a7b9ae511df4a6465f4e191df6564fd77">compactar_memoria_cluster</a>();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        } </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        cin &gt;&gt; comando;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
+<div class="ttc" id="aclassCluster_html_a5bedc8558ba975721788b52e7aaef629"><div class="ttname"><a href="classCluster.html#a5bedc8558ba975721788b52e7aaef629">Cluster::compactar_memoria_procesador</a></div><div class="ttdeci">void compactar_memoria_procesador(const string &amp;ident, int &amp;error)</div><div class="ttdoc">Compacta la memoria de un procesador.</div></div>
 <div class="ttc" id="aclassArea__Procesos_html_af9989fdce6619bd90fa11ea0c988a4b0"><div class="ttname"><a href="classArea__Procesos.html#af9989fdce6619bd90fa11ea0c988a4b0">Area_Procesos::imprimir_area_espera</a></div><div class="ttdeci">void imprimir_area_espera()</div><div class="ttdoc">Escribe los procesos pendientes de todas las prioridades.</div></div>
-<div class="ttc" id="aclassProceso_html"><div class="ttname"><a href="classProceso.html">Proceso</a></div><div class="ttdoc">Representa un proceso.</div><div class="ttdef"><b>Definition:</b> Proceso.hh:15</div></div>
-<div class="ttc" id="aclassCluster_html"><div class="ttname"><a href="classCluster.html">Cluster</a></div><div class="ttdoc">Representa un Cluster.</div><div class="ttdef"><b>Definition:</b> Cluster.hh:20</div></div>
+<div class="ttc" id="aclassProceso_html"><div class="ttname"><a href="classProceso.html">Proceso</a></div><div class="ttdoc">Representa un Proceso.</div><div class="ttdef"><b>Definition:</b> Proceso.hh:15</div></div>
+<div class="ttc" id="aclassCluster_html_a545cc70fcdb0857afb851069e63ea1de"><div class="ttname"><a href="classCluster.html#a545cc70fcdb0857afb851069e63ea1de">Cluster::imprimir_procesador</a></div><div class="ttdeci">void imprimir_procesador(const string &amp;ident, int &amp;error)</div><div class="ttdoc">Escribir los procesos de un procesador.</div></div>
+<div class="ttc" id="aclassCluster_html_a7b9ae511df4a6465f4e191df6564fd77"><div class="ttname"><a href="classCluster.html#a7b9ae511df4a6465f4e191df6564fd77">Cluster::compactar_memoria_cluster</a></div><div class="ttdeci">void compactar_memoria_cluster()</div><div class="ttdoc">Compacta la memoria del clúster.</div></div>
+<div class="ttc" id="aclassCluster_html"><div class="ttname"><a href="classCluster.html">Cluster</a></div><div class="ttdoc">Representa un Cluster.</div><div class="ttdef"><b>Definition:</b> Cluster.hh:21</div></div>
 <div class="ttc" id="aclassCluster_html_a511e6f4cfdbdb41f174978370463c321"><div class="ttname"><a href="classCluster.html#a511e6f4cfdbdb41f174978370463c321">Cluster::alta_proceso_procesador</a></div><div class="ttdeci">void alta_proceso_procesador(const string &amp;ident, Proceso proc, int &amp;error)</div><div class="ttdoc">Añadir proceso a un procesador.</div></div>
-<div class="ttc" id="aclassCluster_html_ae4e581f393eba6274004b81abf19b900"><div class="ttname"><a href="classCluster.html#ae4e581f393eba6274004b81abf19b900">Cluster::imprimir_procesador</a></div><div class="ttdeci">void imprimir_procesador(const string &amp;ident)</div><div class="ttdoc">Escribir los procesos de un procesador.</div></div>
 <div class="ttc" id="aclassCluster_html_ab8a628286f8a977063ea4395d9a422bf"><div class="ttname"><a href="classCluster.html#ab8a628286f8a977063ea4395d9a422bf">Cluster::imprimir_procesadores_cluster</a></div><div class="ttdeci">void imprimir_procesadores_cluster()</div><div class="ttdoc">Escribir los procesadores del clúster.</div></div>
 <div class="ttc" id="aclassArea__Procesos_html_a0aa02e28bf4da5a3f649c821d30ed8c1"><div class="ttname"><a href="classArea__Procesos.html#a0aa02e28bf4da5a3f649c821d30ed8c1">Area_Procesos::alta_prioridad</a></div><div class="ttdeci">void alta_prioridad(const string &amp;ident, int &amp;error)</div><div class="ttdoc">Añadir una prioridad al área de procesos.</div></div>
 <div class="ttc" id="aclassArea__Procesos_html_a940a907e09c3af66a5a09dc0e9ae5d85"><div class="ttname"><a href="classArea__Procesos.html#a940a907e09c3af66a5a09dc0e9ae5d85">Area_Procesos::alta_proceso_espera</a></div><div class="ttdeci">void alta_proceso_espera(const string &amp;ident, Proceso proc, int &amp;error)</div><div class="ttdoc">Añadir un proceso al área de procesos.</div></div>
+<div class="ttc" id="aclassArea__Procesos_html_a06fdd60fdcc7e2dfac0d9710c1f4d51b"><div class="ttname"><a href="classArea__Procesos.html#a06fdd60fdcc7e2dfac0d9710c1f4d51b">Area_Procesos::enviar_procesos_cluster</a></div><div class="ttdeci">void enviar_procesos_cluster(int n)</div><div class="ttdoc">Enviar los procesos del área de procesos al clúster.</div></div>
+<div class="ttc" id="aclassCluster_html_ad27c24f93d82a18964a7170c44c4d696"><div class="ttname"><a href="classCluster.html#ad27c24f93d82a18964a7170c44c4d696">Cluster::baja_proceso_procesador</a></div><div class="ttdeci">void baja_proceso_procesador(const string &amp;ident, int ident_proc, int &amp;error)</div><div class="ttdoc">Eliminar proceso de un procesador.</div></div>
 <div class="ttc" id="aclassCluster_html_ae4f6cb37cfa684b90597ac04bfd36655"><div class="ttname"><a href="classCluster.html#ae4f6cb37cfa684b90597ac04bfd36655">Cluster::modificar_cluster</a></div><div class="ttdeci">void modificar_cluster(const string &amp;ident, int &amp;error)</div><div class="ttdoc">Modificación del cluster.</div></div>
-<div class="ttc" id="aclassArea__Procesos_html"><div class="ttname"><a href="classArea__Procesos.html">Area_Procesos</a></div><div class="ttdoc">Representa una area de procesos.</div><div class="ttdef"><b>Definition:</b> Area_Procesos.hh:18</div></div>
+<div class="ttc" id="aclassCluster_html_a948d7075f9b30c2885ce804029e5ab25"><div class="ttname"><a href="classCluster.html#a948d7075f9b30c2885ce804029e5ab25">Cluster::imprimir_estructura_cluster</a></div><div class="ttdeci">void imprimir_estructura_cluster()</div><div class="ttdoc">Escribe la estructura del clúster.</div></div>
+<div class="ttc" id="aclassArea__Procesos_html"><div class="ttname"><a href="classArea__Procesos.html">Area_Procesos</a></div><div class="ttdoc">Representa una Area_Procesos.</div><div class="ttdef"><b>Definition:</b> Area_Procesos.hh:19</div></div>
 <div class="ttc" id="aclassCluster_html_a3b93301a46cfa8cadf8d0121e234c386"><div class="ttname"><a href="classCluster.html#a3b93301a46cfa8cadf8d0121e234c386">Cluster::avanzar_tiempo</a></div><div class="ttdeci">void avanzar_tiempo(int t)</div><div class="ttdoc">Avanzar t unidades de tiempo en los procesadores del clúster.</div></div>
-<div class="ttc" id="aclassArea__Procesos_html_a1a2a6083ec9764c49af3c09492674b5d"><div class="ttname"><a href="classArea__Procesos.html#a1a2a6083ec9764c49af3c09492674b5d">Area_Procesos::imprimir_prioridad</a></div><div class="ttdeci">void imprimir_prioridad(string ident, int &amp;error)</div><div class="ttdoc">Escribe los procesos pendientes de una prioridad.</div></div>
 <div class="ttc" id="aclassCluster_html_a84f9daea57e2773ab5766ef82d2a1def"><div class="ttname"><a href="classCluster.html#a84f9daea57e2773ab5766ef82d2a1def">Cluster::configurar_cluster</a></div><div class="ttdeci">void configurar_cluster()</div><div class="ttdoc">Configuración/Inicialización de un cluster.</div></div>
+<div class="ttc" id="aclassArea__Procesos_html_a09ede7abc768f88e9938d0d03f3ddd50"><div class="ttname"><a href="classArea__Procesos.html#a09ede7abc768f88e9938d0d03f3ddd50">Area_Procesos::imprimir_prioridad</a></div><div class="ttdeci">void imprimir_prioridad(const string &amp;ident, int &amp;error)</div><div class="ttdoc">Escribe los procesos pendientes de una prioridad.</div></div>
 <div class="ttc" id="aclassArea__Procesos_html_ae5af510b7f353e611bf1b5a8cf9e9fe1"><div class="ttname"><a href="classArea__Procesos.html#ae5af510b7f353e611bf1b5a8cf9e9fe1">Area_Procesos::baja_prioridad</a></div><div class="ttdeci">void baja_prioridad(const string &amp;ident, int &amp;error)</div><div class="ttdoc">Eliminar una prioridad del área de procesos.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -13,7 +13,7 @@
 
 
 /** @class Procesador
-    @brief Representa un procesador
+    @brief Representa un Procesador
 
     Dispone de dos estados posibles (inicializado / no inicializado); si está inicializado tiene una memoria y unos procesos. En caso contrario, es vacío.
 */
@@ -35,16 +35,16 @@ class Procesador {
     /** @brief Inicialización de un procesador. 
 
         \pre mem >= 0
-        \post El resultado es un procesador inicializado con un identificador ident y una memoria mem.
+        \post El resultado es un procesador inicializado con un identificador <em>ident</em> y una memoria <em>mem</em>.
     */
     void inicializar(const string& ident, int mem);
 
-    /** @brief Avanzar t unidades de tiempo en los procesos del procesador.
+    /** @brief Avanzar <em>t</em> unidades de tiempo en los procesos del procesador.
 
         \pre El parámetro implícito está inicializado.
-        \post Se avanza t unidades de tiempo en cada proceso. 
+        \post Se avanza <em>t</em> unidades de tiempo en cada proceso. 
         Si el tiempo de un proceso ha finalizado, se elimina del
-        procesador. En caso contrario, los procesos progresan t unidades
+        procesador. En caso contrario, los procesos progresan <em>t</em> unidades
         de tiempo.
 
     */
@@ -69,14 +69,14 @@ class Procesador {
     /** @brief Añadir un proceso del procesador.
 
         \pre El parámetro implícito debe estar inicializado.
-        \post Añade un proceso al parámetro implícito.
+        \post Añade el proceso <em>proc</em> al parámetro implícito.
     */
     void introducir_proceso(Proceso proc);
 
     /** @brief Eliminar un proceso del procesador.
 
         \pre El parámetro implícito debe estar inicializado.
-        \post Elimina un proceso del parámetro implícito.
+        \post Elimina un proceso con el identificador <em>ident_proceso</em> del parámetro implícito.
     */
     void eliminar_proceso(int ident_proceso);
 
@@ -106,7 +106,7 @@ class Procesador {
     /** @brief Existencia de un determinado proceso en un procesador. 
 
         \pre El parámetro implícito debe estar inicializado.
-        \post Devuelve true si el proceso con el identificador ident existe
+        \post Devuelve true si el proceso con el identificador <em>ident</em> existe
         en el parámetro implícito. En caso contrario, devuelve false.
     */
     bool existe_proceso(int ident);

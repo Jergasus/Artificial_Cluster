@@ -7,7 +7,7 @@
 
 
 /** @class Proceso
-    @brief Representa un proceso
+    @brief Representa un Proceso
 
     Dispone de dos estados posibles (inicializado / no inicializado); si está inicializado tiene un identificador, la memoria que ocupan y un tiempo de ejecución determinado. Si no está incializado, no contiene propiedades. En este caso, solo se puede inicilizar
 
@@ -21,13 +21,13 @@ class Proceso {
 
         Se ejecuta automáticamente al declarar un proceso.
         \pre <em>cierto</em>
-        \post El resultado es un proceso sin identificador, memoria ni tiempo de ejecución.
+        \post El resultado es un proceso sin identificador, sin memoria y sin tiempo.
     */
     Proceso();
 
     /** @brief Creadora por defecto. 
 
-        \pre ident >= 0, mem >= 0, time >= 0.
+        \pre <em>ident</em> >= 0, <em>mem</em> >= 0, <em>time</em> >= 0.
         \post El resultado es un proceso inicializado con un identificador <em>ident</em>,
         memoria <em>mem</em> y tiempo <em>time</em>.
     */

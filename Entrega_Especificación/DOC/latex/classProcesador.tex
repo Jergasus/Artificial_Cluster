@@ -2,7 +2,7 @@
 \label{classProcesador}\index{Procesador@{Procesador}}
 
 
-Representa un procesador.  
+Representa un \mbox{\hyperlink{classProcesador}{Procesador}}.  
 
 
 
@@ -14,7 +14,7 @@ Representa un procesador.
 \item 
 \mbox{\hyperlink{classProcesador_aacfa2a06c7d44636ecfb0338bebbfa8b}{Procesador}} ()
 \begin{DoxyCompactList}\small\item\em Creadora por defecto. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classProcesador_a9f4c17ef9639d942978b788b5994b003}{inicializar}} (string ident, int mem)
+void \mbox{\hyperlink{classProcesador_a26af908b89b133a7eb2e75c445e86ab0}{inicializar}} (const string \&ident, int mem)
 \begin{DoxyCompactList}\small\item\em Inicialización de un procesador. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classProcesador_aa13775c00d510ff83cccbe99bcf22c7b}{avanzar\+\_\+tiempo}} (int time)
 \begin{DoxyCompactList}\small\item\em Avanzar t unidades de tiempo en los procesos del procesador. \end{DoxyCompactList}\item 
@@ -22,7 +22,7 @@ void \mbox{\hyperlink{classProcesador_af61d7f74b7962fbb74e0c897ca44b88d}{mover\+
 \begin{DoxyCompactList}\small\item\em Movimiento de procesos en la memoria del procesador. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classProcesador_afb37453e5ef6f4a260466f6f4e9887be}{escribir\+\_\+procesos}} ()
 \begin{DoxyCompactList}\small\item\em Escritura de los procesos de un procesador. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classProcesador_aba3e423ebc1ecbfe24d9eb68139d7540}{añadir\+\_\+proceso}} (\mbox{\hyperlink{classProceso}{Proceso}} proc)
+void \mbox{\hyperlink{classProcesador_aa0130f8c5e3c9c7b19942bb67a205cd6}{introducir\+\_\+proceso}} (\mbox{\hyperlink{classProceso}{Proceso}} proc)
 \begin{DoxyCompactList}\small\item\em Añadir un proceso del procesador. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classProcesador_a5ac51f563af83e2034fe4ca6fb852b70}{eliminar\+\_\+proceso}} (int ident\+\_\+proceso)
 \begin{DoxyCompactList}\small\item\em Eliminar un proceso del procesador. \end{DoxyCompactList}\item 
@@ -37,7 +37,7 @@ bool \mbox{\hyperlink{classProcesador_a0333ef847a320533f897a2be6537c2e1}{existe\
 
 
 \doxysubsection{Descripción detallada}
-Representa un procesador. 
+Representa un \mbox{\hyperlink{classProcesador}{Procesador}}. 
 
 Dispone de dos estados posibles (inicializado / no inicializado); si está inicializado tiene una memoria y unos procesos. En caso contrario, es vacío. 
 
@@ -76,22 +76,6 @@ El parámetro implícito está inicializado.
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
 Se avanza t unidades de tiempo en cada proceso. Si el tiempo de un proceso ha finalizado, se elimina del procesador. En caso contrario, los procesos progresan t unidades de tiempo. 
-\end{DoxyPostcond}
-\mbox{\Hypertarget{classProcesador_aba3e423ebc1ecbfe24d9eb68139d7540}\label{classProcesador_aba3e423ebc1ecbfe24d9eb68139d7540}} 
-\index{Procesador@{Procesador}!añadir\_proceso@{añadir\_proceso}}
-\index{añadir\_proceso@{añadir\_proceso}!Procesador@{Procesador}}
-\doxysubsubsection{\texorpdfstring{añadir\_proceso()}{añadir\_proceso()}}
-{\footnotesize\ttfamily void Procesador\+::añadir\+\_\+proceso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classProceso}{Proceso}}}]{proc }\end{DoxyParamCaption})}
-
-
-
-Añadir un proceso del procesador. 
-
-\begin{DoxyPrecond}{Precondición}
-El parámetro implícito debe estar inicializado. 
-\end{DoxyPrecond}
-\begin{DoxyPostcond}{Postcondición}
-Añade un proceso al parámetro implícito. 
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classProcesador_ab7f754e2918e0cbca76bf389fcd83eae}\label{classProcesador_ab7f754e2918e0cbca76bf389fcd83eae}} 
 \index{Procesador@{Procesador}!consultar\_identificador@{consultar\_identificador}}
@@ -189,11 +173,11 @@ El parámetro implícito debe estar inicializado.
 \begin{DoxyPostcond}{Postcondición}
 Devuelve true si el proceso con el identificador ident existe en el parámetro implícito. En caso contrario, devuelve false. 
 \end{DoxyPostcond}
-\mbox{\Hypertarget{classProcesador_a9f4c17ef9639d942978b788b5994b003}\label{classProcesador_a9f4c17ef9639d942978b788b5994b003}} 
+\mbox{\Hypertarget{classProcesador_a26af908b89b133a7eb2e75c445e86ab0}\label{classProcesador_a26af908b89b133a7eb2e75c445e86ab0}} 
 \index{Procesador@{Procesador}!inicializar@{inicializar}}
 \index{inicializar@{inicializar}!Procesador@{Procesador}}
 \doxysubsubsection{\texorpdfstring{inicializar()}{inicializar()}}
-{\footnotesize\ttfamily void Procesador\+::inicializar (\begin{DoxyParamCaption}\item[{string}]{ident,  }\item[{int}]{mem }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Procesador\+::inicializar (\begin{DoxyParamCaption}\item[{const string \&}]{ident,  }\item[{int}]{mem }\end{DoxyParamCaption})}
 
 
 
@@ -204,6 +188,22 @@ mem $>$= 0
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
 El resultado es un procesador inicializado con un identificador ident y una memoria mem. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classProcesador_aa0130f8c5e3c9c7b19942bb67a205cd6}\label{classProcesador_aa0130f8c5e3c9c7b19942bb67a205cd6}} 
+\index{Procesador@{Procesador}!introducir\_proceso@{introducir\_proceso}}
+\index{introducir\_proceso@{introducir\_proceso}!Procesador@{Procesador}}
+\doxysubsubsection{\texorpdfstring{introducir\_proceso()}{introducir\_proceso()}}
+{\footnotesize\ttfamily void Procesador\+::introducir\+\_\+proceso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classProceso}{Proceso}}}]{proc }\end{DoxyParamCaption})}
+
+
+
+Añadir un proceso del procesador. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito debe estar inicializado. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Añade un proceso al parámetro implícito. 
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classProcesador_af61d7f74b7962fbb74e0c897ca44b88d}\label{classProcesador_af61d7f74b7962fbb74e0c897ca44b88d}} 
 \index{Procesador@{Procesador}!mover\_procesos\_memoria@{mover\_procesos\_memoria}}
