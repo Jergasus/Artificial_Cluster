@@ -61,7 +61,20 @@ class Area_Procesos {
     /** @brief Enviar los procesos del área de procesos al clúster.
 
         \pre El parámetro implícito está inicializado.
-        \post Se intentan enviar <em>n</em> procesos al clúster. DARLE UNA VUELTA!!!!
+        \post Se intentan enviar <em>n</em> procesos pendientes al clúster.
+        Dichos procesos se intentan colocar por prioridad. En caso que
+        tengan la misma prioridad, se intentarán colocar por el orden
+        de antiguedad. El envío finalizará cuando:
+        1. Los <em>n</em> procesos pendientes se hayan colocado.
+        2. No quedan procesos pendientes.
+        3. Todos los procesos pendientes se hayan intentado colocar sin éxito.
+        Los procesos que hayan sido rechazados se volverán al área de procesos
+        (con la misma prioridad). Si un proceso cabe en más de un procesador,
+        se elige el hueco más ajustado. Si hay un empate, es decir, que los
+        huecos tienen el mismo tamaño, el porceso irá al procesador que tenga
+        más memoria. Si el empate persiste, el proceso se colocará en el
+        procesador más cercano a la raíz. Si el empate persiste, irá al
+        procesador que esté más a la izquierda.
     */
     void enviar_procesos_cluster(int n); // Igual tengo que añadir algo en el cluster. Echar un ojo!
 
