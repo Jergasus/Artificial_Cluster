@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['right_93',['right',['../classBinTree.html#aff8e96651b27284c329667b5ad3e4d0b',1,'BinTree']]]
+  ['recibir_5fproceso_94',['recibir_proceso',['../classCluster.html#ac06f30b3b9d50be8ade5f9f55372cc63',1,'Cluster']]],
+  ['right_95',['right',['../classBinTree.html#aff8e96651b27284c329667b5ad3e4d0b',1,'BinTree']]]
 ];

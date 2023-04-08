@@ -91,7 +91,7 @@ int main() {
         else if (comando == "enviar_procesos_cluster" or comando == "epc") {
             int num;
             cin >> num;
-            area_proceso.enviar_procesos_cluster(num);
+            area_proceso.enviar_procesos_cluster(cluster, num);
         }
         else if (comando == "avanzar_tiempo" or comando == "at") {
             int t;

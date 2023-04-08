@@ -17,7 +17,7 @@ Representa un \mbox{\hyperlink{classProcesador}{Procesador}}.
 void \mbox{\hyperlink{classProcesador_a26af908b89b133a7eb2e75c445e86ab0}{inicializar}} (const string \&ident, int mem)
 \begin{DoxyCompactList}\small\item\em Inicialización de un procesador. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classProcesador_aa13775c00d510ff83cccbe99bcf22c7b}{avanzar\+\_\+tiempo}} (int time)
-\begin{DoxyCompactList}\small\item\em Avanzar t unidades de tiempo en los procesos del procesador. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Avanzar {\itshape t} unidades de tiempo en los procesos del procesador. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classProcesador_af61d7f74b7962fbb74e0c897ca44b88d}{mover\+\_\+procesos\+\_\+memoria}} ()
 \begin{DoxyCompactList}\small\item\em Movimiento de procesos en la memoria del procesador. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classProcesador_afb37453e5ef6f4a260466f6f4e9887be}{escribir\+\_\+procesos}} ()
@@ -69,13 +69,13 @@ El resultado es un procesador sin memoria ni procesos.
 
 
 
-Avanzar t unidades de tiempo en los procesos del procesador. 
+Avanzar {\itshape t} unidades de tiempo en los procesos del procesador. 
 
 \begin{DoxyPrecond}{Precondición}
 El parámetro implícito está inicializado. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Se avanza t unidades de tiempo en cada proceso. Si el tiempo de un proceso ha finalizado, se elimina del procesador. En caso contrario, los procesos progresan t unidades de tiempo. 
+Se avanza {\itshape t} unidades de tiempo en cada proceso. Si el tiempo de un proceso ha finalizado, se elimina del procesador. En caso contrario, los procesos progresan {\itshape t} unidades de tiempo. 
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classProcesador_ab7f754e2918e0cbca76bf389fcd83eae}\label{classProcesador_ab7f754e2918e0cbca76bf389fcd83eae}} 
 \index{Procesador@{Procesador}!consultar\_identificador@{consultar\_identificador}}
@@ -139,7 +139,7 @@ Eliminar un proceso del procesador.
 El parámetro implícito debe estar inicializado. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Elimina un proceso del parámetro implícito. 
+Elimina un proceso con el identificador {\itshape ident\+\_\+proceso} del parámetro implícito. 
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classProcesador_afb37453e5ef6f4a260466f6f4e9887be}\label{classProcesador_afb37453e5ef6f4a260466f6f4e9887be}} 
 \index{Procesador@{Procesador}!escribir\_procesos@{escribir\_procesos}}
@@ -171,7 +171,7 @@ Existencia de un determinado proceso en un procesador.
 El parámetro implícito debe estar inicializado. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Devuelve true si el proceso con el identificador ident existe en el parámetro implícito. En caso contrario, devuelve false. 
+Devuelve true si el proceso con el identificador {\itshape ident} existe en el parámetro implícito. En caso contrario, devuelve false. 
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classProcesador_a26af908b89b133a7eb2e75c445e86ab0}\label{classProcesador_a26af908b89b133a7eb2e75c445e86ab0}} 
 \index{Procesador@{Procesador}!inicializar@{inicializar}}
@@ -187,7 +187,7 @@ Inicialización de un procesador.
 mem $>$= 0 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-El resultado es un procesador inicializado con un identificador ident y una memoria mem. 
+El resultado es un procesador inicializado con un identificador {\itshape ident} y una memoria {\itshape mem}. 
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classProcesador_aa0130f8c5e3c9c7b19942bb67a205cd6}\label{classProcesador_aa0130f8c5e3c9c7b19942bb67a205cd6}} 
 \index{Procesador@{Procesador}!introducir\_proceso@{introducir\_proceso}}
@@ -203,7 +203,7 @@ Añadir un proceso del procesador.
 El parámetro implícito debe estar inicializado. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Añade un proceso al parámetro implícito. 
+Añade el proceso {\itshape proc} al parámetro implícito. 
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classProcesador_af61d7f74b7962fbb74e0c897ca44b88d}\label{classProcesador_af61d7f74b7962fbb74e0c897ca44b88d}} 
 \index{Procesador@{Procesador}!mover\_procesos\_memoria@{mover\_procesos\_memoria}}

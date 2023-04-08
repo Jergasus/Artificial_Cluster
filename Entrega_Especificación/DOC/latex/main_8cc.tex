@@ -103,7 +103,7 @@ int \mbox{\hyperlink{main_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \DoxyCodeLine{69             \mbox{\hyperlink{classProceso}{Proceso}} proceso(ident\_proceso, memoria, tiempo);}
 \DoxyCodeLine{70             \textcolor{keywordtype}{string} ident;}
 \DoxyCodeLine{71             cin >> ident;}
-\DoxyCodeLine{72             area\_proceso.\mbox{\hyperlink{classArea__Procesos_a940a907e09c3af66a5a09dc0e9ae5d85}{alta\_proceso\_espera}}(ident, proceso, error);}
+\DoxyCodeLine{72             area\_proceso.\mbox{\hyperlink{classArea__Procesos_a6ad87a714cbced26befc1ed50e622801}{alta\_proceso\_espera}}(ident, proceso, error);}
 \DoxyCodeLine{73             }
 \DoxyCodeLine{74         \}}
 \DoxyCodeLine{75         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"alta\_proceso\_procesador"} or comando == \textcolor{stringliteral}{"app"}) \{}
@@ -112,7 +112,7 @@ int \mbox{\hyperlink{main_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \DoxyCodeLine{78             \textcolor{keywordtype}{int} ident\_proceso, memoria, tiempo;}
 \DoxyCodeLine{79             cin >> ident\_proceso >> memoria >> tiempo;}
 \DoxyCodeLine{80             \mbox{\hyperlink{classProceso}{Proceso}} proceso(ident\_proceso, memoria, tiempo);}
-\DoxyCodeLine{81             cluster.\mbox{\hyperlink{classCluster_a511e6f4cfdbdb41f174978370463c321}{alta\_proceso\_procesador}}(ident\_procesador, proceso, error);}
+\DoxyCodeLine{81             cluster.\mbox{\hyperlink{classCluster_a5786b35aeee3dbdf3d03928e40949ab9}{alta\_proceso\_procesador}}(ident\_procesador, proceso, error);}
 \DoxyCodeLine{82             }
 \DoxyCodeLine{83         \}}
 \DoxyCodeLine{84         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"baja\_proceso\_procesador"} or comando == \textcolor{stringliteral}{"bpp"}) \{}
@@ -125,7 +125,7 @@ int \mbox{\hyperlink{main_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \DoxyCodeLine{91         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"enviar\_procesos\_cluster"} or comando == \textcolor{stringliteral}{"epc"}) \{}
 \DoxyCodeLine{92             \textcolor{keywordtype}{int} num;}
 \DoxyCodeLine{93             cin >> num;}
-\DoxyCodeLine{94             area\_proceso.\mbox{\hyperlink{classArea__Procesos_a06fdd60fdcc7e2dfac0d9710c1f4d51b}{enviar\_procesos\_cluster}}(num);}
+\DoxyCodeLine{94             area\_proceso.\mbox{\hyperlink{classArea__Procesos_a4fadacca7903a028eb1bbba5aaa02da4}{enviar\_procesos\_cluster}}(cluster, num);}
 \DoxyCodeLine{95         \}}
 \DoxyCodeLine{96         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"avanzar\_tiempo"} or comando == \textcolor{stringliteral}{"at"}) \{}
 \DoxyCodeLine{97             \textcolor{keywordtype}{int} t;}

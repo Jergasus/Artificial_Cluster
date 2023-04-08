@@ -18,10 +18,12 @@ void \mbox{\hyperlink{classArea__Procesos_a0aa02e28bf4da5a3f649c821d30ed8c1}{alt
 \begin{DoxyCompactList}\small\item\em Añadir una prioridad al área de procesos. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classArea__Procesos_ae5af510b7f353e611bf1b5a8cf9e9fe1}{baja\+\_\+prioridad}} (const string \&ident, int \&error)
 \begin{DoxyCompactList}\small\item\em Eliminar una prioridad del área de procesos. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classArea__Procesos_a940a907e09c3af66a5a09dc0e9ae5d85}{alta\+\_\+proceso\+\_\+espera}} (const string \&ident, \mbox{\hyperlink{classProceso}{Proceso}} proc, int \&error)
+void \mbox{\hyperlink{classArea__Procesos_a6ad87a714cbced26befc1ed50e622801}{alta\+\_\+proceso\+\_\+espera}} (const string \&ident, const \mbox{\hyperlink{classProceso}{Proceso}} \&proc, int \&error)
 \begin{DoxyCompactList}\small\item\em Añadir un proceso al área de procesos. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classArea__Procesos_a06fdd60fdcc7e2dfac0d9710c1f4d51b}{enviar\+\_\+procesos\+\_\+cluster}} (int n)
+void \mbox{\hyperlink{classArea__Procesos_a4fadacca7903a028eb1bbba5aaa02da4}{enviar\+\_\+procesos\+\_\+cluster}} (\mbox{\hyperlink{classCluster}{Cluster}} \&cluster, int n)
 \begin{DoxyCompactList}\small\item\em Enviar los procesos del área de procesos al clúster. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArea__Procesos_acf5d36f5526f39aa62d30559c4b6d99f}{eliminar\+\_\+proceso\+\_\+prioridad}} (int ident\+\_\+proc)
+\begin{DoxyCompactList}\small\item\em Elimina un proceso de una prioridad. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classArea__Procesos_a09ede7abc768f88e9938d0d03f3ddd50}{imprimir\+\_\+prioridad}} (const string \&ident, int \&error)
 \begin{DoxyCompactList}\small\item\em Escribe los procesos pendientes de una prioridad. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classArea__Procesos_af9989fdce6619bd90fa11ea0c988a4b0}{imprimir\+\_\+area\+\_\+espera}} ()
@@ -65,13 +67,13 @@ Añadir una prioridad al área de procesos.
 El parámetro implícito está inicializado. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Si existe una prioridad con el mismo identificador que ident, error $>$= 0. En caso contrario, se añade dicha prioridad al área de procesos. 
+Si existe una prioridad con el mismo identificador que {\itshape ident}, {\itshape error} $>$= 0. En caso contrario, {\itshape error} = -\/1 y se añade dicha prioridad al área de procesos. 
 \end{DoxyPostcond}
-\mbox{\Hypertarget{classArea__Procesos_a940a907e09c3af66a5a09dc0e9ae5d85}\label{classArea__Procesos_a940a907e09c3af66a5a09dc0e9ae5d85}} 
+\mbox{\Hypertarget{classArea__Procesos_a6ad87a714cbced26befc1ed50e622801}\label{classArea__Procesos_a6ad87a714cbced26befc1ed50e622801}} 
 \index{Area\_Procesos@{Area\_Procesos}!alta\_proceso\_espera@{alta\_proceso\_espera}}
 \index{alta\_proceso\_espera@{alta\_proceso\_espera}!Area\_Procesos@{Area\_Procesos}}
 \doxysubsubsection{\texorpdfstring{alta\_proceso\_espera()}{alta\_proceso\_espera()}}
-{\footnotesize\ttfamily void Area\+\_\+\+Procesos\+::alta\+\_\+proceso\+\_\+espera (\begin{DoxyParamCaption}\item[{const string \&}]{ident,  }\item[{\mbox{\hyperlink{classProceso}{Proceso}}}]{proc,  }\item[{int \&}]{error }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Area\+\_\+\+Procesos\+::alta\+\_\+proceso\+\_\+espera (\begin{DoxyParamCaption}\item[{const string \&}]{ident,  }\item[{const \mbox{\hyperlink{classProceso}{Proceso}} \&}]{proc,  }\item[{int \&}]{error }\end{DoxyParamCaption})}
 
 
 
@@ -81,7 +83,7 @@ Añadir un proceso al área de procesos.
 El parámetro implícito está inicializado. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Si no existe una prioridad con el mismo identificador que ident, o uno de los procesos de dicha prioridad tiene el mismo identificador que proc, error $>$= 0. En caso contrario, error = -\/1 y añadimos el proceso al área de procesos (con la prioridad de identificador ident). 
+Si no existe una prioridad con el mismo identificador que {\itshape ident}, o uno de los procesos de dicha prioridad tiene el mismo identificador que {\itshape proc}, {\itshape error} $>$= 0. En caso contrario, {\itshape error} = -\/1 y añadimos el proceso al área de procesos (con la prioridad de identificador {\itshape ident}). 
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classArea__Procesos_ae5af510b7f353e611bf1b5a8cf9e9fe1}\label{classArea__Procesos_ae5af510b7f353e611bf1b5a8cf9e9fe1}} 
 \index{Area\_Procesos@{Area\_Procesos}!baja\_prioridad@{baja\_prioridad}}
@@ -97,13 +99,29 @@ Eliminar una prioridad del área de procesos.
 El parámetro implícito está inicializado. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Si no existe una prioridad con el mismo identificador que ident, o dicha prioridad tiene procesos pendientes, error $>$= 0. En caso contrario, se elimina dicha prioridad del área de procesos. 
+Si no existe una prioridad con el mismo identificador que {\itshape ident}, o dicha prioridad tiene procesos pendientes, {\itshape error} $>$= 0. En caso contrario, {\itshape error} = -\/1 y se elimina dicha prioridad del área de procesos. 
 \end{DoxyPostcond}
-\mbox{\Hypertarget{classArea__Procesos_a06fdd60fdcc7e2dfac0d9710c1f4d51b}\label{classArea__Procesos_a06fdd60fdcc7e2dfac0d9710c1f4d51b}} 
+\mbox{\Hypertarget{classArea__Procesos_acf5d36f5526f39aa62d30559c4b6d99f}\label{classArea__Procesos_acf5d36f5526f39aa62d30559c4b6d99f}} 
+\index{Area\_Procesos@{Area\_Procesos}!eliminar\_proceso\_prioridad@{eliminar\_proceso\_prioridad}}
+\index{eliminar\_proceso\_prioridad@{eliminar\_proceso\_prioridad}!Area\_Procesos@{Area\_Procesos}}
+\doxysubsubsection{\texorpdfstring{eliminar\_proceso\_prioridad()}{eliminar\_proceso\_prioridad()}}
+{\footnotesize\ttfamily void Area\+\_\+\+Procesos\+::eliminar\+\_\+proceso\+\_\+prioridad (\begin{DoxyParamCaption}\item[{int}]{ident\+\_\+proc }\end{DoxyParamCaption})}
+
+
+
+Elimina un proceso de una prioridad. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classArea__Procesos_a4fadacca7903a028eb1bbba5aaa02da4}\label{classArea__Procesos_a4fadacca7903a028eb1bbba5aaa02da4}} 
 \index{Area\_Procesos@{Area\_Procesos}!enviar\_procesos\_cluster@{enviar\_procesos\_cluster}}
 \index{enviar\_procesos\_cluster@{enviar\_procesos\_cluster}!Area\_Procesos@{Area\_Procesos}}
 \doxysubsubsection{\texorpdfstring{enviar\_procesos\_cluster()}{enviar\_procesos\_cluster()}}
-{\footnotesize\ttfamily void Area\+\_\+\+Procesos\+::enviar\+\_\+procesos\+\_\+cluster (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Area\+\_\+\+Procesos\+::enviar\+\_\+procesos\+\_\+cluster (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCluster}{Cluster}} \&}]{cluster,  }\item[{int}]{n }\end{DoxyParamCaption})}
 
 
 
@@ -113,7 +131,12 @@ Enviar los procesos del área de procesos al clúster.
 El parámetro implícito está inicializado. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Se intentan enviar n procesos al clúster. D\+A\+R\+LE U\+NA V\+U\+E\+L\+T\+A!!!! 
+Se intentan enviar {\itshape n} procesos pendientes al clúster. Dichos procesos se intentan colocar por prioridad. En caso que tengan la misma prioridad, se intentarán colocar por orden de antiguedad. El envío finalizará cuando\+:
+\begin{DoxyEnumerate}
+\item Los {\itshape n} procesos pendientes se hayan colocado.
+\item No queden procesos pendientes.
+\item Todos los procesos pendientes se hayan intentado colocar sin éxito. Los procesos que hayan sido rechazados volverán al área de procesos (con la misma prioridad). Si un proceso cabe en más de un procesador, se elige el que tenga el hueco más ajustado. Si hay un empate, es decir, que los huecos tienen el mismo tamaño, el porceso irá al procesador que tenga más memoria. Si el empate persiste, el proceso se colocará en el procesador más cercano a la raíz. Si el empate persiste, irá al procesador que esté más a la izquierda. 
+\end{DoxyEnumerate}
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classArea__Procesos_af9989fdce6619bd90fa11ea0c988a4b0}\label{classArea__Procesos_af9989fdce6619bd90fa11ea0c988a4b0}} 
 \index{Area\_Procesos@{Area\_Procesos}!imprimir\_area\_espera@{imprimir\_area\_espera}}
@@ -145,7 +168,7 @@ Escribe los procesos pendientes de una prioridad.
 El parámetro implícito está inicializado. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Si no existe una prioridad con el mismo identificador que ident, error $>$= 0. En caso contrario, error = -\/1 y se escriben los procesos pendientes de la prioridad cuyo identificador es el mismo que ident (se escriben de más antiguo a más nuevo). Además, se escribe el número de procesos de la prioridad colocados correctamente en el clúster y el número de rechazados. 
+Si no existe una prioridad con el mismo identificador que {\itshape ident}, {\itshape error} $>$= 0. En caso contrario, {\itshape error} = -\/1 y se escriben los procesos pendientes de la prioridad cuyo identificador es el mismo que {\itshape ident} (se escriben de más antiguo a más nuevo). Además, se escribe el número de procesos de la prioridad colocados correctamente en el clúster y el número de rechazados. 
 \end{DoxyPostcond}
 
 

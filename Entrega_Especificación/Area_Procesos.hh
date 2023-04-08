@@ -56,27 +56,34 @@ class Area_Procesos {
         que <em>proc</em>, <em>error</em> >= 0. En caso contrario, <em>error</em> = -1 y añadimos el proceso al
         área de procesos (con la prioridad de identificador <em>ident</em>).
     */
-    void alta_proceso_espera(const string& ident, Proceso proc, int& error);
+    void alta_proceso_espera(const string& ident, const Proceso& proc, int& error);
 
     /** @brief Enviar los procesos del área de procesos al clúster.
 
         \pre El parámetro implícito está inicializado.
         \post Se intentan enviar <em>n</em> procesos pendientes al clúster.
         Dichos procesos se intentan colocar por prioridad. En caso que
-        tengan la misma prioridad, se intentarán colocar por el orden
+        tengan la misma prioridad, se intentarán colocar por orden
         de antiguedad. El envío finalizará cuando:
         1. Los <em>n</em> procesos pendientes se hayan colocado.
-        2. No quedan procesos pendientes.
+        2. No queden procesos pendientes.
         3. Todos los procesos pendientes se hayan intentado colocar sin éxito.
-        Los procesos que hayan sido rechazados se volverán al área de procesos
+        Los procesos que hayan sido rechazados volverán al área de procesos
         (con la misma prioridad). Si un proceso cabe en más de un procesador,
-        se elige el hueco más ajustado. Si hay un empate, es decir, que los
+        se elige el que tenga el hueco más ajustado. Si hay un empate, es decir, que los
         huecos tienen el mismo tamaño, el porceso irá al procesador que tenga
         más memoria. Si el empate persiste, el proceso se colocará en el
         procesador más cercano a la raíz. Si el empate persiste, irá al
         procesador que esté más a la izquierda.
     */
-    void enviar_procesos_cluster(int n); // Igual tengo que añadir algo en el cluster. Echar un ojo!
+    void enviar_procesos_cluster(Cluster& cluster, int n);
+
+    /** @brief Elimina un proceso de una prioridad
+
+        \pre El parámetro implícito está inicializado.
+        \post 
+    */
+    void eliminar_proceso_prioridad(int ident_proc);
 
     /** @brief Escribe los procesos pendientes de una prioridad.
 
@@ -97,6 +104,7 @@ class Area_Procesos {
         del área de procesos (en orden creciente de prioridad).
     */
     void imprimir_area_espera();
+
 
 };
 #endif

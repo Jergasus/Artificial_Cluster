@@ -82,5 +82,6 @@ class Procesador {
     string identificador;
     int memoria;
     list<Proceso> procesos;
+    // bool mirar vector vacío!
 };
 #endif

@@ -92,9 +92,9 @@ Métodos públicos</h2></td></tr>
 <tr class="memitem:a4816bee1b97d41126160494109f84c42"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProceso.html#a4816bee1b97d41126160494109f84c42">consultar_tiempo</a> () const</td></tr>
 <tr class="memdesc:a4816bee1b97d41126160494109f84c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consultora del tiempo de ejecución.  <a href="classProceso.html#a4816bee1b97d41126160494109f84c42">Más...</a><br /></td></tr>
 <tr class="separator:a4816bee1b97d41126160494109f84c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32b058d1ab54d69d370b01390db79f6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProceso.html#a32b058d1ab54d69d370b01390db79f6b">modificar_tiempo</a> (int time)</td></tr>
-<tr class="memdesc:a32b058d1ab54d69d370b01390db79f6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifica el tiempo de un proceso.  <a href="classProceso.html#a32b058d1ab54d69d370b01390db79f6b">Más...</a><br /></td></tr>
-<tr class="separator:a32b058d1ab54d69d370b01390db79f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bc26d513c28a3efcd08cfeb1dbb1fa0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProceso.html#a2bc26d513c28a3efcd08cfeb1dbb1fa0">avanzar_tiempo</a> (int time)</td></tr>
+<tr class="memdesc:a2bc26d513c28a3efcd08cfeb1dbb1fa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Avanza el tiempo de un proceso.  <a href="classProceso.html#a2bc26d513c28a3efcd08cfeb1dbb1fa0">Más...</a><br /></td></tr>
+<tr class="separator:a2bc26d513c28a3efcd08cfeb1dbb1fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>Representa un <a class="el" href="classProceso.html" title="Representa un Proceso.">Proceso</a>. </p>
@@ -117,7 +117,7 @@ Métodos públicos</h2></td></tr>
 
 <p>Creadora por defecto. </p>
 <p>Se ejecuta automáticamente al declarar un proceso. </p><dl class="section pre"><dt>Precondición</dt><dd><em>cierto</em> </dd></dl>
-<dl class="section post"><dt>Postcondición</dt><dd>El resultado es un proceso sin identificador, memoria ni tiempo de ejecución. </dd></dl>
+<dl class="section post"><dt>Postcondición</dt><dd>El resultado es un proceso sin identificador, sin memoria y sin tiempo. </dd></dl>
 
 </div>
 </div>
@@ -154,12 +154,34 @@ Métodos públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creadora por defecto. </p>
-<dl class="section pre"><dt>Precondición</dt><dd>ident &gt;= 0, mem &gt;= 0, time &gt;= 0. </dd></dl>
+<dl class="section pre"><dt>Precondición</dt><dd><em>ident</em> &gt;= 0, <em>mem</em> &gt;= 0, <em>time</em> &gt;= 0. </dd></dl>
 <dl class="section post"><dt>Postcondición</dt><dd>El resultado es un proceso inicializado con un identificador <em>ident</em>, memoria <em>mem</em> y tiempo <em>time</em>. </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a id="a2bc26d513c28a3efcd08cfeb1dbb1fa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bc26d513c28a3efcd08cfeb1dbb1fa0">&#9670;&nbsp;</a></span>avanzar_tiempo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Proceso::avanzar_tiempo </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Avanza el tiempo de un proceso. </p>
+<dl class="section pre"><dt>Precondición</dt><dd>El parámetro implícito debe estar inicializado. </dd></dl>
+<dl class="section post"><dt>Postcondición</dt><dd>Devuelve true si el tiempo del proceso - <em>time</em> es &gt; 0. En caso contrario, devuelve false. </dd></dl>
+
+</div>
+</div>
 <a id="aa16ca4c06da961d092a9a417f668ec14"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa16ca4c06da961d092a9a417f668ec14">&#9670;&nbsp;</a></span>consultar_ident()</h2>
 
@@ -220,28 +242,6 @@ Métodos públicos</h2></td></tr>
 <p>Consultora del tiempo de ejecución. </p>
 <dl class="section pre"><dt>Precondición</dt><dd>El parámetro implícito debe estar inicializado. </dd></dl>
 <dl class="section post"><dt>Postcondición</dt><dd>Devuelve el tiempo de ejecución del parámetro implícito </dd></dl>
-
-</div>
-</div>
-<a id="a32b058d1ab54d69d370b01390db79f6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32b058d1ab54d69d370b01390db79f6b">&#9670;&nbsp;</a></span>modificar_tiempo()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Proceso::modificar_tiempo </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>time</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modifica el tiempo de un proceso. </p>
-<dl class="section pre"><dt>Precondición</dt><dd>El parámetro implícito debe estar inicializado. </dd></dl>
-<dl class="section post"><dt>Postcondición</dt><dd>El nuevo tiempo del procesador = tiempo anterior - <em>time</em>. </dd></dl>
 
 </div>
 </div>

@@ -62,7 +62,7 @@ class Cluster {
         en el procesador, ocupando su respectiva memoria.
 
     */
-    void alta_proceso_procesador(const string& ident, Proceso proc, int& error);
+    void alta_proceso_procesador(const string& ident, const Proceso& proc, int& error);
 
     /** @brief Eliminar proceso de un procesador
 
@@ -136,6 +136,16 @@ class Cluster {
 
     */
     void compactar_memoria_cluster();
+
+    /** @brief Recibe los procesos del la acción: <em>enviar_procesos_cluster</em>
+
+        \pre El parámetro implícito está inicializado.
+        \post Recibe los <em>n</em> procesos enviados por la acción:
+        enviar_procesos_cluster.
+
+    */
+    void recibir_proceso(const Proceso& proc);
+
     
 };
 #endif

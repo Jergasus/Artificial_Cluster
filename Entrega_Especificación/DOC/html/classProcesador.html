@@ -84,7 +84,7 @@ Métodos públicos</h2></td></tr>
 <tr class="memdesc:a26af908b89b133a7eb2e75c445e86ab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicialización de un procesador.  <a href="classProcesador.html#a26af908b89b133a7eb2e75c445e86ab0">Más...</a><br /></td></tr>
 <tr class="separator:a26af908b89b133a7eb2e75c445e86ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa13775c00d510ff83cccbe99bcf22c7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProcesador.html#aa13775c00d510ff83cccbe99bcf22c7b">avanzar_tiempo</a> (int time)</td></tr>
-<tr class="memdesc:aa13775c00d510ff83cccbe99bcf22c7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Avanzar t unidades de tiempo en los procesos del procesador.  <a href="classProcesador.html#aa13775c00d510ff83cccbe99bcf22c7b">Más...</a><br /></td></tr>
+<tr class="memdesc:aa13775c00d510ff83cccbe99bcf22c7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Avanzar <em>t</em> unidades de tiempo en los procesos del procesador.  <a href="classProcesador.html#aa13775c00d510ff83cccbe99bcf22c7b">Más...</a><br /></td></tr>
 <tr class="separator:aa13775c00d510ff83cccbe99bcf22c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af61d7f74b7962fbb74e0c897ca44b88d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProcesador.html#af61d7f74b7962fbb74e0c897ca44b88d">mover_procesos_memoria</a> ()</td></tr>
 <tr class="memdesc:af61d7f74b7962fbb74e0c897ca44b88d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Movimiento de procesos en la memoria del procesador.  <a href="classProcesador.html#af61d7f74b7962fbb74e0c897ca44b88d">Más...</a><br /></td></tr>
@@ -153,9 +153,9 @@ Métodos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Avanzar t unidades de tiempo en los procesos del procesador. </p>
+<p>Avanzar <em>t</em> unidades de tiempo en los procesos del procesador. </p>
 <dl class="section pre"><dt>Precondición</dt><dd>El parámetro implícito está inicializado. </dd></dl>
-<dl class="section post"><dt>Postcondición</dt><dd>Se avanza t unidades de tiempo en cada proceso. Si el tiempo de un proceso ha finalizado, se elimina del procesador. En caso contrario, los procesos progresan t unidades de tiempo. </dd></dl>
+<dl class="section post"><dt>Postcondición</dt><dd>Se avanza <em>t</em> unidades de tiempo en cada proceso. Si el tiempo de un proceso ha finalizado, se elimina del procesador. En caso contrario, los procesos progresan <em>t</em> unidades de tiempo. </dd></dl>
 
 </div>
 </div>
@@ -240,7 +240,7 @@ Métodos públicos</h2></td></tr>
 
 <p>Eliminar un proceso del procesador. </p>
 <dl class="section pre"><dt>Precondición</dt><dd>El parámetro implícito debe estar inicializado. </dd></dl>
-<dl class="section post"><dt>Postcondición</dt><dd>Elimina un proceso del parámetro implícito. </dd></dl>
+<dl class="section post"><dt>Postcondición</dt><dd>Elimina un proceso con el identificador <em>ident_proceso</em> del parámetro implícito. </dd></dl>
 
 </div>
 </div>
@@ -283,7 +283,7 @@ Métodos públicos</h2></td></tr>
 
 <p>Existencia de un determinado proceso en un procesador. </p>
 <dl class="section pre"><dt>Precondición</dt><dd>El parámetro implícito debe estar inicializado. </dd></dl>
-<dl class="section post"><dt>Postcondición</dt><dd>Devuelve true si el proceso con el identificador ident existe en el parámetro implícito. En caso contrario, devuelve false. </dd></dl>
+<dl class="section post"><dt>Postcondición</dt><dd>Devuelve true si el proceso con el identificador <em>ident</em> existe en el parámetro implícito. En caso contrario, devuelve false. </dd></dl>
 
 </div>
 </div>
@@ -315,7 +315,7 @@ Métodos públicos</h2></td></tr>
 
 <p>Inicialización de un procesador. </p>
 <dl class="section pre"><dt>Precondición</dt><dd>mem &gt;= 0 </dd></dl>
-<dl class="section post"><dt>Postcondición</dt><dd>El resultado es un procesador inicializado con un identificador ident y una memoria mem. </dd></dl>
+<dl class="section post"><dt>Postcondición</dt><dd>El resultado es un procesador inicializado con un identificador <em>ident</em> y una memoria <em>mem</em>. </dd></dl>
 
 </div>
 </div>
@@ -337,7 +337,7 @@ Métodos públicos</h2></td></tr>
 
 <p>Añadir un proceso del procesador. </p>
 <dl class="section pre"><dt>Precondición</dt><dd>El parámetro implícito debe estar inicializado. </dd></dl>
-<dl class="section post"><dt>Postcondición</dt><dd>Añade un proceso al parámetro implícito. </dd></dl>
+<dl class="section post"><dt>Postcondición</dt><dd>Añade el proceso <em>proc</em> al parámetro implícito. </dd></dl>
 
 </div>
 </div>

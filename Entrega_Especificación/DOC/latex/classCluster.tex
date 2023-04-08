@@ -18,12 +18,12 @@ void \mbox{\hyperlink{classCluster_a84f9daea57e2773ab5766ef82d2a1def}{configurar
 \begin{DoxyCompactList}\small\item\em Configuración/\+Inicialización de un cluster. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCluster_ae4f6cb37cfa684b90597ac04bfd36655}{modificar\+\_\+cluster}} (const string \&ident, int \&error)
 \begin{DoxyCompactList}\small\item\em Modificación del cluster. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classCluster_a511e6f4cfdbdb41f174978370463c321}{alta\+\_\+proceso\+\_\+procesador}} (const string \&ident, \mbox{\hyperlink{classProceso}{Proceso}} proc, int \&error)
+void \mbox{\hyperlink{classCluster_a5786b35aeee3dbdf3d03928e40949ab9}{alta\+\_\+proceso\+\_\+procesador}} (const string \&ident, const \mbox{\hyperlink{classProceso}{Proceso}} \&proc, int \&error)
 \begin{DoxyCompactList}\small\item\em Añadir proceso a un procesador. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCluster_ad27c24f93d82a18964a7170c44c4d696}{baja\+\_\+proceso\+\_\+procesador}} (const string \&ident, int ident\+\_\+proc, int \&error)
 \begin{DoxyCompactList}\small\item\em Eliminar proceso de un procesador. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCluster_a3b93301a46cfa8cadf8d0121e234c386}{avanzar\+\_\+tiempo}} (int t)
-\begin{DoxyCompactList}\small\item\em Avanzar t unidades de tiempo en los procesadores del clúster. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Avanzar {\itshape t} unidades de tiempo en los procesadores del clúster. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCluster_a545cc70fcdb0857afb851069e63ea1de}{imprimir\+\_\+procesador}} (const string \&ident, int \&error)
 \begin{DoxyCompactList}\small\item\em Escribir los procesos de un procesador. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCluster_ab8a628286f8a977063ea4395d9a422bf}{imprimir\+\_\+procesadores\+\_\+cluster}} ()
@@ -33,7 +33,9 @@ void \mbox{\hyperlink{classCluster_a948d7075f9b30c2885ce804029e5ab25}{imprimir\+
 void \mbox{\hyperlink{classCluster_a5bedc8558ba975721788b52e7aaef629}{compactar\+\_\+memoria\+\_\+procesador}} (const string \&ident, int \&error)
 \begin{DoxyCompactList}\small\item\em Compacta la memoria de un procesador. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCluster_a7b9ae511df4a6465f4e191df6564fd77}{compactar\+\_\+memoria\+\_\+cluster}} ()
-\begin{DoxyCompactList}\small\item\em Compacta la memoria del clúster. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Compacta la memoria del clúster. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCluster_ac06f30b3b9d50be8ade5f9f55372cc63}{recibir\+\_\+proceso}} (\mbox{\hyperlink{classProceso}{Proceso}} proc)
+\begin{DoxyCompactList}\small\item\em Recibe los procesos del la acción\+: {\itshape enviar\+\_\+procesos\+\_\+cluster} \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Descripción detallada}
@@ -59,11 +61,11 @@ El resultado es un clúster no inicializado (sin procesadores).
 
 
 \doxysubsection{Documentación de las funciones miembro}
-\mbox{\Hypertarget{classCluster_a511e6f4cfdbdb41f174978370463c321}\label{classCluster_a511e6f4cfdbdb41f174978370463c321}} 
+\mbox{\Hypertarget{classCluster_a5786b35aeee3dbdf3d03928e40949ab9}\label{classCluster_a5786b35aeee3dbdf3d03928e40949ab9}} 
 \index{Cluster@{Cluster}!alta\_proceso\_procesador@{alta\_proceso\_procesador}}
 \index{alta\_proceso\_procesador@{alta\_proceso\_procesador}!Cluster@{Cluster}}
 \doxysubsubsection{\texorpdfstring{alta\_proceso\_procesador()}{alta\_proceso\_procesador()}}
-{\footnotesize\ttfamily void Cluster\+::alta\+\_\+proceso\+\_\+procesador (\begin{DoxyParamCaption}\item[{const string \&}]{ident,  }\item[{\mbox{\hyperlink{classProceso}{Proceso}}}]{proc,  }\item[{int \&}]{error }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Cluster\+::alta\+\_\+proceso\+\_\+procesador (\begin{DoxyParamCaption}\item[{const string \&}]{ident,  }\item[{const \mbox{\hyperlink{classProceso}{Proceso}} \&}]{proc,  }\item[{int \&}]{error }\end{DoxyParamCaption})}
 
 
 
@@ -73,7 +75,7 @@ Añadir proceso a un procesador.
 El parámetro implícito está inicializado. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Si no existe un procesador en el clúster con el mismo identificador que ident, o el procesador ya tiene un proceso con el mismo identificador que proc, o el proceso no cabe en el procesador, error $>$= 0. En caso contrario, error = -\/1 y el proceso se ejecutará en el procesador, ocupando su respectiva memoria. 
+Si no existe un procesador en el clúster con el mismo identificador que {\itshape ident}, o el procesador ya tiene un proceso con el mismo identificador que {\itshape proc}, o el proceso no cabe en el procesador, {\itshape error} $>$= 0. En caso contrario, {\itshape error} = -\/1 y el proceso se ejecutará en el procesador, ocupando su respectiva memoria. 
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classCluster_a3b93301a46cfa8cadf8d0121e234c386}\label{classCluster_a3b93301a46cfa8cadf8d0121e234c386}} 
 \index{Cluster@{Cluster}!avanzar\_tiempo@{avanzar\_tiempo}}
@@ -83,13 +85,13 @@ Si no existe un procesador en el clúster con el mismo identificador que ident, 
 
 
 
-Avanzar t unidades de tiempo en los procesadores del clúster. 
+Avanzar {\itshape t} unidades de tiempo en los procesadores del clúster. 
 
 \begin{DoxyPrecond}{Precondición}
 El parámetro implícito está inicializado. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Se avanza t unidades de tiempo a cada proceso de cada procesador del clúster. Si el tiempo de un proceso ha finalizado, se elimina del procesador. En caso contrario, los procesos progresan t unidades de tiempo. 
+Se avanza {\itshape t} unidades de tiempo a cada proceso de cada procesador del clúster. Si el tiempo de un proceso ha finalizado, se elimina del procesador. En caso contrario, los procesos progresan {\itshape t} unidades de tiempo. 
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classCluster_ad27c24f93d82a18964a7170c44c4d696}\label{classCluster_ad27c24f93d82a18964a7170c44c4d696}} 
 \index{Cluster@{Cluster}!baja\_proceso\_procesador@{baja\_proceso\_procesador}}
@@ -105,7 +107,7 @@ Eliminar proceso de un procesador.
 El parámetro implícito está inicializado. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Si no existe un procesador en el clúster con el mismo identificador que ident, o el procesador no tiene un proceso con el mismo identificador que ident\+\_\+proc, error $>$= 0. En caso contrario, error = -\/1 y se eliminará el respectivo proceso del procesador. 
+Si no existe un procesador en el clúster con el mismo identificador que {\itshape ident}, o el procesador no tiene un proceso con el mismo identificador que {\itshape ident\+\_\+proc}, {\itshape error} $>$= 0. En caso contrario, {\itshape error} = -\/1 y se eliminará el respectivo proceso del procesador. 
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classCluster_a7b9ae511df4a6465f4e191df6564fd77}\label{classCluster_a7b9ae511df4a6465f4e191df6564fd77}} 
 \index{Cluster@{Cluster}!compactar\_memoria\_cluster@{compactar\_memoria\_cluster}}
@@ -137,7 +139,7 @@ Compacta la memoria de un procesador.
 El parámetro implícito está inicializado. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Si no existe un procesador en el clúster con el mismo identificador que ident, error $>$= 0. En caso contrario, error = -\/1 y se desplazan todos los procesos hacia el principio de la memoria del procesador ( sin huecos, sin solaparse y respetando el orden inicial). 
+Si no existe un procesador en el clúster con el mismo identificador que {\itshape ident}, {\itshape error} $>$= 0. En caso contrario, {\itshape error} = -\/1 y se desplazan todos los procesos hacia el principio de la memoria del procesador ( sin huecos, sin solaparse y respetando el orden inicial). 
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classCluster_a84f9daea57e2773ab5766ef82d2a1def}\label{classCluster_a84f9daea57e2773ab5766ef82d2a1def}} 
 \index{Cluster@{Cluster}!configurar\_cluster@{configurar\_cluster}}
@@ -185,7 +187,7 @@ Escribir los procesos de un procesador.
 El parámetro implícito está inicializado. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Si no existe un procesador en el clúster con el mismo identificador que ident, error $>$= 0. En caso contrario, se escriben los procesos pertenecientes al procesador con identificador ident (en orden creciente de memoria). 
+Si no existe un procesador en el clúster con el mismo identificador que {\itshape ident}, {\itshape error} $>$= 0. En caso contrario, {\itshape error} = -\/1 y se escriben los procesos pertenecientes al procesador con identificador ident (en orden creciente de memoria). 
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classCluster_ab8a628286f8a977063ea4395d9a422bf}\label{classCluster_ab8a628286f8a977063ea4395d9a422bf}} 
 \index{Cluster@{Cluster}!imprimir\_procesadores\_cluster@{imprimir\_procesadores\_cluster}}
@@ -217,7 +219,23 @@ Modificación del cluster.
 El parámetro implícito está inicializado. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Si no existe un procesador en el clúster con el mismo identificador que ident, el procesador tiene procesos pendientes o tiene hojas, error $>$= 0. En caso contario, error = -\/1 y en la posición del procesador se pondrá un nuevo clúster. 
+Si no existe un procesador en el clúster con el mismo identificador que {\itshape ident}, el procesador tiene procesos pendientes o tiene hojas, {\itshape error} $>$= 0. En caso contario, {\itshape error} = -\/1 y en la posición del procesador se pondrá un nuevo clúster. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classCluster_ac06f30b3b9d50be8ade5f9f55372cc63}\label{classCluster_ac06f30b3b9d50be8ade5f9f55372cc63}} 
+\index{Cluster@{Cluster}!recibir\_proceso@{recibir\_proceso}}
+\index{recibir\_proceso@{recibir\_proceso}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{recibir\_proceso()}{recibir\_proceso()}}
+{\footnotesize\ttfamily void Cluster\+::recibir\+\_\+proceso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classProceso}{Proceso}}}]{proc }\end{DoxyParamCaption})}
+
+
+
+Recibe los procesos del la acción\+: {\itshape enviar\+\_\+procesos\+\_\+cluster} 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Recibe los {\itshape n} procesos enviados por la acción\+: enviar\+\_\+procesos\+\_\+cluster. 
 \end{DoxyPostcond}
 
 

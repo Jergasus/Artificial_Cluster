@@ -62,11 +62,12 @@ class Proceso {
     //Modificadoras -------------------------------------------------
 
     /**
-     @brief Modifica el tiempo de un proceso.
+     @brief Avanza el tiempo de un proceso.
 
      \pre El parámetro implícito debe estar inicializado.
-     \post El nuevo tiempo del procesador = tiempo anterior - <em>time</em>.
+     \post Devuelve true si el tiempo del proceso - <em>time</em> es > 0.
+     En caso contrario, devuelve false.
     */
-    void modificar_tiempo(int time);
+    bool avanzar_tiempo(int time);
 };
 #endif

@@ -22,8 +22,8 @@ int \mbox{\hyperlink{classProceso_a55976a19b8d909276c62e8be10036df5}{consultar\+
 \begin{DoxyCompactList}\small\item\em Consultora de la memoria. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classProceso_a4816bee1b97d41126160494109f84c42}{consultar\+\_\+tiempo}} () const
 \begin{DoxyCompactList}\small\item\em Consultora del tiempo de ejecución. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classProceso_a32b058d1ab54d69d370b01390db79f6b}{modificar\+\_\+tiempo}} (int time)
-\begin{DoxyCompactList}\small\item\em Modifica el tiempo de un proceso. \end{DoxyCompactList}\end{DoxyCompactItemize}
+bool \mbox{\hyperlink{classProceso_a2bc26d513c28a3efcd08cfeb1dbb1fa0}{avanzar\+\_\+tiempo}} (int time)
+\begin{DoxyCompactList}\small\item\em Avanza el tiempo de un proceso. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Descripción detallada}
@@ -46,7 +46,7 @@ Se ejecuta automáticamente al declarar un proceso. \begin{DoxyPrecond}{Precondi
 {\itshape cierto} 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-El resultado es un proceso sin identificador, memoria ni tiempo de ejecución. 
+El resultado es un proceso sin identificador, sin memoria y sin tiempo. 
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classProceso_a8c0f4efcd62ce74daddbfc5401092ac6}\label{classProceso_a8c0f4efcd62ce74daddbfc5401092ac6}} 
 \index{Proceso@{Proceso}!Proceso@{Proceso}}
@@ -59,7 +59,7 @@ El resultado es un proceso sin identificador, memoria ni tiempo de ejecución.
 Creadora por defecto. 
 
 \begin{DoxyPrecond}{Precondición}
-ident $>$= 0, mem $>$= 0, time $>$= 0. 
+{\itshape ident} $>$= 0, {\itshape mem} $>$= 0, {\itshape time} $>$= 0. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
 El resultado es un proceso inicializado con un identificador {\itshape ident}, memoria {\itshape mem} y tiempo {\itshape time}. 
@@ -67,6 +67,22 @@ El resultado es un proceso inicializado con un identificador {\itshape ident}, m
 
 
 \doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classProceso_a2bc26d513c28a3efcd08cfeb1dbb1fa0}\label{classProceso_a2bc26d513c28a3efcd08cfeb1dbb1fa0}} 
+\index{Proceso@{Proceso}!avanzar\_tiempo@{avanzar\_tiempo}}
+\index{avanzar\_tiempo@{avanzar\_tiempo}!Proceso@{Proceso}}
+\doxysubsubsection{\texorpdfstring{avanzar\_tiempo()}{avanzar\_tiempo()}}
+{\footnotesize\ttfamily bool Proceso\+::avanzar\+\_\+tiempo (\begin{DoxyParamCaption}\item[{int}]{time }\end{DoxyParamCaption})}
+
+
+
+Avanza el tiempo de un proceso. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito debe estar inicializado. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Devuelve true si el tiempo del proceso -\/ {\itshape time} es $>$ 0. En caso contrario, devuelve false. 
+\end{DoxyPostcond}
 \mbox{\Hypertarget{classProceso_aa16ca4c06da961d092a9a417f668ec14}\label{classProceso_aa16ca4c06da961d092a9a417f668ec14}} 
 \index{Proceso@{Proceso}!consultar\_ident@{consultar\_ident}}
 \index{consultar\_ident@{consultar\_ident}!Proceso@{Proceso}}
@@ -114,22 +130,6 @@ El parámetro implícito debe estar inicializado.
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
 Devuelve el tiempo de ejecución del parámetro implícito 
-\end{DoxyPostcond}
-\mbox{\Hypertarget{classProceso_a32b058d1ab54d69d370b01390db79f6b}\label{classProceso_a32b058d1ab54d69d370b01390db79f6b}} 
-\index{Proceso@{Proceso}!modificar\_tiempo@{modificar\_tiempo}}
-\index{modificar\_tiempo@{modificar\_tiempo}!Proceso@{Proceso}}
-\doxysubsubsection{\texorpdfstring{modificar\_tiempo()}{modificar\_tiempo()}}
-{\footnotesize\ttfamily void Proceso\+::modificar\+\_\+tiempo (\begin{DoxyParamCaption}\item[{int}]{time }\end{DoxyParamCaption})}
-
-
-
-Modifica el tiempo de un proceso. 
-
-\begin{DoxyPrecond}{Precondición}
-El parámetro implícito debe estar inicializado. 
-\end{DoxyPrecond}
-\begin{DoxyPostcond}{Postcondición}
-El nuevo tiempo del procesador = tiempo anterior -\/ {\itshape time}. 
 \end{DoxyPostcond}
 
 

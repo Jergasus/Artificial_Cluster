@@ -7,7 +7,7 @@
 #include "Proceso.hh"
 
 #ifndef NO_DIAGRAM
-#include <list>
+#include <list> // Mirar si no se puede!
 #include <string>
 #endif
 

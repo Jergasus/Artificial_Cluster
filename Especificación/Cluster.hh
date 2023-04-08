@@ -10,6 +10,7 @@
 
 #ifndef NO_DIAGRAM
 #include "BinTree.hh"
+#include <list>
 #endif
 
 /** @class Cluster
@@ -135,6 +136,8 @@ class Cluster {
     void sumar_tiempo(BinTree<Procesador>& clust, int tiempo);
     void imprimir_procesadores(BinTree<Procesador>& clust);
     void compactar_memoria_procesadores(BinTree<Procesador>& clust);
+    bool se_puede_colocar(BinTree<Procesador>& clust, Proceso proc, list<Procesador>& proces);
+    void colocar_proceso_procesador(BinTree<Procesador>& clust, Proceso proc, Procesador& proces);
 
 };
 #endif
