@@ -34,7 +34,7 @@ void \mbox{\hyperlink{classCluster_a5bedc8558ba975721788b52e7aaef629}{compactar\
 \begin{DoxyCompactList}\small\item\em Compacta la memoria de un procesador. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCluster_a7b9ae511df4a6465f4e191df6564fd77}{compactar\+\_\+memoria\+\_\+cluster}} ()
 \begin{DoxyCompactList}\small\item\em Compacta la memoria del clúster. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classCluster_ac06f30b3b9d50be8ade5f9f55372cc63}{recibir\+\_\+proceso}} (\mbox{\hyperlink{classProceso}{Proceso}} proc)
+void \mbox{\hyperlink{classCluster_a3c66b85e2a45ac66c60585243b42271b}{recibir\+\_\+proceso}} (const \mbox{\hyperlink{classProceso}{Proceso}} \&proc)
 \begin{DoxyCompactList}\small\item\em Recibe los procesos del la acción\+: {\itshape enviar\+\_\+procesos\+\_\+cluster} \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -221,11 +221,11 @@ El parámetro implícito está inicializado.
 \begin{DoxyPostcond}{Postcondición}
 Si no existe un procesador en el clúster con el mismo identificador que {\itshape ident}, el procesador tiene procesos pendientes o tiene hojas, {\itshape error} $>$= 0. En caso contario, {\itshape error} = -\/1 y en la posición del procesador se pondrá un nuevo clúster. 
 \end{DoxyPostcond}
-\mbox{\Hypertarget{classCluster_ac06f30b3b9d50be8ade5f9f55372cc63}\label{classCluster_ac06f30b3b9d50be8ade5f9f55372cc63}} 
+\mbox{\Hypertarget{classCluster_a3c66b85e2a45ac66c60585243b42271b}\label{classCluster_a3c66b85e2a45ac66c60585243b42271b}} 
 \index{Cluster@{Cluster}!recibir\_proceso@{recibir\_proceso}}
 \index{recibir\_proceso@{recibir\_proceso}!Cluster@{Cluster}}
 \doxysubsubsection{\texorpdfstring{recibir\_proceso()}{recibir\_proceso()}}
-{\footnotesize\ttfamily void Cluster\+::recibir\+\_\+proceso (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classProceso}{Proceso}}}]{proc }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Cluster\+::recibir\+\_\+proceso (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classProceso}{Proceso}} \&}]{proc }\end{DoxyParamCaption})}
 
 
 
