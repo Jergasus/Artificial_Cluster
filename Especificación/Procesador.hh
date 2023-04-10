@@ -8,6 +8,8 @@
 
 #ifndef NO_DIAGRAM
 #include <list>
+#include <vector>
+#include <string>
 #endif
 
 
@@ -82,6 +84,8 @@ class Procesador {
     string identificador;
     int memoria;
     list<Proceso> procesos;
-    // bool mirar vector vacío!
+    int n = memoria;
+    vector<string> procesos_pendientes(n, ".");
+    
 };
 #endif
