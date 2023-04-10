@@ -36,7 +36,7 @@ class Procesador {
         \pre mem >= 0
         \post El resultado es un procesador inicializado con un identificador ident y una memoria mem.
     */
-    void inicializar(string ident, int mem);
+    void inicializar(string ident, int mem); // Crear vector con size mem y luego ponerlo en procesos_pendientes
 
     void avanzar_tiempo(int tiempo);
 
@@ -84,8 +84,7 @@ class Procesador {
     string identificador;
     int memoria;
     list<Proceso> procesos;
-    int n = memoria;
-    vector<string> procesos_pendientes(n, ".");
+    vector<int> procesos_pendientes;
     
 };
 #endif
