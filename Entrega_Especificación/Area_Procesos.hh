@@ -71,7 +71,7 @@ class Area_Procesos {
         Los procesos que hayan sido rechazados volverán al área de procesos
         (con la misma prioridad). Si un proceso cabe en más de un procesador,
         se elige el que tenga el hueco más ajustado. Si hay un empate, es decir, que los
-        huecos tienen el mismo tamaño, el porceso irá al procesador que tenga
+        huecos tienen el mismo tamaño, el proceso irá al procesador que tenga
         más memoria. Si el empate persiste, el proceso se colocará en el
         procesador más cercano a la raíz. Si el empate persiste, irá al
         procesador que esté más a la izquierda.
@@ -81,7 +81,9 @@ class Area_Procesos {
     /** @brief Elimina un proceso de una prioridad
 
         \pre El parámetro implícito está inicializado.
-        \post 
+        \post Elimina un proceso con identificador <em>ident_proc</em> de
+        una prioridad. Si no quedan procesos en dicha prioridad, también
+        la eliminará.
     */
     void eliminar_proceso_prioridad(int ident_proc);
 

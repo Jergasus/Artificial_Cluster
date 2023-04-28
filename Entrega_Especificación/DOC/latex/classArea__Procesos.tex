@@ -115,7 +115,7 @@ Elimina un proceso de una prioridad.
 El parámetro implícito está inicializado. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-
+Elimina un proceso con identificador {\itshape ident\+\_\+proc} de una prioridad. Si no quedan procesos en dicha prioridad, también la eliminará. 
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classArea__Procesos_a4fadacca7903a028eb1bbba5aaa02da4}\label{classArea__Procesos_a4fadacca7903a028eb1bbba5aaa02da4}} 
 \index{Area\_Procesos@{Area\_Procesos}!enviar\_procesos\_cluster@{enviar\_procesos\_cluster}}
@@ -135,7 +135,7 @@ Se intentan enviar {\itshape n} procesos pendientes al clúster. Dichos procesos
 \begin{DoxyEnumerate}
 \item Los {\itshape n} procesos pendientes se hayan colocado.
 \item No queden procesos pendientes.
-\item Todos los procesos pendientes se hayan intentado colocar sin éxito. Los procesos que hayan sido rechazados volverán al área de procesos (con la misma prioridad). Si un proceso cabe en más de un procesador, se elige el que tenga el hueco más ajustado. Si hay un empate, es decir, que los huecos tienen el mismo tamaño, el porceso irá al procesador que tenga más memoria. Si el empate persiste, el proceso se colocará en el procesador más cercano a la raíz. Si el empate persiste, irá al procesador que esté más a la izquierda. 
+\item Todos los procesos pendientes se hayan intentado colocar sin éxito. Los procesos que hayan sido rechazados volverán al área de procesos (con la misma prioridad). Si un proceso cabe en más de un procesador, se elige el que tenga el hueco más ajustado. Si hay un empate, es decir, que los huecos tienen el mismo tamaño, el proceso irá al procesador que tenga más memoria. Si el empate persiste, el proceso se colocará en el procesador más cercano a la raíz. Si el empate persiste, irá al procesador que esté más a la izquierda. 
 \end{DoxyEnumerate}
 \end{DoxyPostcond}
 \mbox{\Hypertarget{classArea__Procesos_af9989fdce6619bd90fa11ea0c988a4b0}\label{classArea__Procesos_af9989fdce6619bd90fa11ea0c988a4b0}} 

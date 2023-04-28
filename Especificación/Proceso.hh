@@ -7,57 +7,80 @@
 
 
 /** @class Proceso
-    @brief Representa un proceso
+    @brief Representa un Proceso
 
     Dispone de dos estados posibles (inicializado / no inicializado); si está inicializado tiene un identificador, la memoria que ocupan y un tiempo de ejecución determinado. Si no está incializado, no contiene propiedades. En este caso, solo se puede inicilizar
 
 */
 class Proceso {
     public:
+
     //Constructoras ---------------------------------------------------------------
 
     /** @brief Creadora por defecto. 
 
         Se ejecuta automáticamente al declarar un proceso.
         \pre <em>cierto</em>
-        \post El resultado es un proceso sin identificador, memoria ni tiempo de ejecución.
+        \post El resultado es un proceso sin identificador, sin memoria y sin tiempo.
     */
     Proceso();
+
     /** @brief Creadora por defecto. 
 
-        Se ejecuta automáticamente al declarar una proceso.
-        \pre ident >= 0, mem >= 0, timeo >= 0.
-        \post El resultado es un proceso inicializado con dicho identificador, la memoria que ocupa y el tiempo de ejecución;
+        \pre <em>ident</em> >= 0, <em>mem</em> >= 0, <em>time</em> >= 0.
+        \post El resultado es un proceso inicializado con un identificador <em>ident</em>,
+        memoria <em>mem</em> y tiempo <em>time</em>.
     */
     Proceso(int ident, int mem, int time);
 
     //Consultoras ------------------------------------------------------------------
+
     /**
      @brief Consultora del identificador
-     \pre Que el parámetro ímplicito esté inicializado.
-     \post Devuelve el identificador del parámetro ímplicito.
+
+     \pre El parámetro implícito debe estar inicializado.
+     \post Devuelve el identificador del parámetro implícito.
     */
     int consultar_ident() const;
+
     /**
      @brief Consultora de la memoria
-     \pre Que el parámetro ímplicito esté inicializado.
-     \post Devuelve la memoria del parámetro ímplicito.
+
+     \pre El parámetro implícito debe estar inicializado.
+     \post Devuelve la memoria del parámetro implícito.
     */
-    int consultar_mem() const;
+    int consultar_memoria() const;
+
     /**
      @brief Consultora del tiempo de ejecución
-     \pre Que el parámetro ímplicito esté inicializado.
-     \post Devuelve el tiempo de ejecución del parámetro ímplicito
+
+     \pre El parámetro implícito debe estar inicializado.
+     \post Devuelve el tiempo de ejecución del parámetro implícito.
     */
     int consultar_tiempo() const;
+
     //Modificadoras -------------------------------------------------
+
     /**
-     @brief Modificadora del tiempo del ejecución del procesador.
-     \pre Que el parámetro ímplicito esté inicializado.
-     \post Devuelve el nuevo tiempo de ejecución después de haber restado al tiempo anterior el tiempo pasado por parámetro. Si el tiempo es del parámetro es mayor que el anterior, se elimina el proceso.
+     @brief Avanza el tiempo de un proceso.
+
+     \pre El parámetro implícito debe estar inicializado.
+     \post Devuelve true si el tiempo del proceso - <em>time</em> es > 0.
+     En caso contrario, devuelve false.
     */
-    void modificar_tiempo(int time);
-    // bool avanzar_tiempo() --> Hacer aqui lo relacionado con el avanzar tiempo
+    bool avanzar_tiempo(int time);
+
+    /**
+     @brief Avanza el tiempo de un proceso.
+
+     \pre El parámetro implícito debe estar inicializado.
+     \post Devuelve true si el tiempo del proceso - <em>time</em> es > 0.
+     En caso contrario, devuelve false.
+    */
+
+    void imprimir() {
+        cout << identificador << " " << memoria << " " << tiempo << endl;
+    }
 
     private:
     int identificador;

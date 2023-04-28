@@ -55,7 +55,7 @@ class Proceso {
      @brief Consultora del tiempo de ejecución
 
      \pre El parámetro implícito debe estar inicializado.
-     \post Devuelve el tiempo de ejecución del parámetro implícito
+     \post Devuelve el tiempo de ejecución del parámetro implícito.
     */
     int consultar_tiempo() const;
 

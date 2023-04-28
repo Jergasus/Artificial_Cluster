@@ -141,7 +141,7 @@ class Cluster {
 
         \pre El parámetro implícito está inicializado.
         \post Recibe los <em>n</em> procesos enviados por la acción:
-        enviar_procesos_cluster.
+        <em>enviar_procesos_cluster</em>.
 
     */
     void recibir_proceso(const Proceso& proc);

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_2ecc_54',['main.cc',['../main_8cc.html',1,'']]]
+  ['procesador_2ehh_47',['Procesador.hh',['../Procesador_8hh.html',1,'']]],
+  ['proceso_2ehh_48',['Proceso.hh',['../Proceso_8hh.html',1,'']]]
 ];

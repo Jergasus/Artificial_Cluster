@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['left_88',['left',['../classBinTree.html#a82108db4c1b08d1f111027788c196d4e',1,'BinTree']]]
+  ['main_78',['main',['../main_8cc.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cc']]],
+  ['modificar_5fcluster_79',['modificar_cluster',['../classCluster.html#ae4f6cb37cfa684b90597ac04bfd36655',1,'Cluster']]],
+  ['mover_5fprocesos_5fmemoria_80',['mover_procesos_memoria',['../classProcesador.html#af61d7f74b7962fbb74e0c897ca44b88d',1,'Procesador']]]
 ];

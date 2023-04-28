@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['cluster_48',['Cluster',['../classCluster.html',1,'']]]
+  ['procesador_42',['Procesador',['../classProcesador.html',1,'']]],
+  ['proceso_43',['Proceso',['../classProceso.html',1,'']]]
 ];

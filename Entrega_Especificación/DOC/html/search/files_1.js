@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bintree_2ehh_52',['BinTree.hh',['../BinTree_8hh.html',1,'']]]
+  ['cluster_2ehh_45',['Cluster.hh',['../Cluster_8hh.html',1,'']]]
 ];
