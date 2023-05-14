@@ -5,6 +5,10 @@
 #ifndef _PROCESO_HH_
 #define _PROCESO_HH_
 
+#ifndef NO_DIAGRAM
+#include <iostream>
+#endif
+using namespace std;
 
 /** @class Proceso
     @brief Representa un Proceso
@@ -68,8 +72,7 @@ class Proceso {
      \post Devuelve true si el tiempo del proceso - <em>time</em> es > 0.
      En caso contrario, devuelve false.
     */
-    bool avanzar_tiempo(int time);
-
+    int avanzar_tiempo(int time);
     /**
      @brief Avanza el tiempo de un proceso.
 
@@ -78,11 +81,10 @@ class Proceso {
      En caso contrario, devuelve false.
     */
 
-    void imprimir() {
-        cout << identificador << " " << memoria << " " << tiempo << endl;
-    }
-
+    void imprimir();
+ 
     private:
+
     int identificador;
     int memoria;
     int tiempo;

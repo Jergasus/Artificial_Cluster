@@ -6,6 +6,8 @@
 #define _AREA_PROCESOS_HH_
 #include "Proceso.hh"
 #include "Cluster.hh"
+#include "BinTree.hh"
+#include "Procesador.hh"
 
 #ifndef NO_DIAGRAM
 #include <map>
@@ -38,15 +40,7 @@ class Area_Procesos {
         \post Duevuelve una área de procesos inicializada con propiedades.
     */
 
-    void inicializar() {
-        int n;
-        cin >> n;
-        for (int i = 0; i < n; ++i) {
-            string llave;
-            cin >> llave;
-            area_procesos[llave];
-        }
-    }
+    void inicializar();
 
     /** @brief Añadir una prioridad al área de procesos. 
 
@@ -55,13 +49,7 @@ class Area_Procesos {
         <em>error</em> >= 0. En caso contrario, <em>error</em> = -1 y se añade dicha prioridad al área de
         procesos.
     */
-    void alta_prioridad(const string& ident, int& error) {
-        if (area_procesos.find(ident) == area_procesos.end()) {
-            area_procesos[ident]; // Ver si funciona
-            error = -1;
-        }
-        else error = 1;
-    }
+    void alta_prioridad(const string& ident, int& error);
 
     /** @brief Eliminar una prioridad del área de procesos. 
 
@@ -100,7 +88,7 @@ class Area_Procesos {
         procesador más cercano a la raíz. Si el empate persiste, irá al
         procesador que esté más a la izquierda.
     */
-    void enviar_procesos_cluster(Cluster& cluster, int n);
+    // void enviar_procesos_cluster(const BinTree<Procesador>& cluster, int n); ---------------------------------------------------
 
     /** @brief Elimina un proceso de una prioridad
 
@@ -109,7 +97,7 @@ class Area_Procesos {
         una prioridad. Si no quedan procesos en dicha prioridad, también
         la eliminará.
     */
-    void eliminar_proceso_prioridad(int ident_proc);
+    // void eliminar_proceso_prioridad(int ident_proc); -----------------------------------------------------------------------
 
     /** @brief Escribe los procesos pendientes de una prioridad.
 
@@ -129,26 +117,12 @@ class Area_Procesos {
         \post Se escriben todos los procesos de todas las prioridades
         del área de procesos (en orden creciente de prioridad).
     */
-    void imprimir_area_espera() {
-        for (map<string, Priority>::const_iterator it = area_procesos.begin(); it != area_procesos.end(); ++it) {
-            cout << (*it).first << endl;
-            queue<Proceso> procesos_aux = (*it).second.procesos;
-            while (not procesos_aux.empty()) {
-                procesos_aux.front().imprimir();
-                procesos_aux.pop();
-            }
-            cout << (*it).second.procesos_aceptados << " " << (*it).second.procesos_rechazados << endl;
-        }
-    }
+    void imprimir_area_espera();
 
     private:
 
-    bool existe_prioridad(string identificador); // alta_proceso_espera
-    
-    bool existe_proceso(string identificador, int identificador_proceso);
-
     struct Priority {
-        queue<Proceso> procesos; //Lista
+        list<Proceso> procesos;
         int procesos_aceptados = 0;
         int procesos_rechazados = 0;
     };

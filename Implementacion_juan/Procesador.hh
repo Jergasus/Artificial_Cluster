@@ -8,8 +8,12 @@
 
 #ifndef NO_DIAGRAM
 #include <list>
+#include <map>
 #include <string>
+#include <iostream>
+#include <set>
 #endif
+using namespace std;
 
 
 /** @class Procesador
@@ -37,10 +41,7 @@ class Procesador {
         \pre mem >= 0
         \post El resultado es un procesador inicializado con un identificador <em>ident</em> y una memoria <em>mem</em>.
     */
-    void inicializar(const string& ident, int mem) {
-        identificador = ident;
-        memoria = mem;
-    }
+    void inicializar(const string& ident, int mem);
 
     /** @brief Avanzar <em>t</em> unidades de tiempo en los procesos del procesador.
 
@@ -60,30 +61,36 @@ class Procesador {
         del parámetro implícito (sin huecos, sin solaparse y respetando el orden inicial).
 
     */
-    void mover_procesos_memoria();
+    // void mover_procesos_memoria(); -------------------------------------------------------------
 
     /** @brief Escritura de los procesos de un procesador. 
 
         \pre El parámetro implícito debe estar inicializado.
         \post Escribe los procesos del parámetro implícito.
     */
-    void escribir_procesos() {
-
-    }
+    void escribir_procesos();
 
     /** @brief Añadir un proceso del procesador.
 
         \pre El parámetro implícito debe estar inicializado.
         \post Añade el proceso <em>proc</em> al parámetro implícito.
     */
-    void introducir_proceso(Proceso proc);
+    int introducir_proceso(const Proceso& proc);
+
+    int siguiente_proceso(map<int, Proceso>::const_iterator it);
+
+    void recalcular_huecos();
 
     /** @brief Eliminar un proceso del procesador.
 
         \pre El parámetro implícito debe estar inicializado.
         \post Elimina un proceso con el identificador <em>ident_proceso</em> del parámetro implícito.
     */
-    void eliminar_proceso(int ident_proceso);
+    int eliminar_proceso(int ident_proceso);
+
+    int ultima_pos(map<int, Proceso>::const_iterator it) const;
+
+    int primera_pos(map<int, Proceso>::const_iterator it) const;
 
     //Consultoras -------------------------------------------------------------
 
@@ -92,27 +99,21 @@ class Procesador {
         \pre El parámetro implícito debe estar inicializado.
         \post Devuelve el identificador del parámetro implícito.
     */
-    string consultar_identificador() const {
-        return identificador;
-    }
+    string consultar_identificador() const;
 
     /** @brief Consultora de la memoria. 
 
         \pre El parámetro implícito debe estar inicializado.
         \post Devuelve la memoria del parámetro implícito.
     */
-    int consultar_memoria() {
-        return memoria;
-    }
+    int consultar_memoria() const;
 
     /** @brief Consultora de los procesos del parámetro implicito. 
 
         \pre El parámetro implícito debe estar inicializado.
         \post Devuelve los procesos del parámetro implícito.
     */
-    list<Proceso> consultar_procesos() {
-        return procesos;
-    }
+    // list<Proceso> consultar_procesos() const; --------------------------------------------------------------
 
     /** @brief Existencia de un determinado proceso en un procesador. 
 
@@ -122,14 +123,23 @@ class Procesador {
     */
     bool existe_proceso(int ident);
 
+    bool cabe_proceso(int mem);
+
+    void imprimir_huecos();
 
     private:
 
     string identificador;
-    int memoria;
-    list<Proceso> procesos;
-    vector<int> procesos_pendientes;
-    // list <int, int>, procesos Como mirar los huecos vacios. Ver foto.
+
+    int espacio_libre;
+    int espacio_total;
+
+    map<int, Proceso> memoria; // Llave: posicion del proceso  Valor: Proceso
+
+    map<int, int> ident_pos; // Llave: identificador del proceso  Valor: Posicion del proceso en memoria
+    
+    map<int, set<int>> huecos; // Llave: Valor de hueco  Valor: Posiciones donde se encuentra un hueco de ese valor 
+    // Lower_bound --> it a la siguiente posicion que mejor está para el hueco. Sino, .end();
     
 };
 #endif

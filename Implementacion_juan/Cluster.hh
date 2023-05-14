@@ -12,6 +12,7 @@
 #include "BinTree.hh"
 #include <iostream>
 #include <string>
+#include <set>
 #endif
 using namespace std;
 
@@ -41,9 +42,7 @@ class Cluster {
         respectivas conexiones y memorias. Si ya existía un clúster, este deja
         de existir.
     */
-    void configurar_cluster() {
-        leer_cluster(cluster);
-    }
+    void configurar_cluster();
 
     /** @brief Modificación del cluster
 
@@ -54,7 +53,7 @@ class Cluster {
         procesador se pondrá un nuevo clúster.
 
     */
-    void modificar_cluster(const string& ident, int& error);
+    // void modificar_cluster(const string& ident, int& error); -----------------------------------------------------------------
 
     /** @brief Añadir proceso a un procesador
 
@@ -97,8 +96,7 @@ class Cluster {
         \pre El parámetro implícito está inicializado.
         \post Si no existe un procesador en el clúster con el mismo identificador
         que <em>ident</em>, <em>error</em> >= 0. En caso contrario, <em>error</em> = -1 y se escriben los procesos
-        pertenecientes al procesador con identificador ident (en orden
-        creciente de memoria).
+        pertenecientes al procesador con identificador ident (en orden creciente de memoria).
 
     */
     void imprimir_procesador(const string& ident, int& error);
@@ -111,9 +109,7 @@ class Cluster {
         respectivos procesos.
 
     */
-    void imprimir_procesadores_cluster() {
-        imprimir_procesadores(cluster);
-    }
+    void imprimir_procesadores_cluster();
 
     /** @brief Escribe la estructura del clúster
 
@@ -121,9 +117,7 @@ class Cluster {
         \post Escribe la estructura de los procesadores del clúster.
 
     */
-    void imprimir_estructura_cluster() {
-        imprimir_estructura(cluster);
-    }
+    void imprimir_estructura_cluster();
 
     /** @brief Compacta la memoria de un procesador
 
@@ -134,7 +128,7 @@ class Cluster {
         sin huecos, sin solaparse y respetando el orden inicial).
 
     */
-    void compactar_memoria_procesador(const string& ident, int& error);
+    // void compactar_memoria_procesador(const string& ident, int& error); -------------------------------------------------
 
     /** @brief Compacta la memoria del clúster
 
@@ -144,7 +138,7 @@ class Cluster {
         sin huecos, sin solaparse y respetando el orden inicial).
 
     */
-    void compactar_memoria_cluster();
+    // void compactar_memoria_cluster(); --------------------------------------------------------------------
 
     /** @brief Recibe los procesos del la acción: <em>enviar_procesos_cluster</em>
 
@@ -153,55 +147,26 @@ class Cluster {
         <em>enviar_procesos_cluster</em>.
 
     */
-    void recibir_proceso(const Proceso& proc);
+    // void recibir_proceso(const Proceso& proc); --------------------------------------------------------------
+
+    BinTree<map<string, Procesador>::iterator> consultar_cluster() const;
+
+    void mirar_huecos(string identificador);
 
     private:
-    // Lee el BinTree de procesadores.
-    BinTree<Procesador> cluster;
-    void leer_cluster(BinTree<Procesador>& clust) {
-        string ident;
-        cin >> ident;
-        if (ident != "*") {
-            int mem;
-            cin >> mem;
-            Procesador procesador;
-            procesador.inicializar(ident, mem);
-            BinTree<Procesador> left, right;
-            leer_cluster(left);
-            leer_cluster(right);
-            clust = BinTree<Procesador>(procesador, left, right);
-        }
-    }
-    bool existe_procesador(BinTree<Procesador>& clust, const string& ident, Procesador& proces) {
 
-    }
-    void sumar_tiempo(BinTree<Procesador>& clust, int tiempo) {
+    BinTree<map<string, Procesador>::iterator> cluster;
 
-    }
-    void imprimir_procesadores(BinTree<Procesador>& clust) {
-        
-    }
-    void imprimir_estructura(BinTree<Procesador>& clust) {
-        if (clust.empty()) cout << " ";
-        else {
-            cout << "(";
-            cout << clust.value().consultar_identificador();
-            BinTree<Procesador> left = clust.left();
-            BinTree<Procesador> right = clust.right();
-            imprimir_procesadores(left);
-            imprimir_procesadores(right);
-            cout << ")";
-        }
-    }
-    void compactar_memoria_procesadores(BinTree<Procesador>& clust) {
+    map<string, Procesador> Procesadores;
 
-    }
-    bool se_puede_colocar(BinTree<Procesador>& clust, Proceso proc, list<Procesador>& proces) {
+    void leer_cluster(BinTree<map<string, Procesador>::iterator>& clust);
 
-    }
-    void colocar_proceso_procesador(BinTree<Procesador>& clust, Proceso proc, Procesador& proces) {
+    bool existe_procesador(const string& ident);
 
-    }
+    void imprimir_estructura(const BinTree<map<string, Procesador>::iterator>& clust);
+    // static void compactar_memoria_procesadores(BinTree<Procesador>& clust); -------------------------------------------------------------
+    // static bool se_puede_colocar(BinTree<Procesador>& clust, Proceso proc, list<Procesador>& proces); ---------------------------------------------
+    // static void colocar_proceso_procesador(BinTree<Procesador>& clust, Proceso proc, Procesador& proces); ----------------------------------------------
 
 };
 #endif
