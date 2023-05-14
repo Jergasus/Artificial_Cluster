@@ -6,7 +6,6 @@
 #define _CLUSTER_HH_
 #include "Procesador.hh"
 #include "Proceso.hh"
-#include "Area_Procesos.hh"
 
 #ifndef NO_DIAGRAM
 #include "BinTree.hh"
@@ -167,7 +166,7 @@ class Cluster {
 
     void imprimir_estructura(const BinTree<map<string, Procesador>::iterator>& clust);
 
-    void meter_proceso_cluster(const BinTree<map<string, Procesador>::iterator>& clust, map<string, Procesador>::iterator& procesador, int& hueco_min, int prof_min, int& prof_procesador, Proceso& proc);
+    void meter_proceso_cluster(const BinTree<map<string, Procesador>::iterator>& clust, map<string, Procesador>::iterator& procesador, int& hueco_min, int prof_actual, int& prof_procesador, Proceso& proc);
 
 };
 #endif

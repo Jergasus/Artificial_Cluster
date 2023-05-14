@@ -131,6 +131,7 @@ int main() {
             cin >> identificador;
             cout << "#" << comando << " " << identificador << endl;
             cluster.compactar_memoria_procesador(identificador, error);
+            if (error != -1) cout << errores[error] << endl;
         }
         else if (comando == "compactar_memoria_cluster" or comando == "cmc") {
             cout << "#" << comando << endl;

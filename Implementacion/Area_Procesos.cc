@@ -53,14 +53,18 @@ void Area_Procesos::alta_proceso_espera(const string& ident, const Proceso& proc
 
 void Area_Procesos::enviar_procesos_cluster(Cluster& clust, int n) {
     map<string, Priority>::iterator it = area_procesos.begin();
-    list<Proceso>::iterator is = (*it).second.procesos.begin();
     while (it != area_procesos.end() and n > 0) {
+        list<Proceso>::iterator is = (*it).second.procesos.begin();
         while (is != (*it).second.procesos.end() and n > 0) {
             if (clust.recibir_proceso((*is))) {
                 --n;
                 is = (*it).second.procesos.erase(is);
+                ++(*it).second.procesos_aceptados;
             }
-            else ++is;
+            else {
+                ++is;
+                ++(*it).second.procesos_rechazados;
+            }
         }
         ++it;
     }

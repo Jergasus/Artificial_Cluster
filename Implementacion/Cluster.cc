@@ -93,6 +93,7 @@ void Cluster::compactar_memoria_procesador(const string& ident, int& error) {
         error = -1;
         (*it).second.compactar_memoria();
     }
+    else error = 0;
 }
 
 void Cluster::compactar_memoria_cluster() {
@@ -113,28 +114,28 @@ bool Cluster::recibir_proceso(Proceso& proc) {
     else return false;
 }
 
-void Cluster::meter_proceso_cluster(const BinTree<map<string, Procesador>::iterator>& clust, map<string, Procesador>::iterator& procesador, int& hueco_min, int prof_min, int& prof_procesador, Proceso& proc) {
+void Cluster::meter_proceso_cluster(const BinTree<map<string, Procesador>::iterator>& clust, map<string, Procesador>::iterator& procesador, int& hueco_min, int prof_actual, int& prof_procesador, Proceso& proc) {
     if (not clust.empty()) {
-        meter_proceso_cluster(clust.right(), procesador, hueco_min, prof_min + 1, prof_procesador, proc);
+        meter_proceso_cluster(clust.right(), procesador, hueco_min, prof_actual + 1, prof_procesador, proc);
         int hueco_procesador = (*clust.value()).second.hueco_min(proc.consultar_memoria());
         if (not (*clust.value()).second.existe_proceso(proc.consultar_ident()) and hueco_procesador != 0) {
             if (hueco_min == -1 or hueco_procesador < hueco_min) {
                 hueco_min = hueco_procesador;
-                prof_procesador = prof_min;
+                prof_procesador = prof_actual;
                 procesador = clust.value();
             }
             else if (hueco_procesador == hueco_min) {
                 if ((*clust.value()).second.consultar_memoria() > (*procesador).second.consultar_memoria()) {
-                    prof_procesador = prof_min;
+                    prof_procesador = prof_actual;
                     procesador = clust.value();
                 }
-                else if ((*clust.value()).second.consultar_memoria() == (*procesador).second.consultar_memoria() and prof_procesador <= prof_min) {
-                    prof_procesador = prof_min;
+                else if ((*clust.value()).second.consultar_memoria() == (*procesador).second.consultar_memoria() and prof_procesador >= prof_actual) {
+                    prof_procesador = prof_actual;
                     procesador = clust.value();
                 }
             }
         }
-        meter_proceso_cluster(clust.left(), procesador, hueco_min, prof_min + 1, prof_procesador, proc);
+        meter_proceso_cluster(clust.left(), procesador, hueco_min, prof_actual + 1, prof_procesador, proc);
     }
 }
 
