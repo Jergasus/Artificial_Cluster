@@ -7,6 +7,8 @@
 #include <map>
 using namespace std;
 
+// ----------------------------------------------------------------------------
+// SALIDA DE ERRORES
 void fallos(map<int, string>& error) {
     error[0] = "error: no existe procesador";
     error[1] = "error: ya existe proceso";
@@ -18,22 +20,22 @@ void fallos(map<int, string>& error) {
     error[7] = "error: procesador con auxiliares";
     error[8] = "error: procesador con procesos";
 }
+// ----------------------------------------------------------------------------
 
 int main() {
     Cluster cluster;
-    Area_Procesos area_proceso;
+    Area_Procesos area_espera;
     map<int, string> errores;
-    fallos(errores);
+    fallos(errores); // Poner en el mapa de errores las frases correspondientes
     int error;
-    cluster.configurar_cluster();
-    area_proceso.inicializar();
+    cluster.configurar_cluster(); // Configurar el cluster inicial
+    area_espera.inicializar(); // Inicilizar la area de espera
     string comando;
     cin >> comando;
     while (comando != "fin") {
         if (comando == "configurar_cluster" or comando == "cc") {
             cout << "#" << comando << endl;
             cluster.configurar_cluster();
-
         }
         else if (comando == "modificar_cluster" or comando == "mc") {
             string ident;
@@ -46,7 +48,7 @@ int main() {
             string ident;
             cin >> ident;
             cout << "#" << comando << " " << ident << endl;
-            area_proceso.alta_prioridad(ident, error);
+            area_espera.alta_prioridad(ident, error);
             if (error != -1) cout << errores[error] << endl;
 
         }
@@ -54,7 +56,7 @@ int main() {
             string ident;
             cin >> ident;
             cout << "#" << comando << " " << ident << endl;
-            area_proceso.baja_prioridad(ident, error);
+            area_espera.baja_prioridad(ident, error);
             if (error != -1) cout << errores[error] << endl;
         }
         else if (comando == "alta_proceso_espera" or comando == "ape") {
@@ -64,7 +66,7 @@ int main() {
             cin >> ident_proceso >> memoria >> tiempo;
             Proceso proceso(ident_proceso, memoria, tiempo);
             cout << "#" << comando << " " << ident << " " << ident_proceso << endl;
-            area_proceso.alta_proceso_espera(ident, proceso, error);
+            area_espera.alta_proceso_espera(ident, proceso, error);
             if (error != -1) cout << errores[error] << endl;
             
         }
@@ -92,7 +94,7 @@ int main() {
             int num;
             cin >> num;
             cout << "#" << comando << " " << num << endl;
-            area_proceso.enviar_procesos_cluster(cluster, num);
+            area_espera.enviar_procesos_cluster(cluster, num);
         }
         else if (comando == "avanzar_tiempo" or comando == "at") {
             int t;
@@ -104,12 +106,12 @@ int main() {
             string identificador;
             cin >> identificador;
             cout << "#" << comando << " " << identificador << endl;
-            area_proceso.imprimir_prioridad(identificador, error);
+            area_espera.imprimir_prioridad(identificador, error);
             if (error != -1) cout << errores[error] << endl;
         }
         else if (comando == "imprimir_area_espera" or comando == "iae") {
             cout << "#" << comando << endl;
-            area_proceso.imprimir_area_espera();
+            area_espera.imprimir_area_espera();
         }
         else if (comando == "imprimir_procesador" or comando == "ipro") {
             string identificador;
@@ -140,7 +142,7 @@ int main() {
         else if (comando == "mirar_huecos" or comando == "h") {
             string identificador;
             cin >> identificador;
-            cout << "#" << comando << endl;
+            cout << "#" << comando << " " << identificador << endl;
             cluster.mirar_huecos(identificador);
         }
         cin >> comando;

@@ -118,7 +118,5 @@ class Area_Procesos {
         int procesos_rechazados = 0;
     };
     map<string, Priority> area_procesos;
-
-
 };
 #endif

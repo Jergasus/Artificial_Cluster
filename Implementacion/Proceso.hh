@@ -81,7 +81,7 @@ class Proceso {
      En caso contrario, devuelve false.
     */
 
-    void imprimir();
+    void imprimir() const;
  
     private:
 

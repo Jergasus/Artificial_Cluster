@@ -1,0 +1,347 @@
+\hypertarget{class_area___procesos}{}\doxysection{Referencia de la Clase Area\+\_\+\+Procesos}
+\label{class_area___procesos}\index{Area\_Procesos@{Area\_Procesos}}
+
+
+Representa una \mbox{\hyperlink{class_area___procesos}{Area\+\_\+\+Procesos}}.  
+
+
+\doxysubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_area___procesos_1_1_priority}{Priority}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_area___procesos_a7bb67af68388c2fc4ff1acf60ac915af}{Area\+\_\+\+Procesos}} ()
+\begin{DoxyCompactList}\small\item\em Creadora por defecto. Se ejecuta de forma automática al declarar una área de procesos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_area___procesos_a7495f7a3d4f520daa695ddd95a19a874}{inicializar}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa una área de procesos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_area___procesos_a0aa02e28bf4da5a3f649c821d30ed8c1}{alta\+\_\+prioridad}} (const string \&ident, int \&error)
+\begin{DoxyCompactList}\small\item\em Añadir una prioridad al área de procesos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_area___procesos_ae5af510b7f353e611bf1b5a8cf9e9fe1}{baja\+\_\+prioridad}} (const string \&ident, int \&error)
+\begin{DoxyCompactList}\small\item\em Eliminar una prioridad del área de procesos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_area___procesos_a6ad87a714cbced26befc1ed50e622801}{alta\+\_\+proceso\+\_\+espera}} (const string \&ident, const \mbox{\hyperlink{class_proceso}{Proceso}} \&proc, int \&error)
+\begin{DoxyCompactList}\small\item\em Añadir un proceso al área de procesos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_area___procesos_ad871992175b494d5187fc768ed5d2a91}{enviar\+\_\+procesos\+\_\+cluster}} (\mbox{\hyperlink{class_cluster}{Cluster}} \&clust, int n)
+\begin{DoxyCompactList}\small\item\em Enviar los procesos del área de procesos al clúster. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_area___procesos_a09ede7abc768f88e9938d0d03f3ddd50}{imprimir\+\_\+prioridad}} (const string \&ident, int \&error)
+\begin{DoxyCompactList}\small\item\em Escribe los procesos pendientes de una prioridad. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_area___procesos_af9989fdce6619bd90fa11ea0c988a4b0}{imprimir\+\_\+area\+\_\+espera}} ()
+\begin{DoxyCompactList}\small\item\em Escribe los procesos pendientes de todas las prioridades. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ string, \mbox{\hyperlink{struct_area___procesos_1_1_priority}{Priority}} $>$ \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\+\_\+procesos}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa una \mbox{\hyperlink{class_area___procesos}{Area\+\_\+\+Procesos}}. 
+
+Definición en la línea 23 del archivo Area\+\_\+\+Procesos.\+hh.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{class_area___procesos_a7bb67af68388c2fc4ff1acf60ac915af}\label{class_area___procesos_a7bb67af68388c2fc4ff1acf60ac915af}} 
+\index{Area\_Procesos@{Area\_Procesos}!Area\_Procesos@{Area\_Procesos}}
+\index{Area\_Procesos@{Area\_Procesos}!Area\_Procesos@{Area\_Procesos}}
+\doxysubsubsection{\texorpdfstring{Area\_Procesos()}{Area\_Procesos()}}
+{\footnotesize\ttfamily Area\+\_\+\+Procesos\+::\+Area\+\_\+\+Procesos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creadora por defecto. Se ejecuta de forma automática al declarar una área de procesos. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es una área de procesos (sin procesos). 
+\end{DoxyPostcond}
+
+
+Definición en la línea 6 del archivo Area\+\_\+\+Procesos.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6                              \{}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_area___procesos_a7495f7a3d4f520daa695ddd95a19a874}\label{class_area___procesos_a7495f7a3d4f520daa695ddd95a19a874}} 
+\index{Area\_Procesos@{Area\_Procesos}!inicializar@{inicializar}}
+\index{inicializar@{inicializar}!Area\_Procesos@{Area\_Procesos}}
+\doxysubsubsection{\texorpdfstring{inicializar()}{inicializar()}}
+{\footnotesize\ttfamily void Area\+\_\+\+Procesos\+::inicializar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inicializa una área de procesos. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito no está inicializado 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Duevuelve una área de procesos inicializada con propiedades. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 9 del archivo Area\+\_\+\+Procesos.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9                                 \{}
+\DoxyCodeLine{10     \textcolor{keywordtype}{int} n;}
+\DoxyCodeLine{11     cin >> n;}
+\DoxyCodeLine{12     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i) \{}
+\DoxyCodeLine{13         \textcolor{keywordtype}{string} llave;}
+\DoxyCodeLine{14         cin >> llave;}
+\DoxyCodeLine{15         \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}[llave];}
+\DoxyCodeLine{16     \}}
+\DoxyCodeLine{17 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_area___procesos_a0aa02e28bf4da5a3f649c821d30ed8c1}\label{class_area___procesos_a0aa02e28bf4da5a3f649c821d30ed8c1}} 
+\index{Area\_Procesos@{Area\_Procesos}!alta\_prioridad@{alta\_prioridad}}
+\index{alta\_prioridad@{alta\_prioridad}!Area\_Procesos@{Area\_Procesos}}
+\doxysubsubsection{\texorpdfstring{alta\_prioridad()}{alta\_prioridad()}}
+{\footnotesize\ttfamily void Area\+\_\+\+Procesos\+::alta\+\_\+prioridad (\begin{DoxyParamCaption}\item[{const string \&}]{ident,  }\item[{int \&}]{error }\end{DoxyParamCaption})}
+
+
+
+Añadir una prioridad al área de procesos. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Si existe una prioridad con el mismo identificador que {\itshape ident}, {\itshape error} $>$= 0. En caso contrario, {\itshape error} = -\/1 y se añade dicha prioridad al área de procesos. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 21 del archivo Area\+\_\+\+Procesos.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21                                                                   \{}
+\DoxyCodeLine{22     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}.find(ident) != \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}.end()) error = 5;}
+\DoxyCodeLine{23     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{24         error = -\/1;}
+\DoxyCodeLine{25         \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}[ident];}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_area___procesos_ae5af510b7f353e611bf1b5a8cf9e9fe1}\label{class_area___procesos_ae5af510b7f353e611bf1b5a8cf9e9fe1}} 
+\index{Area\_Procesos@{Area\_Procesos}!baja\_prioridad@{baja\_prioridad}}
+\index{baja\_prioridad@{baja\_prioridad}!Area\_Procesos@{Area\_Procesos}}
+\doxysubsubsection{\texorpdfstring{baja\_prioridad()}{baja\_prioridad()}}
+{\footnotesize\ttfamily void Area\+\_\+\+Procesos\+::baja\+\_\+prioridad (\begin{DoxyParamCaption}\item[{const string \&}]{ident,  }\item[{int \&}]{error }\end{DoxyParamCaption})}
+
+
+
+Eliminar una prioridad del área de procesos. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Si no existe una prioridad con el mismo identificador que {\itshape ident}, o dicha prioridad tiene procesos pendientes, {\itshape error} $>$= 0. En caso contrario, {\itshape error} = -\/1 y se elimina dicha prioridad del área de procesos. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 29 del archivo Area\+\_\+\+Procesos.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29                                                                   \{}
+\DoxyCodeLine{30     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}.find(ident) == \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}.end()) error = 4;}
+\DoxyCodeLine{31     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{32         \textcolor{keywordflow}{if} (not \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}[ident].procesos.empty()) error = 6;}
+\DoxyCodeLine{33         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{34             error = -\/1;}
+\DoxyCodeLine{35             \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}.erase(\mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}.find(ident));}
+\DoxyCodeLine{36         \}}
+\DoxyCodeLine{37     \}}
+\DoxyCodeLine{38 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_area___procesos_a6ad87a714cbced26befc1ed50e622801}\label{class_area___procesos_a6ad87a714cbced26befc1ed50e622801}} 
+\index{Area\_Procesos@{Area\_Procesos}!alta\_proceso\_espera@{alta\_proceso\_espera}}
+\index{alta\_proceso\_espera@{alta\_proceso\_espera}!Area\_Procesos@{Area\_Procesos}}
+\doxysubsubsection{\texorpdfstring{alta\_proceso\_espera()}{alta\_proceso\_espera()}}
+{\footnotesize\ttfamily void Area\+\_\+\+Procesos\+::alta\+\_\+proceso\+\_\+espera (\begin{DoxyParamCaption}\item[{const string \&}]{ident,  }\item[{const \mbox{\hyperlink{class_proceso}{Proceso}} \&}]{proc,  }\item[{int \&}]{error }\end{DoxyParamCaption})}
+
+
+
+Añadir un proceso al área de procesos. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Si no existe una prioridad con el mismo identificador que {\itshape ident}, o uno de los procesos de dicha prioridad tiene el mismo identificador que {\itshape proc}, {\itshape error} $>$= 0. En caso contrario, {\itshape error} = -\/1 y añadimos el proceso al área de procesos (con la prioridad de identificador {\itshape ident}). 
+\end{DoxyPostcond}
+
+
+Definición en la línea 40 del archivo Area\+\_\+\+Procesos.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40                                                                                             \{}
+\DoxyCodeLine{41     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}.find(ident) == \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}.end()) error = 4;}
+\DoxyCodeLine{42     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{43         \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};}
+\DoxyCodeLine{44         \textcolor{keywordflow}{for} (list<Proceso>::iterator it = \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}[ident].procesos.begin(); it != \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}[ident].procesos.end() and not found; ++it) \{}
+\DoxyCodeLine{45             \textcolor{keywordflow}{if} ((*it).consultar\_ident() == proc.\mbox{\hyperlink{class_proceso_aa16ca4c06da961d092a9a417f668ec14}{consultar\_ident}}()) \{}
+\DoxyCodeLine{46                 found = \textcolor{keyword}{true};}
+\DoxyCodeLine{47                 error = 1;}
+\DoxyCodeLine{48             \}}
+\DoxyCodeLine{49         \}}
+\DoxyCodeLine{50         \textcolor{keywordflow}{if} (not found) \{}
+\DoxyCodeLine{51             error = -\/1;}
+\DoxyCodeLine{52             \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}[ident].procesos.insert(\mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}[ident].procesos.end(), proc);}
+\DoxyCodeLine{53         \}}
+\DoxyCodeLine{54     \}}
+\DoxyCodeLine{55 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_area___procesos_ad871992175b494d5187fc768ed5d2a91}\label{class_area___procesos_ad871992175b494d5187fc768ed5d2a91}} 
+\index{Area\_Procesos@{Area\_Procesos}!enviar\_procesos\_cluster@{enviar\_procesos\_cluster}}
+\index{enviar\_procesos\_cluster@{enviar\_procesos\_cluster}!Area\_Procesos@{Area\_Procesos}}
+\doxysubsubsection{\texorpdfstring{enviar\_procesos\_cluster()}{enviar\_procesos\_cluster()}}
+{\footnotesize\ttfamily void Area\+\_\+\+Procesos\+::enviar\+\_\+procesos\+\_\+cluster (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_cluster}{Cluster}} \&}]{clust,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Enviar los procesos del área de procesos al clúster. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se intentan enviar {\itshape n} procesos pendientes al clúster. Dichos procesos se intentan colocar por prioridad. En caso que tengan la misma prioridad, se intentarán colocar por orden de antiguedad. El envío finalizará cuando\+:
+\begin{DoxyEnumerate}
+\item Los {\itshape n} procesos pendientes se hayan colocado.
+\item No queden procesos pendientes.
+\item Todos los procesos pendientes se hayan intentado colocar sin éxito. Los procesos que hayan sido rechazados volverán al área de procesos (con la misma prioridad). Si un proceso cabe en más de un procesador, se elige el que tenga el hueco más ajustado. Si hay un empate, es decir, que los huecos tienen el mismo tamaño, el proceso irá al procesador que tenga más memoria. Si el empate persiste, el proceso se colocará en el procesador más cercano a la raíz. Si el empate persiste, irá al procesador que esté más a la izquierda. 
+\end{DoxyEnumerate}
+\end{DoxyPostcond}
+
+
+Definición en la línea 57 del archivo Area\+\_\+\+Procesos.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57                                                                  \{}
+\DoxyCodeLine{58     map<string, Priority>::iterator it = \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}.begin();}
+\DoxyCodeLine{59     \textcolor{keywordflow}{while} (it != \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}.end() and n > 0) \{}
+\DoxyCodeLine{60         list<Proceso>::iterator is = (*it).second.procesos.begin();}
+\DoxyCodeLine{61         \textcolor{keywordflow}{while} (is != (*it).second.procesos.end() and n > 0) \{}
+\DoxyCodeLine{62             \textcolor{keywordflow}{if} (clust.\mbox{\hyperlink{class_cluster_a1bd67668284a97e72dad386f8de0a817}{recibir\_proceso}}((*is))) \{}
+\DoxyCodeLine{63                 -\/-\/n;}
+\DoxyCodeLine{64                 is = (*it).second.procesos.erase(is);}
+\DoxyCodeLine{65                 ++(*it).second.procesos\_aceptados;}
+\DoxyCodeLine{66             \}}
+\DoxyCodeLine{67             \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{68                 ++is;}
+\DoxyCodeLine{69                 ++(*it).second.procesos\_rechazados;}
+\DoxyCodeLine{70             \}}
+\DoxyCodeLine{71         \}}
+\DoxyCodeLine{72         ++it;}
+\DoxyCodeLine{73     \}}
+\DoxyCodeLine{74 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_area___procesos_a09ede7abc768f88e9938d0d03f3ddd50}\label{class_area___procesos_a09ede7abc768f88e9938d0d03f3ddd50}} 
+\index{Area\_Procesos@{Area\_Procesos}!imprimir\_prioridad@{imprimir\_prioridad}}
+\index{imprimir\_prioridad@{imprimir\_prioridad}!Area\_Procesos@{Area\_Procesos}}
+\doxysubsubsection{\texorpdfstring{imprimir\_prioridad()}{imprimir\_prioridad()}}
+{\footnotesize\ttfamily void Area\+\_\+\+Procesos\+::imprimir\+\_\+prioridad (\begin{DoxyParamCaption}\item[{const string \&}]{ident,  }\item[{int \&}]{error }\end{DoxyParamCaption})}
+
+
+
+Escribe los procesos pendientes de una prioridad. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Si no existe una prioridad con el mismo identificador que {\itshape ident}, {\itshape error} $>$= 0. En caso contrario, {\itshape error} = -\/1 y se escriben los procesos pendientes de la prioridad cuyo identificador es el mismo que {\itshape ident} (se escriben de más antiguo a más nuevo). Además, se escribe el número de procesos de la prioridad colocados correctamente en el clúster y el número de rechazados. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 76 del archivo Area\+\_\+\+Procesos.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{76                                                                       \{}
+\DoxyCodeLine{77     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}.find(ident) == \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}.end()) error = 4;}
+\DoxyCodeLine{78     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{79         error = -\/1;}
+\DoxyCodeLine{80         \textcolor{keywordflow}{for} (list<Proceso>::iterator it = \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}[ident].procesos.begin(); it != \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}[ident].procesos.end(); ++it) \{}
+\DoxyCodeLine{81             cout << (*it).consultar\_ident() << \textcolor{stringliteral}{" "} << (*it).consultar\_memoria() << \textcolor{stringliteral}{" "} << (*it).consultar\_tiempo() << endl;}
+\DoxyCodeLine{82         \}}
+\DoxyCodeLine{83         cout << \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}[ident].procesos\_aceptados << \textcolor{stringliteral}{" "} << \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}[ident].procesos\_rechazados << endl;}
+\DoxyCodeLine{84     \}}
+\DoxyCodeLine{85 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_area___procesos_af9989fdce6619bd90fa11ea0c988a4b0}\label{class_area___procesos_af9989fdce6619bd90fa11ea0c988a4b0}} 
+\index{Area\_Procesos@{Area\_Procesos}!imprimir\_area\_espera@{imprimir\_area\_espera}}
+\index{imprimir\_area\_espera@{imprimir\_area\_espera}!Area\_Procesos@{Area\_Procesos}}
+\doxysubsubsection{\texorpdfstring{imprimir\_area\_espera()}{imprimir\_area\_espera()}}
+{\footnotesize\ttfamily void Area\+\_\+\+Procesos\+::imprimir\+\_\+area\+\_\+espera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Escribe los procesos pendientes de todas las prioridades. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se escriben todos los procesos de todas las prioridades del área de procesos (en orden creciente de prioridad). 
+\end{DoxyPostcond}
+
+
+Definición en la línea 87 del archivo Area\+\_\+\+Procesos.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{87                                          \{}
+\DoxyCodeLine{88     \textcolor{keywordflow}{for} (map<string, Priority>::iterator it = \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}.begin(); it != \mbox{\hyperlink{class_area___procesos_a2f8290d9193442e850c977606788c27d}{area\_procesos}}.end(); ++it) \{}
+\DoxyCodeLine{89         cout << (*it).first << endl;}
+\DoxyCodeLine{90         \textcolor{keywordflow}{for} (list<Proceso>::iterator is = (*it).second.procesos.begin(); is != (*it).second.procesos.end(); ++is) \{}
+\DoxyCodeLine{91             (*is).imprimir();}
+\DoxyCodeLine{92         \}}
+\DoxyCodeLine{93         cout << (*it).second.procesos\_aceptados << \textcolor{stringliteral}{" "} << (*it).second.procesos\_rechazados << endl;}
+\DoxyCodeLine{94     \}}
+\DoxyCodeLine{95 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{class_area___procesos_a2f8290d9193442e850c977606788c27d}\label{class_area___procesos_a2f8290d9193442e850c977606788c27d}} 
+\index{Area\_Procesos@{Area\_Procesos}!area\_procesos@{area\_procesos}}
+\index{area\_procesos@{area\_procesos}!Area\_Procesos@{Area\_Procesos}}
+\doxysubsubsection{\texorpdfstring{area\_procesos}{area\_procesos}}
+{\footnotesize\ttfamily map$<$string, \mbox{\hyperlink{struct_area___procesos_1_1_priority}{Priority}}$>$ Area\+\_\+\+Procesos\+::area\+\_\+procesos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea 120 del archivo Area\+\_\+\+Procesos.\+hh.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_area___procesos_8hh}{Area\+\_\+\+Procesos.\+hh}}\item 
+\mbox{\hyperlink{_area___procesos_8cc}{Area\+\_\+\+Procesos.\+cc}}\end{DoxyCompactItemize}

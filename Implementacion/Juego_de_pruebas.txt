@@ -1,0 +1,98 @@
+proc1 10 proc11 20 proc111 15 proc1111 10 * * proc1112 20 * * proc112 20 proc1113
+10 * * * proc22 20 proc221 10 * * proc222 20 proc2221 10 * *
+proc2222 15 * *
+1
+1
+imprimir_estructura_cluster
+imprimir_area_espera
+imprimir_procesadores_cluster
+app proc9 11 20 15
+ipro proc1
+app proc1 2 10 7
+ipro proc1
+app proc1 3 1 8
+ipro proc1
+app proc1 2 1 9
+ipro proc1
+bpp proc1 2
+ipro proc1
+app proc1 3 7 9
+ipro proc1
+
+comando_erróneo
+
+bpp proc9 3
+ipro proc1
+bpp proc1 4
+ipro proc1
+bpp proc1 3
+ipro proc1
+
+comando_erróneo
+
+app proc1 1 10 5
+cmp proc1
+ipro proc1
+bpp proc1 1
+cmp proc1
+ipro proc1
+cmp proc1
+ipro proc1
+app proc1 1 1 5
+app proc1 2 9 6
+bpp proc1 1
+ipro proc1
+cmp proc1
+ipro proc1
+bpp proc1 2
+app proc1 1 9 9
+cmp proc1
+ipro proc1
+bpp proc1 1
+app proc1 1 2 5
+app proc1 2 2 4
+app proc1 3 4 5
+app proc1 4 1 6
+app proc1 5 1 7
+bpp proc1 2
+bpp proc1 4
+ipro proc1
+cmp proc1
+ipro proc1
+
+comando_erróneo
+
+ipc
+at 100
+ipc
+app proc1 1 10 5
+app proc111 1 5 5
+cmp proc111
+app proc112 1 5 6
+app proc112 2 15 7
+bpp proc112 1
+app proc22 1 19 9
+app proc221 1 2 5
+app proc221 2 2 4
+app proc221 3 4 5
+app proc221 4 1 6
+app proc221 5 1 7
+bpp proc221 2
+bpp proc221 4
+cmc
+ipc
+
+comando_erróneo
+
+at 5
+ipc
+app proc1 1 5 6
+ipc
+bpp proc111 1
+ipc
+bpp proc112 2
+ipc
+cmc
+ipc
+
+fin

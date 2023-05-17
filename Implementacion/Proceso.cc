@@ -29,6 +29,6 @@ int Proceso::avanzar_tiempo(int time) {
     return tiempo;
 }
 
-void Proceso::imprimir() {
+void Proceso::imprimir() const {
     cout << identificador << " " << memoria << " " << tiempo << endl;
 }

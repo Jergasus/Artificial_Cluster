@@ -7,7 +7,6 @@
 #include "Proceso.hh"
 
 #ifndef NO_DIAGRAM
-#include <list>
 #include <map>
 #include <string>
 #include <iostream>
@@ -54,15 +53,6 @@ class Procesador {
     */
     void avanzar_tiempo(int time);
 
-    /** @brief Movimiento de procesos en la memoria del procesador.
-
-        \pre El parámetro implícito está inicializado.
-        \post Se mueven los procesos hacia el principio de la memoria
-        del parámetro implícito (sin huecos, sin solaparse y respetando el orden inicial).
-
-    */
-    // void mover_procesos_memoria(); -------------------------------------------------------------
-
     /** @brief Escritura de los procesos de un procesador. 
 
         \pre El parámetro implícito debe estar inicializado.
@@ -77,7 +67,19 @@ class Procesador {
     */
     void introducir_proceso(const Proceso& proc);
 
+    /** @brief Ir al siguiente proceso.
+
+        \pre El parámetro implícito debe estar inicializado.
+        \post Devuelve la posicion del siguiente proceso en la memoria del procesador.
+    */
+
     int siguiente_proceso(map<int, Proceso>::const_iterator it);
+
+    /** @brief Recalcula huecos
+
+        \pre El parámetro implícito debe estar inicializado.
+        \post Recalcula los huecos de la memoria del procesador.
+    */
 
     void recalcular_huecos();
 
@@ -87,6 +89,53 @@ class Procesador {
         \post Elimina un proceso con el identificador <em>ident_proceso</em> del parámetro implícito.
     */
     void eliminar_proceso(int ident_proceso);
+
+    /** @brief Existencia de un determinado proceso en un procesador. 
+
+        \pre El parámetro implícito debe estar inicializado.
+        \post Devuelve true si el proceso con el identificador <em>ident</em> existe
+        en el parámetro implícito. En caso contrario, devuelve false.
+    */
+    bool existe_proceso(int ident);
+
+    /** @brief Mirar si cabe un proceso en el procesador. 
+
+        \pre El parámetro implícito debe estar inicializado.
+        \post Devuelve true si el proceso con memoria mem cabe en el procesador.
+        En caso contrario, devuelve false.
+    */
+
+    bool cabe_proceso(int mem);
+
+    /** @brief Existencia de procesos en el procesador 
+
+        \pre El parámetro implícito debe estar inicializado.
+        \post Devuelve true si el procesador no tiene procesos. En caso contrario,
+        devuelve false.
+    */
+
+    bool no_tiene_procesos();
+
+    /** @brief Calcular el hueco min.
+
+        \pre El parámetro implícito debe estar inicializado.
+        \post Si existe un hueco en la memoria del procesador tal que el proceso
+        con memoria "mem" se podria introducir, devuelve el valor de dicho hueco.
+        En caso contrario, devuelve 0.
+    */
+
+    int hueco_min(int mem);
+
+    /** @brief Compacta la memoria de un procesador.
+
+        \pre El parámetro implícito debe estar inicializado.
+        \post Se desplazan todos los procesos hacia el principio de la memoria
+        del procesador (sin huecos, sin solaparse y respetando el orden inicial).
+    */
+
+    void compactar_memoria();
+
+    void imprimir_huecos();
 
     //Consultoras -------------------------------------------------------------
 
@@ -104,31 +153,6 @@ class Procesador {
     */
     int consultar_memoria() const;
 
-    /** @brief Consultora de los procesos del parámetro implicito. 
-
-        \pre El parámetro implícito debe estar inicializado.
-        \post Devuelve los procesos del parámetro implícito.
-    */
-    // list<Proceso> consultar_procesos() const; --------------------------------------------------------------
-
-    /** @brief Existencia de un determinado proceso en un procesador. 
-
-        \pre El parámetro implícito debe estar inicializado.
-        \post Devuelve true si el proceso con el identificador <em>ident</em> existe
-        en el parámetro implícito. En caso contrario, devuelve false.
-    */
-    bool existe_proceso(int ident);
-
-    bool cabe_proceso(int mem);
-
-    bool no_tiene_procesos();
-
-    int hueco_min(int mem);
-
-    void imprimir_huecos();
-
-    void compactar_memoria();
-
     private:
 
     string identificador;
@@ -141,7 +165,7 @@ class Procesador {
     map<int, int> ident_pos; // Llave: identificador del proceso  Valor: Posicion del proceso en memoria
     
     map<int, set<int>> huecos; // Llave: Valor de hueco  Valor: Posiciones donde se encuentra un hueco de ese valor 
-    // Lower_bound --> it a la siguiente posicion que mejor está para el hueco. Sino, .end();
+    // Lower_bound --> it a la posicion que mejor está para el hueco. Sino, .end();
     
 };
 #endif

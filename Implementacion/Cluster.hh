@@ -10,8 +10,8 @@
 #ifndef NO_DIAGRAM
 #include "BinTree.hh"
 #include <iostream>
+#include <map>
 #include <string>
-#include <set>
 #endif
 using namespace std;
 
@@ -148,6 +148,8 @@ class Cluster {
     */
     bool recibir_proceso(Proceso& proc);
 
+    // Mira los huecos de un procesador con identificador "identificador"
+
     void mirar_huecos(string identificador);
 
     private:
@@ -156,17 +158,32 @@ class Cluster {
 
     map<string, Procesador> Procesadores;
 
+   /*  Se usa en modificar cluster. Su uso se basa en descartar el bintree auxiliar creado a la hora de llamar a dicha funcion,
+    en caso que no existe un procesador o el procesador tenga procesos. Gracias a esta, no hace falta crear un arbol aux,
+    haciendo que nos ahorremos memoria. */
+
     void descartar_bintree_aux();
 
-    void recorrer_cluster(BinTree<map<string, Procesador>::iterator>& clust, const string& ident, int& error);
+    /* Se una en modificar clsuter. Esta funcion se dedica a mirar por todo el arbol en busca del procesador
+    con  identificador "ident". En el momento que lo encuentra, mira si el left y el right son vacíos, para poder
+    empezar un nuevo arbol desde ahí. Si esta comprovación es cierta, pondrá en la posicion de ese procesador 
+    el nuevo arbol */
+
+    void modificar_cluster_aux(BinTree<map<string, Procesador>::iterator>& clust, const string& ident, int& error);
+
+    /* Esta funcion se utiliza principalmente para leer un cluster. */
 
     void leer_cluster(BinTree<map<string, Procesador>::iterator>& clust);
-    
-    bool existe_procesador(const string& ident);
+
+    /* Esta funcion lo que hace es imprimir la estructura del cluster, con los espacios vacíos y los procesadores */
 
     void imprimir_estructura(const BinTree<map<string, Procesador>::iterator>& clust);
 
-    void meter_proceso_cluster(const BinTree<map<string, Procesador>::iterator>& clust, map<string, Procesador>::iterator& procesador, int& hueco_min, int prof_actual, int& prof_procesador, Proceso& proc);
+    /* Esta es la funcion recursiva de enviar procesos cluster. Esta lo que hace es buscar el procesador más apto para meter el Proceso
+    proc en él. Para ello, se tienen que seguir una serie de condiciones: 1. El que tenga el hueco más ajustado.
+    2. El que tenga más memoria. 3. El que esté más cerca de la raíz. 4. El que esté más a la izquierda */
+
+    void procesador_apto(const BinTree<map<string, Procesador>::iterator>& clust, map<string, Procesador>::iterator& procesador, int& hueco_min, int prof_actual, int& prof_procesador, Proceso& proc);
 
 };
 #endif
