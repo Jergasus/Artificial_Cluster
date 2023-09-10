@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto PRO2: Simulación del rendimiento de procesadores interconectados: Fichero Fuente Cluster.cc</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Proyecto PRO2: Simulación del rendimiento de procesadores interconectados
+   &#160;<span id="projectnumber">Jesús José García Ayala</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Cluster.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Cluster_8cc.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Cluster_8hh.html">Cluster.hh</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef NO_DIAGRAM</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// Constructoras --------------------------------------------------------------</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classCluster.html#aee7feb1d599d4c8fda6c3ee83e86ba81">   13</a></span>&#160;<a class="code" href="classCluster.html#aee7feb1d599d4c8fda6c3ee83e86ba81">Cluster::Cluster</a>() {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// Modificadoras --------------------------------------------------------------</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classCluster.html#a84f9daea57e2773ab5766ef82d2a1def">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCluster.html#a84f9daea57e2773ab5766ef82d2a1def">Cluster::configurar_cluster</a>() {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    Procesadores = map&lt;string, Procesador&gt;();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    leer_cluster(cluster);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classCluster.html#ae4f6cb37cfa684b90597ac04bfd36655">   23</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCluster.html#ae4f6cb37cfa684b90597ac04bfd36655">Cluster::modificar_cluster</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; ident, <span class="keywordtype">int</span>&amp; error) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    map&lt;string, Procesador&gt;::iterator it = Procesadores.find(ident);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">if</span> (it == Procesadores.end()) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        error = 0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        descartar_bintree_aux();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span> (not it-&gt;second.no_tiene_procesos()) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        error = 8;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        descartar_bintree_aux();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    error = 7;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    modificar_cluster_aux(cluster, ident, error);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classCluster.html#a5786b35aeee3dbdf3d03928e40949ab9">   39</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCluster.html#a5786b35aeee3dbdf3d03928e40949ab9">Cluster::alta_proceso_procesador</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; ident, <span class="keyword">const</span> <a class="code" href="classProceso.html">Proceso</a>&amp; proc, <span class="keywordtype">int</span>&amp; error) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    map&lt;string, Procesador&gt;::iterator it = Procesadores.find(ident);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (it == Procesadores.end()) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        error = 0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (it-&gt;second.existe_proceso(proc.<a class="code" href="classProceso.html#aa16ca4c06da961d092a9a417f668ec14">consultar_ident</a>())) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        error = 1;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (not it-&gt;second.cabe_proceso(proc.<a class="code" href="classProceso.html#a55976a19b8d909276c62e8be10036df5">consultar_memoria</a>())) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        error = 2;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    error = -1;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    it-&gt;second.introducir_proceso(proc);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classCluster.html#ad27c24f93d82a18964a7170c44c4d696">   57</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCluster.html#ad27c24f93d82a18964a7170c44c4d696">Cluster::baja_proceso_procesador</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; ident, <span class="keywordtype">int</span> ident_proc, <span class="keywordtype">int</span>&amp; error) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    map&lt;string, Procesador&gt;::iterator it = Procesadores.find(ident);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> (it == Procesadores.end()) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        error = 0;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span> (not it-&gt;second.existe_proceso(ident_proc)) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        error = 3;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    error = -1;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    it-&gt;second.eliminar_proceso(ident_proc);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classCluster.html#a3b93301a46cfa8cadf8d0121e234c386">   71</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCluster.html#a3b93301a46cfa8cadf8d0121e234c386">Cluster::avanzar_tiempo</a>(<span class="keywordtype">int</span> t) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">for</span> (map&lt;string, Procesador&gt;::iterator it = Procesadores.begin(); it != Procesadores.end(); ++it) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        (*it).second.avanzar_tiempo(t);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classCluster.html#a545cc70fcdb0857afb851069e63ea1de">   77</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCluster.html#a545cc70fcdb0857afb851069e63ea1de">Cluster::imprimir_procesador</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; ident, <span class="keywordtype">int</span>&amp; error) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    map&lt;string, Procesador&gt;::iterator it = Procesadores.find(ident);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> (it != Procesadores.end()) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        error = -1;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        it-&gt;second.escribir_procesos();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">else</span> error = 0;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classCluster.html#ab8a628286f8a977063ea4395d9a422bf">   86</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCluster.html#ab8a628286f8a977063ea4395d9a422bf">Cluster::imprimir_procesadores_cluster</a>() {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">for</span> (map&lt;string, Procesador&gt;::iterator it = Procesadores.begin(); it != Procesadores.end(); ++it) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        cout &lt;&lt; it-&gt;first &lt;&lt; endl;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        it-&gt;second.escribir_procesos();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classCluster.html#a948d7075f9b30c2885ce804029e5ab25">   93</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCluster.html#a948d7075f9b30c2885ce804029e5ab25">Cluster::imprimir_estructura_cluster</a>() {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    imprimir_estructura(cluster);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    cout &lt;&lt; endl;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classCluster.html#a5bedc8558ba975721788b52e7aaef629">   98</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCluster.html#a5bedc8558ba975721788b52e7aaef629">Cluster::compactar_memoria_procesador</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; ident, <span class="keywordtype">int</span>&amp; error) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    map&lt;string, Procesador&gt;::iterator it = Procesadores.find(ident);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (it != Procesadores.end()) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        error = -1;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        it-&gt;second.compactar_memoria();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">else</span> error = 0;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classCluster.html#a7b9ae511df4a6465f4e191df6564fd77">  107</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCluster.html#a7b9ae511df4a6465f4e191df6564fd77">Cluster::compactar_memoria_cluster</a>() {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">for</span> (map&lt;string, Procesador&gt;::iterator it = Procesadores.begin(); it != Procesadores.end(); ++it) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        it-&gt;second.compactar_memoria();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classCluster.html#a1bd67668284a97e72dad386f8de0a817">  113</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classCluster.html#a1bd67668284a97e72dad386f8de0a817">Cluster::recibir_proceso</a>(<a class="code" href="classProceso.html">Proceso</a>&amp; proc) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">int</span> hueco_min = -1;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">int</span> prof_procesador = -1;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    map&lt;string, Procesador&gt;::iterator it = Procesadores.end();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    procesador_apto(cluster, it, hueco_min, 0, prof_procesador, proc);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">if</span> (hueco_min != -1) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        it-&gt;second.introducir_proceso(proc);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">// PRIVADAS -------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classCluster.html#ae5c0f7b9da451abf36593586b728f4ab">  128</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCluster.html#ae5c0f7b9da451abf36593586b728f4ab">Cluster::procesador_apto</a>(<span class="keyword">const</span> BinTree&lt;map&lt;string, Procesador&gt;::iterator&gt;&amp; clust, map&lt;string, Procesador&gt;::iterator&amp; procesador, <span class="keywordtype">int</span>&amp; hueco_min, <span class="keywordtype">int</span> prof_actual, <span class="keywordtype">int</span>&amp; prof_procesador, <a class="code" href="classProceso.html">Proceso</a>&amp; proc) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">if</span> (not clust.empty()) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        procesador_apto(clust.right(), procesador, hueco_min, prof_actual + 1, prof_procesador, proc);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordtype">int</span> hueco_procesador = clust.value()-&gt;second.hueco_min(proc.<a class="code" href="classProceso.html#a55976a19b8d909276c62e8be10036df5">consultar_memoria</a>());</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">if</span> (not clust.value()-&gt;second.existe_proceso(proc.<a class="code" href="classProceso.html#aa16ca4c06da961d092a9a417f668ec14">consultar_ident</a>()) and hueco_procesador != 0) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordflow">if</span> (hueco_min == -1 or hueco_procesador &lt; hueco_min) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                hueco_min = hueco_procesador;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                prof_procesador = prof_actual;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                procesador = clust.value();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (hueco_procesador == hueco_min) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                <span class="keywordflow">if</span> (clust.value()-&gt;second.consultar_memoria() &gt; procesador-&gt;second.consultar_memoria()) {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                    prof_procesador = prof_actual;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                    procesador = clust.value();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (clust.value()-&gt;second.consultar_memoria() == procesador-&gt;second.consultar_memoria() and prof_procesador &gt;= prof_actual) {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                    prof_procesador = prof_actual;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                    procesador = clust.value();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        procesador_apto(clust.left(), procesador, hueco_min, prof_actual + 1, prof_procesador, proc);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="classCluster.html#a6110b353d898e9d2f2dfeef368040c22">  153</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCluster.html#a6110b353d898e9d2f2dfeef368040c22">Cluster::leer_cluster</a>(BinTree&lt;map&lt;string, Procesador&gt;::iterator&gt;&amp; clust) {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">string</span> ident;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    cin &gt;&gt; ident;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">if</span> (ident != <span class="stringliteral">&quot;*&quot;</span>) {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordtype">int</span> mem;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        cin &gt;&gt; mem;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <a class="code" href="classProcesador.html">Procesador</a> procesador;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        procesador.<a class="code" href="classProcesador.html#a26af908b89b133a7eb2e75c445e86ab0">inicializar</a>(ident, mem);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        map&lt;string, Procesador&gt;::iterator it = Procesadores.insert(pair&lt;string, Procesador&gt;(ident, procesador)).first;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        BinTree&lt;map&lt;string, Procesador&gt;::iterator&gt; left, right;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        leer_cluster(left);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        leer_cluster(right);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        clust = BinTree&lt;map&lt;string, Procesador&gt;::iterator&gt;(it, left, right);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="classCluster.html#a908f0c2be4d7c5210015a9d5802e5b85">  169</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCluster.html#a908f0c2be4d7c5210015a9d5802e5b85">Cluster::modificar_cluster_aux</a>(BinTree&lt;map&lt;string, Procesador&gt;::iterator&gt;&amp; clust, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; ident, <span class="keywordtype">int</span>&amp; error) {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">if</span> (not clust.empty()) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">if</span> ((*clust.value()).first == ident) {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordflow">if</span> (clust.right().empty() and clust.left().empty()) {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                error = -1;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                Procesadores.erase(ident);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                BinTree&lt;map&lt;string, Procesador&gt;::iterator&gt; clust_aux;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                leer_cluster(clust_aux);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                clust = BinTree&lt;map&lt;string, Procesador&gt;::iterator&gt;(clust_aux.value(), clust_aux.left(), clust_aux.right());</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        BinTree&lt;map&lt;string, Procesador&gt;::iterator&gt; left = clust.left();</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        BinTree&lt;map&lt;string, Procesador&gt;::iterator&gt; right = clust.right();</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        modificar_cluster_aux(left, ident, error);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        modificar_cluster_aux(right, ident, error);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        clust = BinTree&lt;map&lt;string, Procesador&gt;::iterator&gt;(clust.value(), left, right);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="classCluster.html#a8c8b89786e54f5fedd1bb600f666071c">  188</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCluster.html#a8c8b89786e54f5fedd1bb600f666071c">Cluster::descartar_bintree_aux</a>() {</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">string</span> ident;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    cin &gt;&gt; ident;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">if</span> (ident != <span class="stringliteral">&quot;*&quot;</span>) {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordtype">int</span> mem;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        cin &gt;&gt; mem;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        descartar_bintree_aux(); <span class="comment">// Left</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        descartar_bintree_aux(); <span class="comment">// Right</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;}</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="classCluster.html#aec96799cd68357767c81cb788cd4129b">  199</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classCluster.html#aec96799cd68357767c81cb788cd4129b">Cluster::imprimir_estructura</a>(<span class="keyword">const</span> BinTree&lt;map&lt;string, Procesador&gt;::iterator&gt;&amp; clust) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">if</span> (clust.empty()) cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;(&quot;</span>;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        cout &lt;&lt; clust.value()-&gt;first;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        imprimir_estructura(clust.left());</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        imprimir_estructura(clust.right());</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+<div class="ttc" id="aCluster_8hh_html"><div class="ttname"><a href="Cluster_8hh.html">Cluster.hh</a></div><div class="ttdoc">Especificación de la clase Cluster.</div></div>
+<div class="ttc" id="aclassCluster_html_a1bd67668284a97e72dad386f8de0a817"><div class="ttname"><a href="classCluster.html#a1bd67668284a97e72dad386f8de0a817">Cluster::recibir_proceso</a></div><div class="ttdeci">bool recibir_proceso(Proceso &amp;proc)</div><div class="ttdoc">Recibe los procesos del la acción: enviar_procesos_cluster</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00113">Cluster.cc:113</a></div></div>
+<div class="ttc" id="aclassCluster_html_a3b93301a46cfa8cadf8d0121e234c386"><div class="ttname"><a href="classCluster.html#a3b93301a46cfa8cadf8d0121e234c386">Cluster::avanzar_tiempo</a></div><div class="ttdeci">void avanzar_tiempo(int t)</div><div class="ttdoc">Avanzar t unidades de tiempo en los procesadores del clúster.</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00071">Cluster.cc:71</a></div></div>
+<div class="ttc" id="aclassCluster_html_a545cc70fcdb0857afb851069e63ea1de"><div class="ttname"><a href="classCluster.html#a545cc70fcdb0857afb851069e63ea1de">Cluster::imprimir_procesador</a></div><div class="ttdeci">void imprimir_procesador(const string &amp;ident, int &amp;error)</div><div class="ttdoc">Escribir los procesos de un procesador.</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00077">Cluster.cc:77</a></div></div>
+<div class="ttc" id="aclassCluster_html_a5786b35aeee3dbdf3d03928e40949ab9"><div class="ttname"><a href="classCluster.html#a5786b35aeee3dbdf3d03928e40949ab9">Cluster::alta_proceso_procesador</a></div><div class="ttdeci">void alta_proceso_procesador(const string &amp;ident, const Proceso &amp;proc, int &amp;error)</div><div class="ttdoc">Añadir proceso a un procesador.</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00039">Cluster.cc:39</a></div></div>
+<div class="ttc" id="aclassCluster_html_a5bedc8558ba975721788b52e7aaef629"><div class="ttname"><a href="classCluster.html#a5bedc8558ba975721788b52e7aaef629">Cluster::compactar_memoria_procesador</a></div><div class="ttdeci">void compactar_memoria_procesador(const string &amp;ident, int &amp;error)</div><div class="ttdoc">Compacta la memoria de un procesador.</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00098">Cluster.cc:98</a></div></div>
+<div class="ttc" id="aclassCluster_html_a6110b353d898e9d2f2dfeef368040c22"><div class="ttname"><a href="classCluster.html#a6110b353d898e9d2f2dfeef368040c22">Cluster::leer_cluster</a></div><div class="ttdeci">void leer_cluster(BinTree&lt; map&lt; string, Procesador &gt;::iterator &gt; &amp;clust)</div><div class="ttdoc">Lee un cluster.</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00153">Cluster.cc:153</a></div></div>
+<div class="ttc" id="aclassCluster_html_a7b9ae511df4a6465f4e191df6564fd77"><div class="ttname"><a href="classCluster.html#a7b9ae511df4a6465f4e191df6564fd77">Cluster::compactar_memoria_cluster</a></div><div class="ttdeci">void compactar_memoria_cluster()</div><div class="ttdoc">Compacta la memoria del clúster.</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00107">Cluster.cc:107</a></div></div>
+<div class="ttc" id="aclassCluster_html_a84f9daea57e2773ab5766ef82d2a1def"><div class="ttname"><a href="classCluster.html#a84f9daea57e2773ab5766ef82d2a1def">Cluster::configurar_cluster</a></div><div class="ttdeci">void configurar_cluster()</div><div class="ttdoc">Configuración/Inicialización de un cluster.</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00019">Cluster.cc:19</a></div></div>
+<div class="ttc" id="aclassCluster_html_a8c8b89786e54f5fedd1bb600f666071c"><div class="ttname"><a href="classCluster.html#a8c8b89786e54f5fedd1bb600f666071c">Cluster::descartar_bintree_aux</a></div><div class="ttdeci">void descartar_bintree_aux()</div><div class="ttdoc">Descartar un cluster en la funcion modificar_cluster(mc)</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00188">Cluster.cc:188</a></div></div>
+<div class="ttc" id="aclassCluster_html_a908f0c2be4d7c5210015a9d5802e5b85"><div class="ttname"><a href="classCluster.html#a908f0c2be4d7c5210015a9d5802e5b85">Cluster::modificar_cluster_aux</a></div><div class="ttdeci">void modificar_cluster_aux(BinTree&lt; map&lt; string, Procesador &gt;::iterator &gt; &amp;clust, const string &amp;ident, int &amp;error)</div><div class="ttdoc">Modifica un cluster auxiliar.</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00169">Cluster.cc:169</a></div></div>
+<div class="ttc" id="aclassCluster_html_a948d7075f9b30c2885ce804029e5ab25"><div class="ttname"><a href="classCluster.html#a948d7075f9b30c2885ce804029e5ab25">Cluster::imprimir_estructura_cluster</a></div><div class="ttdeci">void imprimir_estructura_cluster()</div><div class="ttdoc">Escribe la estructura del clúster.</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00093">Cluster.cc:93</a></div></div>
+<div class="ttc" id="aclassCluster_html_ab8a628286f8a977063ea4395d9a422bf"><div class="ttname"><a href="classCluster.html#ab8a628286f8a977063ea4395d9a422bf">Cluster::imprimir_procesadores_cluster</a></div><div class="ttdeci">void imprimir_procesadores_cluster()</div><div class="ttdoc">Escribir los procesadores del clúster.</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00086">Cluster.cc:86</a></div></div>
+<div class="ttc" id="aclassCluster_html_ad27c24f93d82a18964a7170c44c4d696"><div class="ttname"><a href="classCluster.html#ad27c24f93d82a18964a7170c44c4d696">Cluster::baja_proceso_procesador</a></div><div class="ttdeci">void baja_proceso_procesador(const string &amp;ident, int ident_proc, int &amp;error)</div><div class="ttdoc">Eliminar proceso de un procesador.</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00057">Cluster.cc:57</a></div></div>
+<div class="ttc" id="aclassCluster_html_ae4f6cb37cfa684b90597ac04bfd36655"><div class="ttname"><a href="classCluster.html#ae4f6cb37cfa684b90597ac04bfd36655">Cluster::modificar_cluster</a></div><div class="ttdeci">void modificar_cluster(const string &amp;ident, int &amp;error)</div><div class="ttdoc">Modificación del cluster.</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00023">Cluster.cc:23</a></div></div>
+<div class="ttc" id="aclassCluster_html_ae5c0f7b9da451abf36593586b728f4ab"><div class="ttname"><a href="classCluster.html#ae5c0f7b9da451abf36593586b728f4ab">Cluster::procesador_apto</a></div><div class="ttdeci">void procesador_apto(const BinTree&lt; map&lt; string, Procesador &gt;::iterator &gt; &amp;clust, map&lt; string, Procesador &gt;::iterator &amp;procesador, int &amp;hueco_min, int prof_actual, int &amp;prof_procesador, Proceso &amp;proc)</div><div class="ttdoc">Mira el procesador apto para recibir el proceso en la función: enviar_procesos_cluster(epc)</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00128">Cluster.cc:128</a></div></div>
+<div class="ttc" id="aclassCluster_html_aec96799cd68357767c81cb788cd4129b"><div class="ttname"><a href="classCluster.html#aec96799cd68357767c81cb788cd4129b">Cluster::imprimir_estructura</a></div><div class="ttdeci">void imprimir_estructura(const BinTree&lt; map&lt; string, Procesador &gt;::iterator &gt; &amp;clust)</div><div class="ttdoc">Imprime la estructura de un cluster.</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00199">Cluster.cc:199</a></div></div>
+<div class="ttc" id="aclassCluster_html_aee7feb1d599d4c8fda6c3ee83e86ba81"><div class="ttname"><a href="classCluster.html#aee7feb1d599d4c8fda6c3ee83e86ba81">Cluster::Cluster</a></div><div class="ttdeci">Cluster()</div><div class="ttdoc">Creadora por defecto. Se ejecuta de forma automatica al declarar un clúster.</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00013">Cluster.cc:13</a></div></div>
+<div class="ttc" id="aclassProcesador_html"><div class="ttname"><a href="classProcesador.html">Procesador</a></div><div class="ttdoc">Representa un Procesador.</div><div class="ttdef"><b>Definition:</b> <a href="Procesador_8hh_source.html#l00023">Procesador.hh:23</a></div></div>
+<div class="ttc" id="aclassProcesador_html_a26af908b89b133a7eb2e75c445e86ab0"><div class="ttname"><a href="classProcesador.html#a26af908b89b133a7eb2e75c445e86ab0">Procesador::inicializar</a></div><div class="ttdeci">void inicializar(const string &amp;ident, int mem)</div><div class="ttdoc">Inicialización de un procesador.</div><div class="ttdef"><b>Definition:</b> <a href="Procesador_8cc_source.html#l00017">Procesador.cc:17</a></div></div>
+<div class="ttc" id="aclassProceso_html"><div class="ttname"><a href="classProceso.html">Proceso</a></div><div class="ttdoc">Representa un Proceso.</div><div class="ttdef"><b>Definition:</b> <a href="Proceso_8hh_source.html#l00019">Proceso.hh:19</a></div></div>
+<div class="ttc" id="aclassProceso_html_a55976a19b8d909276c62e8be10036df5"><div class="ttname"><a href="classProceso.html#a55976a19b8d909276c62e8be10036df5">Proceso::consultar_memoria</a></div><div class="ttdeci">int consultar_memoria() const</div><div class="ttdoc">Consultora de la memoria.</div><div class="ttdef"><b>Definition:</b> <a href="Proceso_8cc_source.html#l00029">Proceso.cc:29</a></div></div>
+<div class="ttc" id="aclassProceso_html_aa16ca4c06da961d092a9a417f668ec14"><div class="ttname"><a href="classProceso.html#aa16ca4c06da961d092a9a417f668ec14">Proceso::consultar_ident</a></div><div class="ttdeci">int consultar_ident() const</div><div class="ttdoc">Consultora del identificador.</div><div class="ttdef"><b>Definition:</b> <a href="Proceso_8cc_source.html#l00025">Proceso.cc:25</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

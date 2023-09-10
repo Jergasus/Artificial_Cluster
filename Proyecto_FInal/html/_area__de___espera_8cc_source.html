@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto PRO2: Simulación del rendimiento de procesadores interconectados: Fichero Fuente Area_de_Espera.cc</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Proyecto PRO2: Simulación del rendimiento de procesadores interconectados
+   &#160;<span id="projectnumber">Jesús José García Ayala</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Area_de_Espera.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_area__de___espera_8cc.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_area__de___espera_8hh.html">Area_de_Espera.hh</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Constructoras --------------------------------------------------------------</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_area__de___espera.html#a3231c321a9441f69a9e099827d4f3369">    6</a></span>&#160;<a class="code" href="class_area__de___espera.html#a3231c321a9441f69a9e099827d4f3369">Area_de_Espera::Area_de_Espera</a>() {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_area__de___espera.html#ae9b3ade14202981ec8ce42c340ef768c">    9</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_area__de___espera.html#ae9b3ade14202981ec8ce42c340ef768c">Area_de_Espera::inicializar</a>() {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">int</span> n;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    cin &gt;&gt; n;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; ++i) {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordtype">string</span> llave;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        cin &gt;&gt; llave;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        area_procesos[llave];</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// Modificadoras --------------------------------------------------------------</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_area__de___espera.html#aaa40d44059fc33dc83b1cfd6d3411d26">   21</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_area__de___espera.html#aaa40d44059fc33dc83b1cfd6d3411d26">Area_de_Espera::alta_prioridad</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; ident, <span class="keywordtype">int</span>&amp; error) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    map&lt;string, Priority&gt;::iterator it = area_procesos.find(ident);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">if</span> (it != area_procesos.end()) error = 5;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        error = -1;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        area_procesos[ident];</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_area__de___espera.html#a2156fa78f97c93e773a693469c4798f6">   30</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_area__de___espera.html#a2156fa78f97c93e773a693469c4798f6">Area_de_Espera::baja_prioridad</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; ident, <span class="keywordtype">int</span>&amp; error) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    map&lt;string, Priority&gt;::iterator it = area_procesos.find(ident);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> (it == area_procesos.end()) error = 4;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">if</span> (not it-&gt;second.procesos.empty()) error = 6;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            error = -1;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            area_procesos.erase(it);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_area__de___espera.html#a9d2f3f61952be3df536e1cf18f7e6a19">   42</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_area__de___espera.html#a9d2f3f61952be3df536e1cf18f7e6a19">Area_de_Espera::alta_proceso_espera</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; ident, <span class="keyword">const</span> <a class="code" href="class_proceso.html">Proceso</a>&amp; proc, <span class="keywordtype">int</span>&amp; error) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    map&lt;string, Priority&gt;::iterator it = area_procesos.find(ident);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> (it == area_procesos.end()) error = 4;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">for</span> (list&lt;Proceso&gt;::iterator is = it-&gt;second.procesos.begin(); is != it-&gt;second.procesos.end() and not found; ++is) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span> ((*is).consultar_ident() == proc.<a class="code" href="class_proceso.html#aa16ca4c06da961d092a9a417f668ec14">consultar_ident</a>()) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                found = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                error = 1;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> (not found) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            error = -1;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            it-&gt;second.procesos.insert(it-&gt;second.procesos.end(), proc);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_area__de___espera.html#ad5069a946201e9c6ffee0459046bf810">   60</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_area__de___espera.html#ad5069a946201e9c6ffee0459046bf810">Area_de_Espera::enviar_procesos_cluster</a>(<a class="code" href="class_cluster.html">Cluster</a>&amp; clust, <span class="keywordtype">int</span> n) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    map&lt;string, Priority&gt;::iterator it = area_procesos.begin();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">while</span> (it != area_procesos.end() and n &gt; 0) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        list&lt;Proceso&gt;::iterator is = it-&gt;second.procesos.begin();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">while</span> (is != it-&gt;second.procesos.end() and n &gt; 0) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">if</span> (clust.<a class="code" href="class_cluster.html#a1bd67668284a97e72dad386f8de0a817">recibir_proceso</a>((*is))) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                --n;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                is = it-&gt;second.procesos.erase(is);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                ++it-&gt;second.procesos_aceptados;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                ++is;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                ++it-&gt;second.procesos_rechazados;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        ++it;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="class_area__de___espera.html#ae83f2d06628bfee83b970760114f4a18">   79</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_area__de___espera.html#ae83f2d06628bfee83b970760114f4a18">Area_de_Espera::imprimir_prioridad</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; ident, <span class="keywordtype">int</span>&amp; error) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    map&lt;string, Priority&gt;::iterator it = area_procesos.find(ident);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (it == area_procesos.end()) error = 4;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        error = -1;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">for</span> (list&lt;Proceso&gt;::iterator is = it-&gt;second.procesos.begin(); is != it-&gt;second.procesos.end(); ++is) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            (*is).imprimir();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        cout &lt;&lt; it-&gt;second.procesos_aceptados &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; it-&gt;second.procesos_rechazados &lt;&lt; endl;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_area__de___espera.html#ac235074f6c395f17449f4fcb421fd20c">   91</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_area__de___espera.html#ac235074f6c395f17449f4fcb421fd20c">Area_de_Espera::imprimir_area_espera</a>() {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">for</span> (map&lt;string, Priority&gt;::iterator it = area_procesos.begin(); it != area_procesos.end(); ++it) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        cout &lt;&lt; it-&gt;first &lt;&lt; endl;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">for</span> (list&lt;Proceso&gt;::iterator is = it-&gt;second.procesos.begin(); is != it-&gt;second.procesos.end(); ++is) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            (*is).imprimir();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        cout &lt;&lt; it-&gt;second.procesos_aceptados &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; it-&gt;second.procesos_rechazados &lt;&lt; endl;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_area__de___espera_html_a3231c321a9441f69a9e099827d4f3369"><div class="ttname"><a href="class_area__de___espera.html#a3231c321a9441f69a9e099827d4f3369">Area_de_Espera::Area_de_Espera</a></div><div class="ttdeci">Area_de_Espera()</div><div class="ttdoc">Creadora por defecto. Se ejecuta de forma automática al declarar una área de procesos.</div><div class="ttdef"><b>Definition:</b> <a href="_area__de___espera_8cc_source.html#l00006">Area_de_Espera.cc:6</a></div></div>
+<div class="ttc" id="aclass_cluster_html_a1bd67668284a97e72dad386f8de0a817"><div class="ttname"><a href="class_cluster.html#a1bd67668284a97e72dad386f8de0a817">Cluster::recibir_proceso</a></div><div class="ttdeci">bool recibir_proceso(Proceso &amp;proc)</div><div class="ttdoc">Recibe los procesos del la acción: enviar_procesos_cluster</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8cc_source.html#l00109">Cluster.cc:109</a></div></div>
+<div class="ttc" id="a_area__de___espera_8hh_html"><div class="ttname"><a href="_area__de___espera_8hh.html">Area_de_Espera.hh</a></div><div class="ttdoc">Especificación de la clase Area_de_Espera.</div></div>
+<div class="ttc" id="aclass_area__de___espera_html_ac235074f6c395f17449f4fcb421fd20c"><div class="ttname"><a href="class_area__de___espera.html#ac235074f6c395f17449f4fcb421fd20c">Area_de_Espera::imprimir_area_espera</a></div><div class="ttdeci">void imprimir_area_espera()</div><div class="ttdoc">Escribe los procesos pendientes de todas las prioridades.</div><div class="ttdef"><b>Definition:</b> <a href="_area__de___espera_8cc_source.html#l00091">Area_de_Espera.cc:91</a></div></div>
+<div class="ttc" id="aclass_area__de___espera_html_ae9b3ade14202981ec8ce42c340ef768c"><div class="ttname"><a href="class_area__de___espera.html#ae9b3ade14202981ec8ce42c340ef768c">Area_de_Espera::inicializar</a></div><div class="ttdeci">void inicializar()</div><div class="ttdoc">Inicializa una área de procesos.</div><div class="ttdef"><b>Definition:</b> <a href="_area__de___espera_8cc_source.html#l00009">Area_de_Espera.cc:9</a></div></div>
+<div class="ttc" id="aclass_area__de___espera_html_aaa40d44059fc33dc83b1cfd6d3411d26"><div class="ttname"><a href="class_area__de___espera.html#aaa40d44059fc33dc83b1cfd6d3411d26">Area_de_Espera::alta_prioridad</a></div><div class="ttdeci">void alta_prioridad(const string &amp;ident, int &amp;error)</div><div class="ttdoc">Añadir una prioridad al área de procesos.</div><div class="ttdef"><b>Definition:</b> <a href="_area__de___espera_8cc_source.html#l00021">Area_de_Espera.cc:21</a></div></div>
+<div class="ttc" id="aclass_proceso_html_aa16ca4c06da961d092a9a417f668ec14"><div class="ttname"><a href="class_proceso.html#aa16ca4c06da961d092a9a417f668ec14">Proceso::consultar_ident</a></div><div class="ttdeci">int consultar_ident() const</div><div class="ttdoc">Consultora del identificador.</div><div class="ttdef"><b>Definition:</b> <a href="_proceso_8cc_source.html#l00021">Proceso.cc:21</a></div></div>
+<div class="ttc" id="aclass_area__de___espera_html_ad5069a946201e9c6ffee0459046bf810"><div class="ttname"><a href="class_area__de___espera.html#ad5069a946201e9c6ffee0459046bf810">Area_de_Espera::enviar_procesos_cluster</a></div><div class="ttdeci">void enviar_procesos_cluster(Cluster &amp;clust, int n)</div><div class="ttdoc">Enviar los procesos del área de procesos al clúster.</div><div class="ttdef"><b>Definition:</b> <a href="_area__de___espera_8cc_source.html#l00060">Area_de_Espera.cc:60</a></div></div>
+<div class="ttc" id="aclass_proceso_html"><div class="ttname"><a href="class_proceso.html">Proceso</a></div><div class="ttdoc">Representa un Proceso.</div><div class="ttdef"><b>Definition:</b> <a href="_proceso_8hh_source.html#l00019">Proceso.hh:19</a></div></div>
+<div class="ttc" id="aclass_area__de___espera_html_ae83f2d06628bfee83b970760114f4a18"><div class="ttname"><a href="class_area__de___espera.html#ae83f2d06628bfee83b970760114f4a18">Area_de_Espera::imprimir_prioridad</a></div><div class="ttdeci">void imprimir_prioridad(const string &amp;ident, int &amp;error)</div><div class="ttdoc">Escribe los procesos pendientes de una prioridad.</div><div class="ttdef"><b>Definition:</b> <a href="_area__de___espera_8cc_source.html#l00079">Area_de_Espera.cc:79</a></div></div>
+<div class="ttc" id="aclass_area__de___espera_html_a9d2f3f61952be3df536e1cf18f7e6a19"><div class="ttname"><a href="class_area__de___espera.html#a9d2f3f61952be3df536e1cf18f7e6a19">Area_de_Espera::alta_proceso_espera</a></div><div class="ttdeci">void alta_proceso_espera(const string &amp;ident, const Proceso &amp;proc, int &amp;error)</div><div class="ttdoc">Añadir un proceso al área de procesos.</div><div class="ttdef"><b>Definition:</b> <a href="_area__de___espera_8cc_source.html#l00042">Area_de_Espera.cc:42</a></div></div>
+<div class="ttc" id="aclass_cluster_html"><div class="ttname"><a href="class_cluster.html">Cluster</a></div><div class="ttdoc">Representa un Cluster.</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8hh_source.html#l00022">Cluster.hh:22</a></div></div>
+<div class="ttc" id="aclass_area__de___espera_html_a2156fa78f97c93e773a693469c4798f6"><div class="ttname"><a href="class_area__de___espera.html#a2156fa78f97c93e773a693469c4798f6">Area_de_Espera::baja_prioridad</a></div><div class="ttdeci">void baja_prioridad(const string &amp;ident, int &amp;error)</div><div class="ttdoc">Eliminar una prioridad del área de procesos.</div><div class="ttdef"><b>Definition:</b> <a href="_area__de___espera_8cc_source.html#l00030">Area_de_Espera.cc:30</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,190 @@
+\hypertarget{program_8cc}{}\doxysection{Referencia del Archivo program.\+cc}
+\label{program_8cc}\index{program.cc@{program.cc}}
+
+
+Programa Principal.  
+
+
+{\ttfamily \#include \char`\"{}Cluster.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Area\+\_\+de\+\_\+\+Espera.\+hh\char`\"{}}\newline
+Dependencia gráfica adjunta para program.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{program_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{program_8cc_a0badc15cdb18bf1e6f4ad7efd1c64df7}{fallos}} (vector$<$ string $>$ \&error)
+\item 
+int \mbox{\hyperlink{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Programa Principal. 
+
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{program_8cc_a0badc15cdb18bf1e6f4ad7efd1c64df7}\label{program_8cc_a0badc15cdb18bf1e6f4ad7efd1c64df7}} 
+\index{program.cc@{program.cc}!fallos@{fallos}}
+\index{fallos@{fallos}!program.cc@{program.cc}}
+\doxysubsubsection{\texorpdfstring{fallos()}{fallos()}}
+{\footnotesize\ttfamily void fallos (\begin{DoxyParamCaption}\item[{vector$<$ string $>$ \&}]{error }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 28 del archivo program.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28                                    \{}
+\DoxyCodeLine{29     error[0] = \textcolor{stringliteral}{"{}error: no existe procesador"{}};}
+\DoxyCodeLine{30     error[1] = \textcolor{stringliteral}{"{}error: ya existe proceso"{}};}
+\DoxyCodeLine{31     error[2] = \textcolor{stringliteral}{"{}error: no cabe proceso"{}};}
+\DoxyCodeLine{32     error[3] = \textcolor{stringliteral}{"{}error: no existe proceso"{}};}
+\DoxyCodeLine{33     error[4] = \textcolor{stringliteral}{"{}error: no existe prioridad"{}};}
+\DoxyCodeLine{34     error[5] = \textcolor{stringliteral}{"{}error: ya existe prioridad"{}};}
+\DoxyCodeLine{35     error[6] = \textcolor{stringliteral}{"{}error: prioridad con procesos"{}};}
+\DoxyCodeLine{36     error[7] = \textcolor{stringliteral}{"{}error: procesador con auxiliares"{}};}
+\DoxyCodeLine{37     error[8] = \textcolor{stringliteral}{"{}error: procesador con procesos"{}};}
+\DoxyCodeLine{38 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{program.cc@{program.cc}!main@{main}}
+\index{main@{main}!program.cc@{program.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 41 del archivo program.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41            \{}
+\DoxyCodeLine{42     \mbox{\hyperlink{classCluster}{Cluster}} cluster;}
+\DoxyCodeLine{43     \mbox{\hyperlink{classArea__de__Espera}{Area\_de\_Espera}} area\_espera;}
+\DoxyCodeLine{44     vector<string> errores(9);}
+\DoxyCodeLine{45     \mbox{\hyperlink{program_8cc_a0badc15cdb18bf1e6f4ad7efd1c64df7}{fallos}}(errores);}
+\DoxyCodeLine{46     \textcolor{keywordtype}{int} error;}
+\DoxyCodeLine{47     cluster.\mbox{\hyperlink{classCluster_a84f9daea57e2773ab5766ef82d2a1def}{configurar\_cluster}}(); \textcolor{comment}{// Configurar el cluster inicial}}
+\DoxyCodeLine{48     area\_espera.\mbox{\hyperlink{classArea__de__Espera_ae9b3ade14202981ec8ce42c340ef768c}{inicializar}}(); \textcolor{comment}{// Inicilizar el area de espera}}
+\DoxyCodeLine{49     \textcolor{keywordtype}{string} comando;}
+\DoxyCodeLine{50     cin >> comando;}
+\DoxyCodeLine{51     \textcolor{keywordflow}{while} (comando != \textcolor{stringliteral}{"{}fin"{}}) \{}
+\DoxyCodeLine{52         \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"{}configurar\_cluster"{}} or comando == \textcolor{stringliteral}{"{}cc"{}}) \{}
+\DoxyCodeLine{53             cout << \textcolor{stringliteral}{"{}\#"{}} << comando << endl;}
+\DoxyCodeLine{54             cluster.\mbox{\hyperlink{classCluster_a84f9daea57e2773ab5766ef82d2a1def}{configurar\_cluster}}();}
+\DoxyCodeLine{55         \}}
+\DoxyCodeLine{56         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"{}modificar\_cluster"{}} or comando == \textcolor{stringliteral}{"{}mc"{}}) \{}
+\DoxyCodeLine{57             \textcolor{keywordtype}{string} ident;}
+\DoxyCodeLine{58             cin >> ident;}
+\DoxyCodeLine{59             cout << \textcolor{stringliteral}{"{}\#"{}} << comando << \textcolor{stringliteral}{"{} "{}} << ident << endl;}
+\DoxyCodeLine{60             cluster.\mbox{\hyperlink{classCluster_ae4f6cb37cfa684b90597ac04bfd36655}{modificar\_cluster}}(ident, error);}
+\DoxyCodeLine{61             \textcolor{keywordflow}{if} (error != -\/1) cout << errores[error] << endl;}
+\DoxyCodeLine{62         \}}
+\DoxyCodeLine{63         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"{}alta\_prioridad"{}} or comando == \textcolor{stringliteral}{"{}ap"{}}) \{}
+\DoxyCodeLine{64             \textcolor{keywordtype}{string} ident;}
+\DoxyCodeLine{65             cin >> ident;}
+\DoxyCodeLine{66             cout << \textcolor{stringliteral}{"{}\#"{}} << comando << \textcolor{stringliteral}{"{} "{}} << ident << endl;}
+\DoxyCodeLine{67             area\_espera.\mbox{\hyperlink{classArea__de__Espera_aaa40d44059fc33dc83b1cfd6d3411d26}{alta\_prioridad}}(ident, error);}
+\DoxyCodeLine{68             \textcolor{keywordflow}{if} (error != -\/1) cout << errores[error] << endl;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         \}}
+\DoxyCodeLine{71         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"{}baja\_prioridad"{}} or comando == \textcolor{stringliteral}{"{}bp"{}}) \{}
+\DoxyCodeLine{72             \textcolor{keywordtype}{string} ident;}
+\DoxyCodeLine{73             cin >> ident;}
+\DoxyCodeLine{74             cout << \textcolor{stringliteral}{"{}\#"{}} << comando << \textcolor{stringliteral}{"{} "{}} << ident << endl;}
+\DoxyCodeLine{75             area\_espera.\mbox{\hyperlink{classArea__de__Espera_a2156fa78f97c93e773a693469c4798f6}{baja\_prioridad}}(ident, error);}
+\DoxyCodeLine{76             \textcolor{keywordflow}{if} (error != -\/1) cout << errores[error] << endl;}
+\DoxyCodeLine{77         \}}
+\DoxyCodeLine{78         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"{}alta\_proceso\_espera"{}} or comando == \textcolor{stringliteral}{"{}ape"{}}) \{}
+\DoxyCodeLine{79             \textcolor{keywordtype}{string} ident;}
+\DoxyCodeLine{80             cin >> ident;}
+\DoxyCodeLine{81             \textcolor{keywordtype}{int} ident\_proceso, memoria, tiempo;}
+\DoxyCodeLine{82             cin >> ident\_proceso >> memoria >> tiempo;}
+\DoxyCodeLine{83             \mbox{\hyperlink{classProceso}{Proceso}} proceso(ident\_proceso, memoria, tiempo);}
+\DoxyCodeLine{84             cout << \textcolor{stringliteral}{"{}\#"{}} << comando << \textcolor{stringliteral}{"{} "{}} << ident << \textcolor{stringliteral}{"{} "{}} << ident\_proceso << endl;}
+\DoxyCodeLine{85             area\_espera.\mbox{\hyperlink{classArea__de__Espera_a9d2f3f61952be3df536e1cf18f7e6a19}{alta\_proceso\_espera}}(ident, proceso, error);}
+\DoxyCodeLine{86             \textcolor{keywordflow}{if} (error != -\/1) cout << errores[error] << endl;}
+\DoxyCodeLine{87             }
+\DoxyCodeLine{88         \}}
+\DoxyCodeLine{89         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"{}alta\_proceso\_procesador"{}} or comando == \textcolor{stringliteral}{"{}app"{}}) \{}
+\DoxyCodeLine{90             \textcolor{keywordtype}{string} ident\_procesador;}
+\DoxyCodeLine{91             cin >> ident\_procesador;}
+\DoxyCodeLine{92             \textcolor{keywordtype}{int} ident\_proceso, memoria, tiempo;}
+\DoxyCodeLine{93             cin >> ident\_proceso >> memoria >> tiempo;}
+\DoxyCodeLine{94             \mbox{\hyperlink{classProceso}{Proceso}} proceso(ident\_proceso, memoria, tiempo);}
+\DoxyCodeLine{95             cout << \textcolor{stringliteral}{"{}\#"{}} << comando << \textcolor{stringliteral}{"{} "{}} << ident\_procesador << \textcolor{stringliteral}{"{} "{}} << ident\_proceso << endl;}
+\DoxyCodeLine{96             cluster.\mbox{\hyperlink{classCluster_a5786b35aeee3dbdf3d03928e40949ab9}{alta\_proceso\_procesador}}(ident\_procesador, proceso, error);}
+\DoxyCodeLine{97             \textcolor{keywordflow}{if} (error != -\/1) cout << errores[error] << endl;}
+\DoxyCodeLine{98             }
+\DoxyCodeLine{99         \}}
+\DoxyCodeLine{100         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"{}baja\_proceso\_procesador"{}} or comando == \textcolor{stringliteral}{"{}bpp"{}}) \{}
+\DoxyCodeLine{101             \textcolor{keywordtype}{string} ident\_procesador;}
+\DoxyCodeLine{102             cin >> ident\_procesador;}
+\DoxyCodeLine{103             \textcolor{keywordtype}{int} ident\_proceso;}
+\DoxyCodeLine{104             cin >> ident\_proceso;}
+\DoxyCodeLine{105             cout << \textcolor{stringliteral}{"{}\#"{}} << comando << \textcolor{stringliteral}{"{} "{}} << ident\_procesador << \textcolor{stringliteral}{"{} "{}} << ident\_proceso << endl;}
+\DoxyCodeLine{106             cluster.\mbox{\hyperlink{classCluster_ad27c24f93d82a18964a7170c44c4d696}{baja\_proceso\_procesador}}(ident\_procesador, ident\_proceso, error);}
+\DoxyCodeLine{107             \textcolor{keywordflow}{if} (error != -\/1) cout << errores[error] << endl;}
+\DoxyCodeLine{108         \}}
+\DoxyCodeLine{109         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"{}enviar\_procesos\_cluster"{}} or comando == \textcolor{stringliteral}{"{}epc"{}}) \{}
+\DoxyCodeLine{110             \textcolor{keywordtype}{int} num;}
+\DoxyCodeLine{111             cin >> num;}
+\DoxyCodeLine{112             cout << \textcolor{stringliteral}{"{}\#"{}} << comando << \textcolor{stringliteral}{"{} "{}} << num << endl;}
+\DoxyCodeLine{113             area\_espera.\mbox{\hyperlink{classArea__de__Espera_ad5069a946201e9c6ffee0459046bf810}{enviar\_procesos\_cluster}}(cluster, num);}
+\DoxyCodeLine{114         \}}
+\DoxyCodeLine{115         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"{}avanzar\_tiempo"{}} or comando == \textcolor{stringliteral}{"{}at"{}}) \{}
+\DoxyCodeLine{116             \textcolor{keywordtype}{int} t;}
+\DoxyCodeLine{117             cin >> t;}
+\DoxyCodeLine{118             cout << \textcolor{stringliteral}{"{}\#"{}} << comando << \textcolor{stringliteral}{"{} "{}} << t << endl;}
+\DoxyCodeLine{119             cluster.\mbox{\hyperlink{classCluster_a3b93301a46cfa8cadf8d0121e234c386}{avanzar\_tiempo}}(t);}
+\DoxyCodeLine{120         \}}
+\DoxyCodeLine{121         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"{}imprimir\_prioridad"{}} or comando == \textcolor{stringliteral}{"{}ipri"{}}) \{}
+\DoxyCodeLine{122             \textcolor{keywordtype}{string} identificador;}
+\DoxyCodeLine{123             cin >> identificador;}
+\DoxyCodeLine{124             cout << \textcolor{stringliteral}{"{}\#"{}} << comando << \textcolor{stringliteral}{"{} "{}} << identificador << endl;}
+\DoxyCodeLine{125             area\_espera.\mbox{\hyperlink{classArea__de__Espera_ae83f2d06628bfee83b970760114f4a18}{imprimir\_prioridad}}(identificador, error);}
+\DoxyCodeLine{126             \textcolor{keywordflow}{if} (error != -\/1) cout << errores[error] << endl;}
+\DoxyCodeLine{127         \}}
+\DoxyCodeLine{128         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"{}imprimir\_area\_espera"{}} or comando == \textcolor{stringliteral}{"{}iae"{}}) \{}
+\DoxyCodeLine{129             cout << \textcolor{stringliteral}{"{}\#"{}} << comando << endl;}
+\DoxyCodeLine{130             area\_espera.\mbox{\hyperlink{classArea__de__Espera_ac235074f6c395f17449f4fcb421fd20c}{imprimir\_area\_espera}}();}
+\DoxyCodeLine{131         \}}
+\DoxyCodeLine{132         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"{}imprimir\_procesador"{}} or comando == \textcolor{stringliteral}{"{}ipro"{}}) \{}
+\DoxyCodeLine{133             \textcolor{keywordtype}{string} identificador;}
+\DoxyCodeLine{134             cin >> identificador;}
+\DoxyCodeLine{135             cout << \textcolor{stringliteral}{"{}\#"{}} << comando << \textcolor{stringliteral}{"{} "{}} << identificador << endl;}
+\DoxyCodeLine{136             cluster.\mbox{\hyperlink{classCluster_a545cc70fcdb0857afb851069e63ea1de}{imprimir\_procesador}}(identificador, error);}
+\DoxyCodeLine{137             \textcolor{keywordflow}{if} (error != -\/1) cout << errores[error] << endl;}
+\DoxyCodeLine{138         \}}
+\DoxyCodeLine{139         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"{}imprimir\_procesadores\_cluster"{}} or comando == \textcolor{stringliteral}{"{}ipc"{}}) \{}
+\DoxyCodeLine{140             cout << \textcolor{stringliteral}{"{}\#"{}} << comando << endl;}
+\DoxyCodeLine{141             cluster.\mbox{\hyperlink{classCluster_ab8a628286f8a977063ea4395d9a422bf}{imprimir\_procesadores\_cluster}}();}
+\DoxyCodeLine{142         \}}
+\DoxyCodeLine{143         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"{}imprimir\_estructura\_cluster"{}} or comando == \textcolor{stringliteral}{"{}iec"{}}) \{}
+\DoxyCodeLine{144             cout << \textcolor{stringliteral}{"{}\#"{}} << comando << endl;}
+\DoxyCodeLine{145             cluster.\mbox{\hyperlink{classCluster_a948d7075f9b30c2885ce804029e5ab25}{imprimir\_estructura\_cluster}}();}
+\DoxyCodeLine{146         \}}
+\DoxyCodeLine{147         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"{}compactar\_memoria\_procesador"{}} or comando == \textcolor{stringliteral}{"{}cmp"{}}) \{}
+\DoxyCodeLine{148             \textcolor{keywordtype}{string} identificador;}
+\DoxyCodeLine{149             cin >> identificador;}
+\DoxyCodeLine{150             cout << \textcolor{stringliteral}{"{}\#"{}} << comando << \textcolor{stringliteral}{"{} "{}} << identificador << endl;}
+\DoxyCodeLine{151             cluster.\mbox{\hyperlink{classCluster_a5bedc8558ba975721788b52e7aaef629}{compactar\_memoria\_procesador}}(identificador, error);}
+\DoxyCodeLine{152             \textcolor{keywordflow}{if} (error != -\/1) cout << errores[error] << endl;}
+\DoxyCodeLine{153         \}}
+\DoxyCodeLine{154         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (comando == \textcolor{stringliteral}{"{}compactar\_memoria\_cluster"{}} or comando == \textcolor{stringliteral}{"{}cmc"{}}) \{}
+\DoxyCodeLine{155             cout << \textcolor{stringliteral}{"{}\#"{}} << comando << endl;}
+\DoxyCodeLine{156             cluster.\mbox{\hyperlink{classCluster_a7b9ae511df4a6465f4e191df6564fd77}{compactar\_memoria\_cluster}}();}
+\DoxyCodeLine{157         \} }
+\DoxyCodeLine{158         cin >> comando;}
+\DoxyCodeLine{159     \}}
+\DoxyCodeLine{160 \}}
+
+\end{DoxyCode}

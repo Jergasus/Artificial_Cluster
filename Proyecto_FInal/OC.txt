@@ -1,0 +1,501 @@
+// Salida del juego de pruebas: alta_proceso_procesador(app), baja_proceso_procesador(bpp), compactar_memoria_procesador(cmp), compactar_memoria_cluster(cmc), avanzar_tiempo(at)
+
+///////////////////////
+/* SALIDA COMENTADA */
+///////////////////////
+
+**********************************************************************************************
+/* Impresión de la estructura del cluster, el area de espera y los procesadores del cluster */
+**********************************************************************************************
+
+#imprimir_estructura_cluster
+(proc1(proc11(proc111(proc1111  )(proc1112  ))(proc112(proc1113  ) ))(proc22(proc221  )(proc222(proc2221  )(proc2222  ))))
+
+#imprimir_area_espera
+1
+0 0
+
+#imprimir_procesadores_cluster
+proc1
+proc11
+proc111
+proc1111
+proc1112
+proc1113
+proc112
+proc22
+proc221
+proc222
+proc2221
+proc2222
+
+********************************************
+/* Prueba de alta_proceso_procesador(app) */
+********************************************
+
+//////////////////////////////////////////////////////
+/* 1. Añadir un proceso a un procesador inexistente */
+//////////////////////////////////////////////////////
+
+// Imprimimos un error correspondiente a la no existencia del procesador proc9
+#app proc9 11
+error: no existe procesador
+
+// Imprimimos proc1
+#ipro proc1
+
+///////////////////////////////////////////////////////////////////////////////
+/* 2. Añadir un proceso que ocupe toda la memoria de un procesador existente */
+///////////////////////////////////////////////////////////////////////////////
+
+// Añadimos el proceso 2 al procesador proc1
+#app proc1 2
+
+// Imprimimos proc1
+#ipro proc1
+0 2 10 7
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* 3. Añadir un proceso (con distinto id de los procesos que tiene el procesador) a un procesador existente lleno */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Imprimimos un error correspondiente a la imposibilidad de introducir el proceso 3 al procesador proc1
+#app proc1 3
+error: no cabe proceso
+
+// Imprimimos proc1
+#ipro proc1
+0 2 10 7
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* 4. Añadir un proceso (con el mismo id que uno de los procesos que tiene el procesador) a un procesador existente lleno */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Imprimimos un error correspondiente a la existencia del proceso 2 en el procesador proc1
+#app proc1 2
+error: ya existe proceso
+
+// imprimimos proc1
+#ipro proc1
+0 2 10 7
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/* 5. Añadir varios procesos a un procesador existente sin pasarse de la memoria límite */
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// Eliminamos el proceso existente en el procesador en cuestión para reestablecer la memoria
+#bpp proc1 2
+
+// Imprimimos proc1
+#ipro proc1
+
+// Añadimos el proceso 3 al procesador proc1
+#app proc1 3
+
+// Imprimimos proc1
+#ipro proc1
+0 3 7 9
+
+// Añadimos el proceso 2 al procesador proc1
+#app proc1 2
+
+// Imprimimos proc1
+#ipro proc1
+0 3 7 9
+7 2 2 6
+
+// Se han añadido a proc1 el proceso con id 3 y el proceso con id 2, ya que la memoria que suman es 9, sienda esta menor que 10.
+
+
+********************************************
+/* Prueba de baja_proceso_procesador(bpp) */
+********************************************
+
+/////////////////////////////////////////////////////////
+/* 1. Eliminar un proceso de un procesador inexistente */
+/////////////////////////////////////////////////////////
+
+// Imprimimos un error correspondiente a la inexistencia de un procesador con id proc9
+#bpp proc9 3
+error: no existe procesador
+
+// Imprimimos proc1
+#ipro proc1
+0 3 7 9
+7 2 2 6
+
+///////////////////////////////////////////////////////////////////
+/* 2. Eliminar un proceso inexistente de un procesador existente */
+///////////////////////////////////////////////////////////////////
+
+// Imprimimos un error correspondiente a la inexistencia de un proceso con id 4 en el procesador proc1
+#bpp proc1 4
+error: no existe proceso
+
+// Imprimimos proc1
+#ipro proc1
+0 3 7 9
+7 2 2 6
+
+/////////////////////////////////////////////////////////////////
+/* 3. Eliminar un proceso existente de un procesador existente */
+/////////////////////////////////////////////////////////////////
+
+// Eliminamos el proceso con id 3 del procesador proc1
+#bpp proc1 3
+
+// Imprimimos proc1
+#ipro proc1
+7 2 2 6
+
+*************************************************
+/* Prueba de compactar_memoria_procesador(cmp) */
+*************************************************
+
+/////////////////////////////
+/* 1. Con procesador lleno */
+/////////////////////////////
+
+// Imprimimos un error correspondiente a la imposibilidad de introducir el proceso 1 al procesador proc1
+#app proc1 1
+error: no cabe proceso
+
+// Compactamos la memoria del proc1
+#cmp proc1
+
+// Imprimimos proc1
+#ipro proc1
+0 2 2 6
+
+/////////////////////////////
+/* 2. Con procesador vacío */
+/////////////////////////////
+
+// Imprimimos un error correspondiente a la inexistencia de un proceso con id 1 en el procesador proc1
+#bpp proc1 1
+error: no existe proceso
+
+// Compactamos la memoria de proc1
+#cmp proc1
+
+// Imprimimos proc1
+#ipro proc1
+0 2 2 6
+
+/////////////////////////////////////
+/* 3. Con procesador ya compactado */
+/////////////////////////////////////
+
+// Volvemos a compactar la memoria de proc1
+#cmp proc1
+
+// Volvemos a imprimir proc1
+#ipro proc1
+0 2 2 6
+
+/////////////////////////////////////////////////
+/* 4. Con procesador con un hueco al principio */
+/////////////////////////////////////////////////
+
+// Añadimos el proceso 1 al procesador proc1
+#app proc1 1
+
+// Imprimimos un error correspondiente a la existencia de un proceso con id 2 en el procesador proc1
+#app proc1 2
+error: ya existe proceso
+
+// Eliminamos el proceso 1 al procesador proc1
+#bpp proc1 1
+
+// Imprimimos proc1
+#ipro proc1
+0 2 2 6
+
+// Compactamos la memoria de proc1
+#cmp proc1
+
+// Imprimimos proc1
+#ipro proc1
+0 2 2 6
+
+/////////////////////////////////////////////
+/* 5. Con procesador con un hueco al final */
+/////////////////////////////////////////////
+
+// Proc1 queda vacío
+#bpp proc1 2
+
+// Añadimos el proceso 1 al procesador proc1
+#app proc1 1
+
+// Compactamos la memoria de proc1
+#cmp proc1
+
+// Imprimimos proc1
+#ipro proc1
+0 1 9 9
+
+////////////////////////////////////////////////
+/* 6. Con procesador con hueco entre procesos */
+////////////////////////////////////////////////
+
+// Proc1 queda vacío
+#bpp proc1 1
+
+// Añadimos y quitamos para conseguir huecos entre medio de la memoria del procesador
+// Añadimos el proceso 1 al procesador proc1
+#app proc1 1
+
+// Añadimos el proceso 2 al procesador proc1
+#app proc1 2
+
+// Añadimos el proceso 3 al procesador proc1
+#app proc1 3
+
+// Añadimos el proceso 4 al procesador proc1
+#app proc1 4
+
+// Añadimos el proceso 5 al procesador proc1
+#app proc1 5
+
+// Eliminamos el proceso 2 al procesador proc1
+#bpp proc1 2
+
+// Eliminamos el proceso 4 al procesador proc1
+#bpp proc1 4
+
+// Imprimimos proc1
+#ipro proc1
+0 1 2 5
+4 3 4 5
+9 5 1 7
+
+// Compactamos la memoria de proc1
+#cmp proc1
+
+// Imprimimos proc1
+#ipro proc1
+0 1 2 5
+2 3 4 5
+6 5 1 7
+
+**********************************************
+/* Prueba de compactar_memoria_cluster(cmc) */
+**********************************************
+
+// Imprimimos los procesadores del cluster
+#ipc
+proc1
+0 1 2 5
+2 3 4 5
+6 5 1 7
+proc11
+proc111
+proc1111
+proc1112
+proc1113
+proc112
+proc22
+proc221
+proc222
+proc2221
+proc2222
+
+// Avanzamos 100 ut. Esto lo hacemos para que todos los procesos se eliminen de los procesadores.
+#at 100
+
+// Imprimimos los procesadores del cluster
+#ipc
+proc1
+proc11
+proc111
+proc1111
+proc1112
+proc1113
+proc112
+proc22
+proc221
+proc222
+proc2221
+proc2222
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* 1. Utilizamos los mismos casos que a la hora de compactar_memoria_procesador, pero esta vez compactando el cluster al final*/
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Añadimos el proceso 1 al procesador proc1
+#app proc1 1
+
+// Añadimos el proceso 1 al procesador proc111
+#app proc111 1
+
+// Compactamos la memoria de proc1
+#cmp proc111
+#app proc112 1
+#app proc112 2
+#bpp proc112 1
+#app proc22 1
+#app proc221 1
+#app proc221 2
+#app proc221 3
+#app proc221 4
+#app proc221 5
+#bpp proc221 2
+#bpp proc221 4
+
+// Compactamos la memoria del cluster
+#cmc
+
+// Imprimimos los procesadores del cluster
+#ipc
+proc1
+0 1 10 5
+proc11
+proc111
+0 1 5 5
+proc1111
+proc1112
+proc1113
+proc112
+0 2 15 7
+proc22
+0 1 19 9
+proc221
+0 1 2 5
+2 3 4 5
+6 5 1 7
+proc222
+proc2221
+proc2222
+
+**********************************
+/* Prueba de avanzar_tiempo(at) */
+**********************************
+
+//////////////////////////////////////////////////////////////////
+/* 1. Con procesos que se tienen que eliminar y que no a la vez */
+//////////////////////////////////////////////////////////////////
+
+// Avanzamos 5 ut.
+#at 5
+
+// Imprimimos los procesadores del cluster
+#ipc
+proc1
+proc11
+proc111
+proc1111
+proc1112
+proc1113
+proc112
+0 2 15 2
+proc22
+0 1 19 4
+proc221
+6 5 1 2
+proc222
+proc2221
+proc2222
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* 2. alta_proceso_procesador de un proceso con la misma id que uno eliminado al avanzar tiempo y que este pueda caber en el procesador */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Añadimos el proceso 1 al procesador proc1
+#app proc1 1
+
+// Imprimimos los procesadores del cluster
+#ipc
+proc1
+0 1 5 6
+proc11
+proc111
+proc1111
+proc1112
+proc1113
+proc112
+0 2 15 2
+proc22
+0 1 19 4
+proc221
+6 5 1 2
+proc222
+proc2221
+proc2222
+
+/////////////////////////////////////////////////////////
+/* 3. baja_proceso_procesador con un proceso eliminado */
+/////////////////////////////////////////////////////////
+
+// Imprimimos un error correspondiente a la inexistencia de un proceso con id 1 en el procesador proc111
+#bpp proc111 1
+error: no existe proceso
+
+// Imprimimos los procesadores del cluster
+#ipc
+proc1
+0 1 5 6
+proc11
+proc111
+proc1111
+proc1112
+proc1113
+proc112
+0 2 15 2
+proc22
+0 1 19 4
+proc221
+6 5 1 2
+proc222
+proc2221
+proc2222
+
+////////////////////////////////////////////////////////////
+/* 4. baja_proceso_procesador con un proceso no eliminado */
+////////////////////////////////////////////////////////////
+
+// Eliminamos el proceso 2 al procesador proc112
+#bpp proc112 2
+
+// Imprimimos los procesadores del cluster
+#ipc
+proc1
+0 1 5 6
+proc11
+proc111
+proc1111
+proc1112
+proc1113
+proc112
+proc22
+0 1 19 4
+proc221
+6 5 1 2
+proc222
+proc2221
+proc2222
+
+//////////////////////////////////
+/* 5. compactar_memoria_cluster */
+//////////////////////////////////
+
+// Compactamos la memoria del cluster
+#cmc
+
+// Imprimimos los procesadores del cluster
+#ipc
+proc1
+0 1 5 6
+proc11
+proc111
+proc1111
+proc1112
+proc1113
+proc112
+proc22
+0 1 19 4
+proc221
+0 5 1 2
+proc222
+proc2221
+proc2222

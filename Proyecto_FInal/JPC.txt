@@ -1,0 +1,390 @@
+// Juego de pruebas: alta_proceso_procesador(app), baja_proceso_procesador(bpp), compactar_memoria_procesador(cmp), compactar_memoria_cluster(cmc), avanzar_tiempo(at)
+// Cada vez que se modifica un objeto, se imprime para ver que ha sido modificado.
+
+///////////////////////
+/* ENTRADA COMENTADA */
+///////////////////////
+
+*****************************************************
+/* Inicialización del cluster y del area de espera */
+*****************************************************
+
+proc1 10 proc11 20 proc111 15 proc1111 10 * * proc1112 20 * * proc112 20 proc1113
+10 * * * proc22 20 proc221 10 * * proc222 20 proc2221 10 * *
+proc2222 15 * *
+
+
+1
+1
+
+**********************************************************************************************
+/* Impresión de la estructura del cluster, el area de espera y los procesadores del cluster */
+**********************************************************************************************
+
+// Se imprimirá la estructura del cluster
+imprimir_estructura_cluster
+
+// Se imprimirá el área de espera
+imprimir_area_espera
+
+// Se imprimirán los procesadores del cluster
+imprimir_procesadores_cluster
+
+********************************************
+/* Prueba de alta_proceso_procesador(app) */
+********************************************
+
+//////////////////////////////////////////////////////
+/* 1. Añadir un proceso a un procesador inexistente */
+//////////////////////////////////////////////////////
+
+// Se añade el proceso 11 al procesador proc9
+app proc9 11 20 15
+
+// Se imprime proc1
+ipro proc1
+
+///////////////////////////////////////////////////////////////////////////////
+/* 2. Añadir un proceso que ocupe toda la memoria de un procesador existente */
+///////////////////////////////////////////////////////////////////////////////
+
+// Se añade el proceso 2 al procesador proc1
+app proc1 2 10 7
+
+/ Se imprime el procesador proc1
+ipro proc1
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* 3. Añadir un proceso (con distinto id de los procesos que tiene el procesador) a un procesador existente lleno */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Se añade el proceso 3 al procesador proc1
+app proc1 3 1 8
+
+// Se imprime el procesador proc1
+ipro proc1
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* 4. Añadir un proceso (con el mismo id que uno de los procesos que tiene el procesador) a un procesador existente lleno */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Se añade el proceso 2 al procesador proc1
+app proc1 2 1 9
+
+// Se imprime el procesador proc1
+ipro proc1
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/* 5. Añadir varios procesos a un procesador existente sin pasarse de la memoria límite */
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// Eliminamos el proceso existente en el procesador en cuestión para reestablecer la memoria
+bpp proc1 2
+
+// Se imprime el procesador proc1
+ipro proc1
+
+// Se añade el proceso 3 al procesador proc1
+app proc1 3 7 9
+
+// Se imprime el procesador proc1
+ipro proc1
+
+// Se añade el proceso 2 al procesador proc1
+app proc1 2 2 6
+
+// Se imprime el procesador proc1
+ipro proc1
+
+// Se deben haber añadido al procesador en cuestión el proceso con id 3 y el proceso con id 2, ya que la memoria que suman es 9, sienda esta menor que 10.
+
+comando_erróneo
+
+********************************************
+/* Prueba de baja_proceso_procesador(bpp) */
+********************************************
+
+/////////////////////////////////////////////////////////
+/* 1. Eliminar un proceso de un procesador inexistente */
+/////////////////////////////////////////////////////////
+
+// Se elimina el proceso 3 del procesador proc9
+bpp proc9 3
+
+// Se imprime el procesador proc1
+ipro proc1
+
+///////////////////////////////////////////////////////////////////
+/* 2. Eliminar un proceso inexistente de un procesador existente */
+///////////////////////////////////////////////////////////////////
+
+// Se elimina el proceso 4 del procesador proc1
+bpp proc1 4
+
+// Se imprime el procesador proc1
+ipro proc1
+
+/////////////////////////////////////////////////////////////////
+/* 3. Eliminar un proceso existente de un procesador existente */
+/////////////////////////////////////////////////////////////////
+
+// Se elimina el proceso 3 del procesador proc1
+bpp proc1 3
+
+// Se imprime el procesador proc1
+ipro proc1
+
+comando_erróneo
+
+*************************************************
+/* Prueba de compactar_memoria_procesador(cmp) */
+*************************************************
+
+/////////////////////////////
+/* 1. Con procesador lleno */
+/////////////////////////////
+
+// Ponemos un proceso de la misma memoria que la del procesador para que éste quede lleno
+app proc1 1 10 5
+
+// Compacta la memoria del procesador proc1
+cmp proc1
+
+// Se imprime el procesador proc1
+ipro proc1
+
+/////////////////////////////
+/* 2. Con procesador vacío */
+/////////////////////////////
+
+// Eliminamos el proceso que ocupaba toda la memoria del procesador para que este quede vacío
+bpp proc1 1
+
+// Compacta la memoria del procesador proc1
+cmp proc1
+
+// Se imprime el procesador proc1
+ipro proc1
+
+/////////////////////////////////////
+/* 3. Con procesador ya compactado */
+/////////////////////////////////////
+
+// Como hemos compactado previamente un procesador vacío, podemos probar esta funcionalidad con el mismo procesador.
+
+// Vuelve a compactar la memoria del procesador proc1
+cmp proc1
+
+// Se imprime el procesador proc1
+ipro proc1
+
+/////////////////////////////////////////////////
+/* 4. Con procesador con un hueco al principio */
+/////////////////////////////////////////////////
+
+// Al añadir 1 procesador con memoria de 1 y otro con memoria de 9, y después eliminar el primero, se crea un hueco al inicio de 1.
+// Se añade el proceso 1 al procesador proc1
+app proc1 1 1 5
+
+// Se añade el proceso 2 al procesador proc1
+app proc1 2 9 6
+
+// Se elimina el proceso 1 del procesador proc1
+bpp proc1 1
+
+// Se imprime el procesador proc1
+ipro proc1
+
+// Compacta la memoria del procesador proc1
+cmp proc1
+
+// Se imprime el procesador proc1
+ipro proc1
+
+/////////////////////////////////////////////
+/* 5. Con procesador con un hueco al final */
+/////////////////////////////////////////////
+
+// Eliminamos el proceso que falta en el procesador, para dejarlo vacío.
+// Se elimina el proceso 2 del procesador proc1
+bpp proc1 2
+
+// Añadimos un proceso de memoria 9 a un procesador de memoria 10, para dejar un hueco al final
+// Se añade el proceso 1 al procesador proc1
+app proc1 1 9 9
+
+// Compacta la memoria del procesador proc1
+cmp proc1
+
+// Se imprime el procesador proc1
+ipro proc1
+
+////////////////////////////////////////////////
+/* 6. Con procesador con hueco entre procesos */
+////////////////////////////////////////////////
+
+// Volvemos a dejar el procesador vacío
+// Se elimina el proceso 1 del procesador proc1
+bpp proc1 1
+
+// Añadimos procesos de diferentes memoria para después eliminarlos y dejar huecos entre ellos.
+// Se añade el proceso 1 al procesador proc1
+app proc1 1 2 5
+
+// Se añade el proceso 2 al procesador proc1
+app proc1 2 2 4
+
+// Se añade el proceso 3 al procesador proc1
+app proc1 3 4 5
+
+// Se añade el proceso 4 al procesador proc1
+app proc1 4 1 6
+
+// Se añade el proceso 5 al procesador proc1
+app proc1 5 1 7
+
+// Se elimina el proceso 2 del procesador proc1
+bpp proc1 2
+
+// Se elimina el proceso 4 del procesador proc1
+bpp proc1 4
+
+// Se imprime el procesador proc1
+ipro proc1
+
+// Compacta la memoria del procesador proc1
+cmp proc1
+
+// Se imprime el procesador proc1
+ipro proc1
+
+comando_erróneo
+
+**********************************************
+/* Prueba de compactar_memoria_cluster(cmc) */
+**********************************************
+
+// Imprime todos los procesadores del cluster
+ipc
+
+// Lo utilizamos para dejar los procesadores del cluster sin procesos
+// Avanza 100 ut. 
+at 100
+
+// Imprime todos los procesadores del cluster
+ipc
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* 1. Utilizamos los mismos casos que a la hora de compactar_memoria_procesador, pero esta vez compactando el cluster al final*/
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Proceso que ocupa toda la memoria del procesador
+// Se añade el proceso 1 al procesador proc1
+app proc1 1 10 5
+
+// Procesador compactado que luego volveremos a compactar
+// Se añade el proceso 1 al procesador proc111
+app proc111 1 5 5
+
+// Compacta la memoria del procesador proc111
+cmp proc111
+
+// Procesador con hueco al inicio
+// Se añade el proceso 1 al procesador proc112
+app proc112 1 5 6
+
+// Se añade el proceso 2 al procesador proc112
+app proc112 2 15 7
+
+// Se elimina el proceso 1 del procesador proc112
+bpp proc112 1
+
+// Procesador con hueco al final
+// Se añade el proceso 1 al procesador proc22
+app proc22 1 19 9
+
+// Procesador con huecos entre medio
+// Se añade el proceso 1 al procesador proc221
+app proc221 1 2 5
+
+// Se añade el proceso 2 al procesador proc221
+app proc221 2 2 4
+
+// Se añade el proceso 3 al procesador proc221
+app proc221 3 4 5
+
+// Se añade el proceso 4 al procesador proc221
+app proc221 4 1 6
+
+// Se añade el proceso 5 al procesador proc221
+app proc221 5 1 7
+
+// Se elimina el proceso 2 al procesador proc221
+bpp proc221 2
+
+// Se elimina el proceso 4 al procesador proc221
+bpp proc221 4
+
+// Compacta todos los procesadores del cluster (vacíos, llenos y otros)
+cmc
+
+// Imprime todos los procesadores del cluster
+ipc
+
+comando_erróneo
+
+**********************************
+/* Prueba de avanzar_tiempo(at) */
+**********************************
+
+//////////////////////////////////////////////////////////////////
+/* 1. Con procesos que se tienen que eliminar y que no a la vez */
+//////////////////////////////////////////////////////////////////
+
+// Avanza 5 ut
+at 5
+
+// Imprime todos los procesadores del cluster
+ipc
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* 2. alta_proceso_procesador de un proceso con la misma id que uno eliminado al avanzar tiempo y que este pueda caber en el procesador */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Se añade el proceso 1 al procesador proc1
+app proc1 1 5 6
+
+// Imprime todos los procesadores del cluster
+ipc
+
+/////////////////////////////////////////////////////////
+/* 3. baja_proceso_procesador con un proceso eliminado */
+/////////////////////////////////////////////////////////
+
+// Se elimina el proceso 1 al procesador proc111
+bpp proc111 1
+
+// Imprime todos los procesadores del cluster
+ipc
+
+////////////////////////////////////////////////////////////
+/* 4. baja_proceso_procesador con un proceso no eliminado */
+////////////////////////////////////////////////////////////
+
+// Se elimina el proceso 2 al procesador proc112
+bpp proc112 2
+
+// Imprime todos los procesadores del cluster
+ipc
+
+//////////////////////////////////
+/* 5. compactar_memoria_cluster */
+//////////////////////////////////
+
+// Compacta la memoria de todos los procesadores del cluster
+cmc
+
+// Imprime todos los procesadores del cluster
+ipc
+
+fin
